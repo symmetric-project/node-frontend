@@ -3,11 +3,21 @@ const StickyHeader = () => {
     <div
       style={{
         position: "sticky",
+        top: 0,
         height: 50,
-        width: "100%",
-        backgroundColor: "red",
+        backgroundColor: "white",
+
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "center",
+
+        padding: 5,
+        
+        zIndex: 10,
       }}
-    ></div>
+    >
+      <div style={{ width: 40, height: 40, backgroundColor: "gray" }}></div>
+    </div>
   );
 };
 

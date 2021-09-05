@@ -3,9 +3,10 @@ const PostCard = () => {
     <div
       style={{
         position: "sticky",
-        height: 50,
-        width: "100%",
-        backgroundColor: "red",
+        height: 500,
+        width: 640,
+        backgroundColor: "white",
+        margin: 10,
       }}
     ></div>
   );

@@ -5,7 +5,7 @@ const NodeHeader = () => {
         position: "relative",
         height: 150,
         width: "100%",
-        backgroundColor: "blue",
+        backgroundColor: "rgb(51, 168, 255)",
       }}
     >
       <div
@@ -13,7 +13,7 @@ const NodeHeader = () => {
           position: "absolute",
           height: 75,
           width: "100%",
-          backgroundColor: "gray",
+          backgroundColor: "white",
           bottom: 0,
 
           display: "flex",
@@ -22,7 +22,7 @@ const NodeHeader = () => {
           alignItems: "center",
         }}
       >
-        <div>Node Name Hub</div>
+        <div>Node Name</div>
         <div>r/node</div>
       </div>
     </div>
