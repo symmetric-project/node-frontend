@@ -14,6 +14,9 @@ const SortingContainer = () => {
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "center",
+
+        borderTopLeftRadius: 3,
+        borderTopRightRadius: 3,
       }}
     >
       <div

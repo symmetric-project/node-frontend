@@ -14,6 +14,9 @@ const PostingContainer = () => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+
+        borderTopLeftRadius: 3,
+        borderTopRightRadius: 3,
       }}
     >
       <div

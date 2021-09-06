@@ -5,3 +5,38 @@ html {
 
   background-color: #dae0e6;
 }
+
+html,
+body {
+  font-family: IBMPlexSans;
+  font-size: 14px;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  font-weight: 400;
+  src: local("IBMPlexSans"),
+    url(../public/fonts/ibm-plex-sans/IBMPlexSans-Regular.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  font-weight: 700;
+  src: local("IBMPlexSans"),
+    url(../public/fonts/ibm-plex-sans/IBMPlexSans-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 400;
+  src: local("NotoSans"),
+    url(../public/fonts/noto-sans/NotoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 700;
+  src: local("NotoSans"),
+    url(../public/fonts/noto-sans/NotoSans-Bold.ttf) format("truetype");
+}

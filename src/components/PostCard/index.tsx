@@ -7,6 +7,9 @@ const PostCard = () => {
         width: 640,
         backgroundColor: "white",
         margin: 10,
+
+        borderTopLeftRadius: 3,
+        borderTopRightRadius: 3,
       }}
     ></div>
   );
