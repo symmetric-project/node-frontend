@@ -1,0 +1,10 @@
+#+TITLE: Contributing
+* Guide
+To contribut to this project, please fork this repository, and clone it to your home computer.
+You can then make any changes you want there, and once finished, you can commit it to your home repository.
+Please ensure that you have signed your commit message with a name or alias, as well as an email(github provides one that redirects to you if you wish to remain anonymous).
+
+After you are done, you can push to github, and crate a pull request that adds your changes or additions.
+If you have not or cannot test the changes if applicable, someone else will need to ensure they work before the change is commited
+* Help
+If you need any help at all contributing to this project, you can take a look at our discord [[https://discord.com/invite/AkSbP5JF][here]].
