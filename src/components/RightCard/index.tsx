@@ -1,4 +1,4 @@
-const RightCard = () => {
+const RightCard = (props: { title: string; content: string }) => {
   return (
     <div
       style={{
@@ -21,17 +21,22 @@ const RightCard = () => {
           borderTopRightRadius: 3,
 
           display: "flex",
+          justifyContent: "flex-start",
           alignItems: "center",
-          justifyContent: "center",
 
           color: "white",
           fontWeight: 700,
           fontSize: 14,
+          lineHeight: 18,
+
+          padding: 10,
         }}
       >
-        Header title
+        {props.title}
       </div>
-      <div style={{ height: "100%", padding: 15 }}>asdasd</div>
+      <div style={{ height: "100%", padding: 15, fontFamily: "NotoSans", lineHeight: "21px"}}>
+        {props.content}
+      </div>
     </div>
   );
 };

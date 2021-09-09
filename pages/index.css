@@ -6,10 +6,19 @@ html {
   background-color: #dae0e6;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-family: IBMPlexSans;
   font-size: 14px;
+}
+
+input:focus {
+  outline: 1px solid blue;
+  box-shadow: none;
 }
 
 @font-face {
@@ -19,6 +28,21 @@ body {
     url(../public/fonts/ibm-plex-sans/IBMPlexSans-Regular.ttf)
       format("truetype");
 }
+
+@font-face {
+  font-family: "IBMPlexSans";
+  font-weight: 500;
+  src: local("IBMPlexSans"),
+    url(../public/fonts/ibm-plex-sans/IBMPlexSans-Medium.ttf) format("truetype");
+}
+
+/* @font-face {
+  font-family: "IBMPlexSans";
+  font-weight: 600;
+  src: local("IBMPlexSans"),
+    url(../public/fonts/ibm-plex-sans/IBMPlexSans-SemiBold.ttf)
+      format("truetype");
+} */
 
 @font-face {
   font-family: "IBMPlexSans";

@@ -1,3 +1,6 @@
+import { COLORS } from "../../const";
+import GenericIcon from "../icons/GenericIcon";
+
 const PostingContainer = () => {
   return (
     <div
@@ -19,18 +22,50 @@ const PostingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 450, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
+      <GenericIcon
+        onMouseOver={() => {}}
+        onMouseLeave={() => {}}
+        onClick={() => {}}
+        iconName="person-circle"
+        title="My page"
+        size={45}
+        color={COLORS.ICON_GRAY}
+      />
+      <input
+        style={{
+          width: 440,
+          height: 18,
+          backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
+          borderStyle: "solid",
+          borderWidth: 1,
+          borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
+          margin: 10,
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          padding: 10,
+          borderRadius: 4,
+        }}
+      />
+      <GenericIcon
+        onMouseOver={() => {}}
+        onMouseLeave={() => {}}
+        onClick={() => {}}
+        iconName="image"
+        title="Link"
+        size={30}
+        color={COLORS.ICON_GRAY}
+        style={{ padding: 10}}
+      />
+      <GenericIcon
+        onMouseOver={() => {}}
+        onMouseLeave={() => {}}
+        onClick={() => {}}
+        iconName="link"
+        title="Link"
+        size={30}
+        color={COLORS.ICON_GRAY}
+      />
     </div>
   );
 };

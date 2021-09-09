@@ -1,3 +1,6 @@
+import React from "react";
+import GenericSortingButton from "./GenericSortingButton";
+
 const SortingContainer = () => {
   return (
     <div
@@ -19,29 +22,12 @@ const SortingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{ width: 38, height: 38, backgroundColor: "gray", margin: 10 }}
-      ></div>
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
+      <GenericSortingButton name="Best" iconName="star-large" />
+      <GenericSortingButton name="Trending" iconName="graph-line" />
+      <GenericSortingButton name="New" iconName="/editor/hint" />
+      <GenericSortingButton name="Worst" iconName="trash" />
 
-          width: 38,
-          height: 38,
-          backgroundColor: "gray",
-          margin: 10,
-        }}
-      ></div>
+      {/* <PostStyleSwitchButton /> */}
     </div>
   );
 };

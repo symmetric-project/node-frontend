@@ -1,17 +1,29 @@
-const PostCard = () => {
+import React from "react";
+import { Post } from "../../types";
+import LeftVotingBar from "./LeftVotingBar";
+import RightContent from "./RightContent";
+
+const PostCard = (props: { post: Post }) => {
   return (
     <div
       style={{
-        position: "sticky",
-        height: 500,
+        position: "relative",
+        height: "auto",
+        minHeight: 175,
         width: 640,
-        backgroundColor: "white",
         margin: 10,
 
         borderTopLeftRadius: 3,
         borderTopRightRadius: 3,
+
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "stretch",
       }}
-    ></div>
+    >
+      <LeftVotingBar />
+      <RightContent post={props.post} />
+    </div>
   );
 };
 
