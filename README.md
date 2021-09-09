@@ -1,3 +1,8 @@
+![license](https://img.shields.io/github/license/symmetric-project/node-frontend)
+![coverage](https://img.shields.io/github/license/symmetric-project/node-frontend)
+![stars](https://img.shields.io/github/stars/symmetric-project/node-frontend)
+![forks](https://img.shields.io/github/forks/symmetric-project/node-frontend)
+![issues](https://img.shields.io/github/issues/symmetric-project/node-frontend)
 # node-frontend
 The frontend for a Symmetric node.
 
