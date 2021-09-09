@@ -8,7 +8,7 @@ The frontend for a Symmetric node.
 
 ![Preview](https://github.com/symmetric-project/node-frontend/blob/main/preview.png)
 
-Create a env.local file with the following parameters:
+Create a `env.local` file with the following parameters:
 ```
 NEXT_PUBLIC_MODE=dev
 NEXT_PUBLIC_FRONTEND_BASE_URL_DEV=http://localhost:3000
