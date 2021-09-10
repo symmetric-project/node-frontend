@@ -1,4 +1,12 @@
-const RightCard = (props: { title: string; content: string }) => {
+const GenericCard = ({
+  title,
+  content,
+  headerHeight = 46,
+}: {
+  title: string;
+  content: string;
+  headerHeight?: number;
+}) => {
   return (
     <div
       style={{
@@ -14,7 +22,7 @@ const RightCard = (props: { title: string; content: string }) => {
         style={{
           top: 0,
           width: "100%",
-          height: 46,
+          height: headerHeight,
           backgroundColor: "#0079d3",
 
           borderTopLeftRadius: 3,
@@ -32,13 +40,20 @@ const RightCard = (props: { title: string; content: string }) => {
           padding: 10,
         }}
       >
-        {props.title}
+        {title}
       </div>
-      <div style={{ height: "100%", padding: 15, fontFamily: "NotoSans", lineHeight: "21px"}}>
-        {props.content}
+      <div
+        style={{
+          height: "100%",
+          padding: 15,
+          fontFamily: "NotoSans",
+          lineHeight: "21px",
+        }}
+      >
+        {content}
       </div>
     </div>
   );
 };
 
-export default RightCard;
+export default GenericCard;

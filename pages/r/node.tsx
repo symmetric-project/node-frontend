@@ -3,8 +3,9 @@ import React from "react";
 import { POSTS } from "../../src/api/queries";
 import NodeHeader from "../../src/components/NodeHeader";
 import PostCard from "../../src/components/PostCard";
+import PostCards from "../../src/components/PostCards";
 import PostingContainer from "../../src/components/PostingContainer";
-import RightCard from "../../src/components/RightCard";
+import GenericCard from "../../src/components/cards/GenericCard";
 import SortingContainer from "../../src/components/SortingContainer";
 import StickyHeader from "../../src/components/StickyHeader";
 
@@ -33,23 +34,19 @@ const NodePage = () => {
         >
           <PostingContainer />
           <SortingContainer />
-
-          {console.log(data)}
-          {data.posts.map((post: any) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          <PostCards posts={data.posts} />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <RightCard
+          <GenericCard
             title="About Community"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />
-          <RightCard
+          <GenericCard
             title="About Community"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />
-          <RightCard
+          <GenericCard
             title="About Community"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />

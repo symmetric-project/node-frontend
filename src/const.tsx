@@ -20,6 +20,7 @@ export const COLORS = {
   TRANSPARENT_LIGHT_GRAY: "rgba(0, 0, 0, 0.05)",
   TRANSPARENT_LIGHTER_GRAY: "rgba(0, 0, 0, 0.02)",
   ICON_GRAY: "rgb(135, 138, 140)",
+  BUTTON_BLUE: "rgb(0, 121, 211)",
   GRAY: "gray",
   BLACK: "black",
 };

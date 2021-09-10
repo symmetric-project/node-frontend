@@ -14,8 +14,7 @@ const PostingContainer = () => {
         marginBottom: 10,
 
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
 
         borderTopLeftRadius: 3,
@@ -30,17 +29,18 @@ const PostingContainer = () => {
         title="My page"
         size={45}
         color={COLORS.ICON_GRAY}
+        style={{ marginLeft: 5 }}
       />
       <input
         placeholder="Create Post"
         style={{
-          width: 440,
+          width: 470,
           height: 15,
           backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
           borderStyle: "solid",
           borderWidth: 1,
           borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
-          margin: 10,
+          marginLeft: 5,
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
