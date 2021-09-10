@@ -1,11 +1,5 @@
-import StickyHeader from "../src/components/StickyHeader";
-
 const IndexPage = () => {
-  return (
-    <div>
-      <StickyHeader />
-    </div>
-  );
+  return <div>Hello world!</div>;
 };
 
 export default IndexPage;

@@ -3,11 +3,11 @@ import React from "react";
 import { FRONTEND_URL } from "../../const";
 
 const GenericIcon = (props: {
-  onMouseEnter: () => any;
-  onMouseLeave: () => any;
+  onMouseEnter?: () => any;
+  onMouseLeave?: () => any;
+  onClick?: () => any;
   color?: string;
   backgroundColor?: string;
-  onClick: () => any;
   iconName: string;
   title: string;
   size: number;
@@ -15,9 +15,21 @@ const GenericIcon = (props: {
 }) => {
   return (
     <SVG
-      onMouseEnter={() => props.onMouseEnter()}
-      onMouseLeave={() => props.onMouseLeave()}
-      onClick={() => props.onClick()}
+      onMouseEnter={() => {
+        if (props.onMouseEnter !== undefined) {
+          props.onMouseEnter();
+        }
+      }}
+      onMouseLeave={() => {
+        if (props.onMouseLeave !== undefined) {
+          props.onMouseLeave();
+        }
+      }}
+      onClick={() => {
+        if (props.onClick !== undefined) {
+          props.onClick();
+        }
+      }}
       src={`${FRONTEND_URL}/icons/${props.iconName}.svg`}
       width={props.size}
       height="auto"

@@ -31,7 +31,7 @@ const RightContent = (props: { post: Post }) => {
             margin: 5,
           }}
         ></div>
-        r/NodeName - Posted by u/DomPachino 5 hours ago
+        nodename.com - Posted by u/virtumondeObjective 5 hours ago
       </div>
 
       <div style={{ padding: 10 }}>

@@ -2,6 +2,7 @@ import React from "react";
 import { COLORS } from "../../const";
 import GenericIcon from "../icons/GenericIcon";
 import UserOptions from "./UserOptions";
+import SVG from "react-inlinesvg";
 
 const StickyHeader = () => {
   return (
@@ -17,14 +18,32 @@ const StickyHeader = () => {
         alignItems: "center",
 
         padding: 5,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 0,
+        paddingRight: 0,
 
         zIndex: 10,
       }}
     >
-      <div style={{ width: 30, height: 30, backgroundColor: "gray" }}></div>
-      symmetric
+      <a
+        href="/"
+        style={{
+          userSelect: "none",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          textDecoration: "none",
+        }}
+      >
+        <SVG
+          src={`https://avatars.dicebear.com/api/jdenticon/symmetric/.svg`}
+          width={30}
+          height="auto"
+          cursor="pointer"
+          title={"Avatar"}
+          style={{ marginLeft: 20, marginRight: 10 }}
+        />
+        symmetric
+      </a>
       <input
         placeholder="Create Post"
         style={{

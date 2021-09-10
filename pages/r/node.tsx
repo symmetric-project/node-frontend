@@ -14,7 +14,6 @@ const NodePage = () => {
   if (error) return null;
   return (
     <div>
-      <StickyHeader />
       <NodeHeader />
       <div
         style={{
