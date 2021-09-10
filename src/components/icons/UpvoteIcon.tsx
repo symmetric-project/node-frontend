@@ -3,7 +3,7 @@ import React from "react";
 import { FRONTEND_URL } from "../../const";
 
 const UpvoteIcon = (props: {
-  onMouseOver: () => any;
+  onMouseEnter: () => any;
   onMouseLeave: () => any;
   color: string | undefined;
   backgroundColor: string | undefined;
@@ -11,7 +11,7 @@ const UpvoteIcon = (props: {
 }) => {
   return (
     <SVG
-      onMouseOver={() => props.onMouseOver()}
+      onMouseEnter={() => props.onMouseEnter()}
       onMouseLeave={() => props.onMouseLeave()}
       onClick={() => props.onClick()}
       src={`${FRONTEND_URL}/icons/chevron-up.svg`}

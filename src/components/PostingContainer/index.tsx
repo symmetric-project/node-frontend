@@ -23,7 +23,7 @@ const PostingContainer = () => {
       }}
     >
       <GenericIcon
-        onMouseOver={() => {}}
+        onMouseEnter={() => {}}
         onMouseLeave={() => {}}
         onClick={() => {}}
         iconName="person-circle"
@@ -32,9 +32,10 @@ const PostingContainer = () => {
         color={COLORS.ICON_GRAY}
       />
       <input
+        placeholder="Create Post"
         style={{
           width: 440,
-          height: 18,
+          height: 15,
           backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
           borderStyle: "solid",
           borderWidth: 1,
@@ -48,17 +49,17 @@ const PostingContainer = () => {
         }}
       />
       <GenericIcon
-        onMouseOver={() => {}}
+        onMouseEnter={() => {}}
         onMouseLeave={() => {}}
         onClick={() => {}}
         iconName="image"
         title="Link"
         size={30}
         color={COLORS.ICON_GRAY}
-        style={{ padding: 10}}
+        style={{ padding: 10 }}
       />
       <GenericIcon
-        onMouseOver={() => {}}
+        onMouseEnter={() => {}}
         onMouseLeave={() => {}}
         onClick={() => {}}
         iconName="link"

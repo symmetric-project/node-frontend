@@ -22,7 +22,7 @@ const LeftVotingBar = () => {
     >
       <UpvoteIcon
         color={upvoted ? COLORS.ORANGE : COLORS.BLACK}
-        onMouseOver={() => setMouseOverUpvote(true)}
+        onMouseEnter={() => setMouseOverUpvote(true)}
         onMouseLeave={() => setMouseOverUpvote(false)}
         backgroundColor={
           mouseOverUpvote ? COLORS.TRANSPARENT_LIGHT_GRAY : undefined
@@ -34,7 +34,7 @@ const LeftVotingBar = () => {
       />
       <DownvoteIcon
         color={downvoted ? COLORS.BLUE : COLORS.BLACK}
-        onMouseOver={() => setMouseOverDownvote(true)}
+        onMouseEnter={() => setMouseOverDownvote(true)}
         onMouseLeave={() => setMouseOverDownvote(false)}
         backgroundColor={
           mouseOverDownvote ? COLORS.TRANSPARENT_LIGHT_GRAY : undefined

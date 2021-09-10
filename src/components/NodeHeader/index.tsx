@@ -1,6 +1,7 @@
+import React from "react";
 import { COLORS } from "../../const";
 import JoinTransparentButton from "../buttons/JoinTransparentButton";
-import TransparentButton from "../buttons/TransparentButton";
+import SVG from "react-inlinesvg";
 
 const NodeHeader = () => {
   return (
@@ -50,7 +51,14 @@ const NodeHeader = () => {
             alignItems: "center",
           }}
         >
-          h/
+          <SVG
+            src={`https://avatars.dicebear.com/api/jdenticon/${"nodename"}/.svg`}
+            width={50}
+            height="auto"
+            cursor="pointer"
+            title={"Avatar"}
+            /* style={{ backgroundColor: props.backgroundColor, ...props.style }} */
+          />
         </div>
         <div
           style={{
@@ -64,7 +72,16 @@ const NodeHeader = () => {
           }}
         >
           <div style={{ fontSize: 28, fontWeight: 700 }}>Node Name</div>
-          <div style={{ color: COLORS.METATEXT }}>r/node</div>
+          <div
+            style={{
+              color: COLORS.METATEXT,
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <div>symmetric.</div>
+            <div style={{ fontWeight: 500 }}>nodename.com</div>
+          </div>
         </div>
 
         <JoinTransparentButton joined={true} />

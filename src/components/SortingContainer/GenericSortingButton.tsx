@@ -16,11 +16,11 @@ const GenericSortingButton = (props: { iconName: string, name: string }) => {
         margin: 5,
         cursor: "pointer",
       }}
-      onMouseOver={() => setMouseOver(true)}
+      onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
     >
       <GenericIcon
-        onMouseOver={() => {}}
+        onMouseEnter={() => {}}
         onMouseLeave={() => {}}
         onClick={() => {}}
         iconName={props.iconName}

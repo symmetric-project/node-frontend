@@ -16,9 +16,13 @@ body {
   font-size: 14px;
 }
 
+input {
+  font-family: "NotoSans";
+}
+
 input:focus {
-  outline: 1px solid blue;
-  box-shadow: none;
+  outline: none;
+  box-shadow: 0 0 3px rgb(0, 121, 211);
 }
 
 @font-face {

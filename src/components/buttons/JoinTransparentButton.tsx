@@ -8,7 +8,7 @@ const JoinTransparentButton = (props: { joined: boolean }) => {
       onMouseEnter={() => setCursorOnButton(true)}
       onMouseLeave={() => setCursorOnButton(false)}
       style={{
-        width: "auto",
+        width: 80,
         height: 32,
 
         paddingLeft: 20,
