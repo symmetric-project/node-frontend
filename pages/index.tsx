@@ -5,7 +5,7 @@ import PostCards from "../src/components/PostCards";
 import PostingContainer from "../src/components/PostingContainer";
 import RightCard from "../src/components/cards/GenericCard";
 import SortingContainer from "../src/components/SortingContainer";
-import TopNodesCard from "../src/components/cards/TopNodesCard";
+import TopNodesCard from "../src/components/cards/TrendingNodesCard";
 
 const IndexPage = () => {
   const { loading, error, data } = useQuery(POSTS);
@@ -33,22 +33,19 @@ const IndexPage = () => {
         <PostCards posts={data.posts} />
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <TopNodesCard
-          title="About Community"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <RightCard
-          title="About Community"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <RightCard
-          title="About Community"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <RightCard
-          title="About Community"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
+        <TopNodesCard />
+        <RightCard title="About Community">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </RightCard>
+        <RightCard title="About Community">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </RightCard>
+        <RightCard title="About Community">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </RightCard>
       </div>
     </div>
   );

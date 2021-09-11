@@ -1,13 +1,11 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { POSTS } from "../../src/api/queries";
+import GenericCard from "../../src/components/cards/GenericCard";
 import NodeHeader from "../../src/components/NodeHeader";
-import PostCard from "../../src/components/PostCard";
 import PostCards from "../../src/components/PostCards";
 import PostingContainer from "../../src/components/PostingContainer";
-import GenericCard from "../../src/components/cards/GenericCard";
 import SortingContainer from "../../src/components/SortingContainer";
-import StickyHeader from "../../src/components/StickyHeader";
 
 const NodePage = () => {
   const { loading, error, data } = useQuery(POSTS);
@@ -38,18 +36,18 @@ const NodePage = () => {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <GenericCard
-            title="About Community"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <GenericCard
-            title="About Community"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
-          <GenericCard
-            title="About Community"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          />
+          <GenericCard title="About Community">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </GenericCard>
+          <GenericCard title="About Community">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </GenericCard>
+          <GenericCard title="About Community">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </GenericCard>
         </div>
       </div>
     </div>

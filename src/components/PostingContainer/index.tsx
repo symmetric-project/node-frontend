@@ -1,5 +1,7 @@
+import React from "react";
 import { COLORS } from "../../const";
 import GenericIcon from "../icons/GenericIcon";
+import SVG from "react-inlinesvg";
 
 const PostingContainer = () => {
   return (
@@ -10,7 +12,7 @@ const PostingContainer = () => {
         width: 640,
         backgroundColor: "white",
 
-        marginTop: 15,
+        marginTop: 20,
         marginBottom: 10,
 
         display: "flex",
@@ -21,16 +23,23 @@ const PostingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <GenericIcon
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}
-        onClick={() => {}}
-        iconName="person-circle"
-        title="My page"
-        size={45}
-        color={COLORS.ICON_GRAY}
-        style={{ marginLeft: 5 }}
-      />
+      <div
+        style={{
+          width: 50,
+          height: 50,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <SVG
+          src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
+          width={50}
+          height="auto"
+          cursor="pointer"
+          title={"My Page"}
+        />
+      </div>
       <input
         placeholder="Create Post"
         style={{
@@ -40,7 +49,6 @@ const PostingContainer = () => {
           borderStyle: "solid",
           borderWidth: 1,
           borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
-          marginLeft: 5,
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
@@ -48,25 +56,34 @@ const PostingContainer = () => {
           borderRadius: 4,
         }}
       />
-      <GenericIcon
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}
-        onClick={() => {}}
-        iconName="image"
-        title="Link"
-        size={30}
-        color={COLORS.ICON_GRAY}
-        style={{ padding: 10 }}
-      />
-      <GenericIcon
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}
-        onClick={() => {}}
-        iconName="link"
-        title="Link"
-        size={30}
-        color={COLORS.ICON_GRAY}
-      />
+      <div
+        style={{
+          width: 90,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <GenericIcon
+          onMouseEnter={() => {}}
+          onMouseLeave={() => {}}
+          onClick={() => {}}
+          iconName="image"
+          title="Link"
+          size={30}
+          color={COLORS.ICON_GRAY}
+          style={{ padding: 10 }}
+        />
+        <GenericIcon
+          onMouseEnter={() => {}}
+          onMouseLeave={() => {}}
+          onClick={() => {}}
+          iconName="link"
+          title="Link"
+          size={30}
+          color={COLORS.ICON_GRAY}
+        />
+      </div>
     </div>
   );
 };

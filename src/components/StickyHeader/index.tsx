@@ -1,8 +1,12 @@
 import React from "react";
 import { COLORS } from "../../const";
-import GenericIcon from "../icons/GenericIcon";
 import UserOptions from "./UserOptions";
 import SVG from "react-inlinesvg";
+import {
+  IoAddOutline,
+  IoChatbubbleEllipsesOutline,
+  IoNotificationsOutline,
+} from "react-icons/io5";
 
 const StickyHeader = () => {
   return (
@@ -44,33 +48,71 @@ const StickyHeader = () => {
         />
         symmetric
       </a>
-      <input
-        placeholder="Create Post"
+      <div style={{ width: "100%", display: "flex", justifyContent: "center", backgroundColor: "transparent" }}>
+        <input
+          placeholder="Search Symmetric"
+          style={{
+            maxWidth: 850,
+            width: "100%",
+            height: 15,
+            backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
+            borderStyle: "solid",
+            borderWidth: 1,
+            borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
+            margin: 10,
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            padding: 10,
+            borderRadius: 4,
+          }}
+        />
+      </div>
+      <div
         style={{
-          width: "100%",
-          height: 15,
-          backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
-          borderStyle: "solid",
-          borderWidth: 1,
-          borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
-          margin: 10,
+          width: "auto",
           display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          padding: 10,
-          borderRadius: 4,
+          justifyContent: "flex-end",
+          right: 0,
         }}
-      />
-      <GenericIcon
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}
-        onClick={() => {}}
-        iconName="notification-direct"
-        title="Link"
-        size={30}
-        color={COLORS.ICON_GRAY}
-      />
-      <UserOptions />
+      >
+        <div
+          style={{
+            width: 30,
+            height: 30,
+            margin: 5,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <IoChatbubbleEllipsesOutline color={COLORS.GRAY} size={23} />
+        </div>
+        <div
+          style={{
+            width: 30,
+            height: 30,
+            margin: 5,
+            marginRight: 5,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <IoNotificationsOutline color={COLORS.GRAY} size={25} />
+        </div>
+        <div
+          style={{
+            width: 30,
+            height: 30,
+            margin: 5,
+            marginLeft: 0,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <IoAddOutline color={COLORS.GRAY} size={30} />
+        </div>
+        <UserOptions />
+      </div>
     </div>
   );
 };

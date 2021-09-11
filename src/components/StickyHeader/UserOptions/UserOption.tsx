@@ -1,30 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { COLORS } from "../../../const";
-import GenericIcon from "../../icons/GenericIcon";
 
-const UserOption = (props: {
+const UserOption = ({
+  href,
+  name,
+  icon,
+}: {
   href: string;
   name: string;
-  iconName: string;
+  icon: React.ReactChild;
 }) => {
   return (
     <a
-      href={props.href}
+      href={href}
       style={{
         display: "flex",
         alignItems: "center",
         marginBottom: 10,
         textDecoration: "none",
+        color: COLORS.BLACK,
       }}
     >
-      <GenericIcon
-        iconName={props.iconName}
-        title={props.name}
-        size={30}
-        color={COLORS.ICON_GRAY}
-        style={{ paddingRight: 10 }}
-      />
-      Profile
+      <div style={{ width: 30, height: 30, marginRight: 10 }}> {icon}</div>
+      {name}
     </a>
   );
 };

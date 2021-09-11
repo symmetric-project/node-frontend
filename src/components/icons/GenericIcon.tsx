@@ -2,7 +2,17 @@ import SVG from "react-inlinesvg";
 import React from "react";
 import { FRONTEND_URL } from "../../const";
 
-const GenericIcon = (props: {
+const GenericIcon = ({
+  onMouseEnter,
+  onMouseLeave,
+  onClick,
+  color,
+  backgroundColor,
+  iconName,
+  title,
+  size,
+  style,
+}: {
   onMouseEnter?: () => any;
   onMouseLeave?: () => any;
   onClick?: () => any;
@@ -16,27 +26,27 @@ const GenericIcon = (props: {
   return (
     <SVG
       onMouseEnter={() => {
-        if (props.onMouseEnter !== undefined) {
-          props.onMouseEnter();
+        if (onMouseEnter !== undefined) {
+          onMouseEnter();
         }
       }}
       onMouseLeave={() => {
-        if (props.onMouseLeave !== undefined) {
-          props.onMouseLeave();
+        if (onMouseLeave !== undefined) {
+          onMouseLeave();
         }
       }}
       onClick={() => {
-        if (props.onClick !== undefined) {
-          props.onClick();
+        if (onClick !== undefined) {
+          onClick();
         }
       }}
-      src={`${FRONTEND_URL}/icons/${props.iconName}.svg`}
-      width={props.size}
+      src={`${FRONTEND_URL}/icons/${iconName}.svg`}
+      width={size}
       height="auto"
       cursor="pointer"
-      title={props.title}
-      color={props.color}
-      style={{ backgroundColor: props.backgroundColor, ...props.style }}
+      title={title}
+      color={color}
+      style={{ backgroundColor: backgroundColor, ...style }}
     />
   );
 };

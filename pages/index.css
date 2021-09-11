@@ -40,13 +40,13 @@ input:focus {
     url(../public/fonts/ibm-plex-sans/IBMPlexSans-Medium.ttf) format("truetype");
 }
 
-/* @font-face {
+@font-face {
   font-family: "IBMPlexSans";
   font-weight: 600;
   src: local("IBMPlexSans"),
     url(../public/fonts/ibm-plex-sans/IBMPlexSans-SemiBold.ttf)
       format("truetype");
-} */
+}
 
 @font-face {
   font-family: "IBMPlexSans";
@@ -60,6 +60,13 @@ input:focus {
   font-weight: 400;
   src: local("NotoSans"),
     url(../public/fonts/noto-sans/NotoSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-weight: 600;
+  src: local("NotoSans"),
+    url(../public/fonts/noto-sans/NotoSans-Bold.ttf) format("truetype");
 }
 
 @font-face {

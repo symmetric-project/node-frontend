@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 import { COLORS } from "../../../const";
 import GenericIcon from "../../icons/GenericIcon";
+import {
+  IoPersonCircleOutline,
+  IoSettingsOutline,
+  IoAddSharp,
+} from "react-icons/io5";
 import UserOption from "./UserOption";
 
 const UserOptions = () => {
@@ -15,7 +20,7 @@ const UserOptions = () => {
         style={{
           position: "relative",
           height: 37,
-          width: 250,
+          width: "auto",
           cursor: "pointer",
 
           display: "flex",
@@ -34,13 +39,23 @@ const UserOptions = () => {
             : null), */
         }}
       >
-        <SVG
-          src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
-          width={150}
-          height="auto"
-          cursor="pointer"
-          title={"Avatar"}
-        />
+        <div
+          style={{
+            width: 50,
+            height: 50,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <SVG
+            src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
+            width={50}
+            height="auto"
+            cursor="pointer"
+            title={"Avatar"}
+          />
+        </div>
         <div
           style={{
             display: "flex",
@@ -53,16 +68,26 @@ const UserOptions = () => {
           <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>100 bases</div>
         </div>
 
-        <GenericIcon
-          onMouseEnter={() => {}}
-          onMouseLeave={() => {}}
-          onClick={() => {}}
-          iconName="chevron-down"
-          title="My page"
-          size={45}
-          color={COLORS.ICON_GRAY}
-          style={{ right: 0 }}
-        />
+        <div
+          style={{
+            width: 50,
+            height: 50,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <GenericIcon
+            onMouseEnter={() => {}}
+            onMouseLeave={() => {}}
+            onClick={() => {}}
+            iconName="chevron-down"
+            title="My page"
+            size={45}
+            color={COLORS.ICON_GRAY}
+            style={{ right: 0 }}
+          />
+        </div>
       </div>
       {mouseOver ? (
         <div
@@ -84,9 +109,21 @@ const UserOptions = () => {
             padding: 15,
           }}
         >
-          <UserOption iconName="user-circle" name="Profile" href="/" />
-          <UserOption iconName="settings" name="Segsttin" href="/" />
-          <UserOption iconName="settings" name="Profile" href="/" />
+          <UserOption
+            icon={<IoPersonCircleOutline size={30} />}
+            name="Profile"
+            href="/"
+          />
+          <UserOption
+            icon={<IoSettingsOutline size={30} />}
+            name="Settings"
+            href="/"
+          />
+          <UserOption
+            icon={<IoAddSharp size={30} />}
+            name="Create Node"
+            href="/"
+          />
         </div>
       ) : null}
     </div>
