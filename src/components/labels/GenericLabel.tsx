@@ -1,30 +1,26 @@
 import React, { useState } from "react";
-import { COLORS } from "../../../const";
+import { COLORS } from "../../const";
 
-const TagLabel = ({ children }: { children: React.ReactChild }) => {
+const GenericLabel = ({ children }: { children: React.ReactChild }) => {
   const [mouseOver, setMouseOver] = useState(false);
   return (
     <div
       style={{
         width: "auto",
-        minHeight: 24,
         lineHeight: "16px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
 
-        borderRadius: 20,
-        backgroundColor: mouseOver
-          ? COLORS.TRANSPARENT_LIGHT_GRAY
-          : COLORS.TAG_GRAY,
-        padding: 6,
+        borderRadius: 2,
+        backgroundColor: COLORS.TAG_RED,
+        padding: 2,
         margin: 5,
         cursor: "pointer",
 
-        color: COLORS.BUTTON_BLUE,
+        color: COLORS.WHITE,
         fontSize: 12,
-        fontWeight: 700,
-        fontFamily: "NotoSans",
+        fontWeight: 500,
       }}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
@@ -34,4 +30,4 @@ const TagLabel = ({ children }: { children: React.ReactChild }) => {
   );
 };
 
-export default TagLabel;
+export default GenericLabel;

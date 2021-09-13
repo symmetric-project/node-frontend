@@ -8,6 +8,7 @@ import {
   IoAddSharp,
 } from "react-icons/io5";
 import UserOption from "./UserOption";
+import { popupVar } from "../../../states/popups";
 
 const UserOptions = () => {
   const [mouseOver, setMouseOver] = useState(false);
@@ -122,7 +123,7 @@ const UserOptions = () => {
           <UserOption
             icon={<IoAddSharp size={30} />}
             name="Create Node"
-            href="/"
+            onClick={() => popupVar("create-node")}
           />
         </div>
       ) : null}

@@ -26,8 +26,6 @@ const SortingContainer = () => {
       <GenericSortingButton name="Trending" iconName="graph-line" />
       <GenericSortingButton name="New" iconName="/editor/hint" />
       <GenericSortingButton name="Worst" iconName="trash" />
-
-      {/* <PostStyleSwitchButton /> */}
     </div>
   );
 };

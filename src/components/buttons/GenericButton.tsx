@@ -5,10 +5,12 @@ const GenericButton = ({
   name,
   style,
   href,
+  onClick,
 }: {
   name: string;
-  style: React.CSSProperties;
-  href: string;
+  style?: React.CSSProperties;
+  href?: string;
+  onClick?: () => void;
 }) => {
   const [cursorOnButton, setCursorOnButton] = useState(false);
   return (
@@ -37,6 +39,7 @@ const GenericButton = ({
 
         ...style,
       }}
+      onClick={onClick ? () => onClick() : undefined}
     >
       {name}
     </a>

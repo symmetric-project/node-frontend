@@ -48,7 +48,14 @@ const StickyHeader = () => {
         />
         symmetric
       </a>
-      <div style={{ width: "100%", display: "flex", justifyContent: "center", backgroundColor: "transparent" }}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: "transparent",
+        }}
+      >
         <input
           placeholder="Search Symmetric"
           style={{

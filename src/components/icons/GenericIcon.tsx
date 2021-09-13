@@ -35,11 +35,6 @@ const GenericIcon = ({
           onMouseLeave();
         }
       }}
-      onClick={() => {
-        if (onClick !== undefined) {
-          onClick();
-        }
-      }}
       src={`${FRONTEND_URL}/icons/${iconName}.svg`}
       width={size}
       height="auto"
@@ -47,6 +42,7 @@ const GenericIcon = ({
       title={title}
       color={color}
       style={{ backgroundColor: backgroundColor, ...style }}
+      onClick={onClick ? () => onClick() : undefined}
     />
   );
 };

@@ -5,10 +5,12 @@ const UserOption = ({
   href,
   name,
   icon,
+  onClick,
 }: {
-  href: string;
+  href?: string;
   name: string;
   icon: React.ReactChild;
+  onClick?: () => void;
 }) => {
   return (
     <a
@@ -19,7 +21,9 @@ const UserOption = ({
         marginBottom: 10,
         textDecoration: "none",
         color: COLORS.BLACK,
+        cursor: "pointer",
       }}
+      onClick={onClick ? () => onClick() : undefined}
     >
       <div style={{ width: 30, height: 30, marginRight: 10 }}> {icon}</div>
       {name}

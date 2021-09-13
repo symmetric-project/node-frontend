@@ -1,6 +1,6 @@
 export type Post = {
   id: string | null;
-  title: string;
+  name: string;
   content: string | null;
   link: string | null;
 };

@@ -4,9 +4,18 @@ export const POSTS = gql`
   query {
     posts {
       id
-      title
+      name
       content
       link
+    }
+  }
+`;
+
+export const NODES = gql`
+  query {
+    nodes {
+      id
+      name
     }
   }
 `;

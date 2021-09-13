@@ -42,7 +42,7 @@ const RightContent = (props: { post: Post }) => {
             fontSize: 18,
           }}
         >
-          {props.post.title}
+          {props.post.name}
         </div>
         <div style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}>
           {props.post.content}
