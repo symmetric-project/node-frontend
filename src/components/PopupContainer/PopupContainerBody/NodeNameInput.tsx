@@ -1,11 +1,11 @@
 import { useReactiveVar } from "@apollo/client";
-import React, { useState } from "react";
-import { COLORS, NODE_DOMAIN } from "../../../const";
-import { nodeNameVar } from "../../../states/popups/createNodePopup";
+import React from "react";
+import { COLORS } from "../../../const";
+import { CreateNodePopupVars } from "../../../states/ui/createNodePopup";
 import Input from "../../Input";
 
 const NodeNameInput = () => {
-  const nodeNameReactiveVar = useReactiveVar(nodeNameVar);
+  const nodeNameReactiveVar = useReactiveVar(CreateNodePopupVars.name);
   return (
     <div
       style={{
@@ -21,7 +21,7 @@ const NodeNameInput = () => {
       <Input
         onChange={(value: string) => {
           if (value.length <= 32) {
-            nodeNameVar(value);
+            CreateNodePopupVars.name(value)
           }
         }}
         value={nodeNameReactiveVar}

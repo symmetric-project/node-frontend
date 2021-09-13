@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 import { COLORS } from "../../../const";
-import GenericIcon from "../../icons/GenericIcon";
 import {
   IoPersonCircleOutline,
   IoSettingsOutline,
   IoAddSharp,
+  IoChevronDown,
 } from "react-icons/io5";
 import UserOption from "./UserOption";
-import { popupVar } from "../../../states/popups";
+import { popupVar, stickyHeaderSubmenuVar } from "../../../states/ui";
+import { useReactiveVar } from "@apollo/client";
 
 const UserOptions = () => {
-  const [mouseOver, setMouseOver] = useState(false);
+  const stickyHeaderSubmenuReactiveVar = useReactiveVar(stickyHeaderSubmenuVar);
 
   return (
     <div>
       <div
-        onMouseEnter={() => setMouseOver(true)}
-        onMouseLeave={() => setMouseOver(false)}
         style={{
           position: "relative",
           height: 37,
@@ -27,6 +26,8 @@ const UserOptions = () => {
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
+
+          userSelect: "none",
 
           paddingRight: 20,
 
@@ -38,6 +39,13 @@ const UserOptions = () => {
                 borderRadius: 5,
               }
             : null), */
+        }}
+        onClick={() => {
+          if (stickyHeaderSubmenuReactiveVar === "") {
+            stickyHeaderSubmenuVar("user-options");
+          } else {
+            stickyHeaderSubmenuVar("");
+          }
         }}
       >
         <div
@@ -78,22 +86,11 @@ const UserOptions = () => {
             justifyContent: "center",
           }}
         >
-          <GenericIcon
-            onMouseEnter={() => {}}
-            onMouseLeave={() => {}}
-            onClick={() => {}}
-            iconName="chevron-down"
-            title="My page"
-            size={45}
-            color={COLORS.ICON_GRAY}
-            style={{ right: 0 }}
-          />
+          <IoChevronDown size={25} style={{ color: COLORS.ICON_GRAY, right: 0 }} />
         </div>
       </div>
-      {mouseOver ? (
+      {stickyHeaderSubmenuReactiveVar === "user-options" ? (
         <div
-          onMouseEnter={() => setMouseOver(true)}
-          onMouseLeave={() => setMouseOver(false)}
           style={{
             position: "absolute",
             width: 200,
@@ -106,6 +103,10 @@ const UserOptions = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
+
+            userSelect: "none",
+
+            boxShadow: "0 4px 4px rgb(0 0 0 / 25%)",
 
             padding: 15,
           }}

@@ -16,26 +16,24 @@ const TrendingNodesCard = () => {
           flexDirection: "column",
         }}
       >
-        <NodeRow place={1} diff="up" nodeName={"NoNewNormal"} />
+        <NodeRow place={1} diff="up" nodeName={"LoremIpsum"} />
         <NodeRowDivider />
-        <NodeRow place={1} diff="up" nodeName={"FreeSpeech"} />
+        <NodeRow place={1} diff="up" nodeName={"IpsumLorem"} />
         <NodeRowDivider />
-        <NodeRow place={1} diff="up" nodeName={"NoNewNormal"} />
+        <NodeRow place={1} diff="up" nodeName={"SitAmet"} />
         <NodeRowDivider />
-        <NodeRow place={1} diff="up" nodeName={"NoNewNormal"} />
+        <NodeRow place={1} diff="up" nodeName={"AdispElit "} />
         <NodeRowDivider />
-        <NodeRow place={1} diff="up" nodeName={"FreeSpeech"} />
-        <NodeRowDivider />
-        <NodeRow place={1} diff="up" nodeName={"NoNewNormal"} />
+        <NodeRow place={1} diff="up" nodeName={"UtEnim"} />
       </div>
 
       <GenericButton
         href="/trending-nodes"
         name="View All"
-        style={{ marginTop: 10 }}
+        style={{ marginTop: 7 }}
       />
 
-      <div
+      {/* <div
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -43,15 +41,15 @@ const TrendingNodesCard = () => {
           justifyContent: "center",
         }}
       >
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-        <TagLabel>Trump</TagLabel>
-      </div>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+        <TagLabel>Tag</TagLabel>
+      </div> */}
     </GenericCard>
   );
 };

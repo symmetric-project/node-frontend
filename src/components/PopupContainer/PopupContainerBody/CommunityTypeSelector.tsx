@@ -1,12 +1,12 @@
 import { useReactiveVar } from "@apollo/client";
-import React, { useState } from "react";
+import React from "react";
 import { IoEye, IoLockClosed, IoPerson } from "react-icons/io5";
 import { COLORS } from "../../../const";
-import { nodeAccessTypeVar } from "../../../states/popups/createNodePopup";
+import { CreateNodePopupVars } from "../../../states/ui/createNodePopup";
 import Checkbox from "../../Checkbox";
 
 const CommunityTypeSelector = () => {
-  const nodeAccessTypeReactiveVar = useReactiveVar(nodeAccessTypeVar)
+  const nodeAccessTypeReactiveVar = useReactiveVar(CreateNodePopupVars.access)
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <div style={{ fontSize: 16, fontWeight: 500, marginBottom: 10 }}>
@@ -29,7 +29,7 @@ const CommunityTypeSelector = () => {
           <Checkbox
             name="public"
             checked={nodeAccessTypeReactiveVar === "public"}
-            onChange={(name) => nodeAccessTypeVar(name)}
+            onChange={(name) => CreateNodePopupVars.access(name)}
           />
           <IoPerson size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5 }}>Public</div>
@@ -41,7 +41,7 @@ const CommunityTypeSelector = () => {
           <Checkbox
             name="restricted"
             checked={nodeAccessTypeReactiveVar === "restricted"}
-            onChange={(name) => nodeAccessTypeVar(name)}
+            onChange={(name) => CreateNodePopupVars.access(name)}
           />
           <IoEye size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5, color: COLORS.BLACK }}>
@@ -55,7 +55,7 @@ const CommunityTypeSelector = () => {
           <Checkbox
             name="private"
             checked={nodeAccessTypeReactiveVar === "private"}
-            onChange={(name) => nodeAccessTypeVar(name)}
+            onChange={(name) => CreateNodePopupVars.access(name)}
           />
           <IoLockClosed size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5 }}>Private</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { COLORS } from "../../const";
-import { popupVar } from "../../states/popups";
+import { popupVar } from "../../states/ui";
 
 const PopupContainerHeader = ({ children }: { children: React.ReactChild }) => {
   return (
@@ -17,7 +17,7 @@ const PopupContainerHeader = ({ children }: { children: React.ReactChild }) => {
 
         fontSize: 16,
         padding: 20,
-        
+
         cursor: "pointer"
       }}
     >

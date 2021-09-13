@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const POSTS = gql`
+export const QUERY_POSTS = gql`
   query {
     posts {
       id
@@ -11,7 +11,7 @@ export const POSTS = gql`
   }
 `;
 
-export const NODES = gql`
+export const QUERY_NODES = gql`
   query {
     nodes {
       id

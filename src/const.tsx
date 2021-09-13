@@ -18,6 +18,7 @@ export const COLORS = {
   ORANGE: "#ff4500",
   ORBLUE: "#7193ff",
   BLUE: "rgb(0, 121, 211)",
+  BLUE_LIGHT: "rgb(36, 160, 237)",
   WHITE: "white",
   LIGHT_GRAY: "#f8f9fa",
   TRANSPARENT_BLACK_POPUP_BACKGROUND: "rgba(28,28,28,.9)",
@@ -32,7 +33,7 @@ export const COLORS = {
   GRAY: "gray",
   GRAY_DIVIDER: "rgb(237, 239, 241)",
   GRAY_TEXT: "rgb(124, 124, 124)",
-  GRAY_POPUP_FOOTER: "rgb(237, 239, 241)",
+  GRAY_BACKGROUND: "rgb(237, 239, 241)",
   BLACK: "black",
 };
 

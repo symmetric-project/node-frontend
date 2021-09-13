@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { POSTS } from "../../src/api/queries";
+import { QUERY_POSTS } from "../../src/api/queries";
 import GenericCard from "../../src/components/cards/GenericCard";
 import NodeHeader from "../../src/components/NodeHeader";
 import PostCards from "../../src/components/PostCards";
@@ -8,7 +8,7 @@ import PostingContainer from "../../src/components/PostingContainer";
 import SortingContainer from "../../src/components/SortingContainer";
 
 const NodePage = () => {
-  const { loading, error, data } = useQuery(POSTS);
+  const { loading, error, data } = useQuery(QUERY_POSTS);
   if (loading) return null;
   if (error) return null;
   return (

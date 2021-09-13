@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import { COLORS } from "../../const";
-import DownvoteIcon from "../icons/DownvoteIcon";
-import UpvoteIcon from "../icons/UpvoteIcon";
 
 const LeftVotingBar = () => {
   const [mouseOverUpvote, setMouseOverUpvote] = useState(false);
@@ -18,30 +17,24 @@ const LeftVotingBar = () => {
 
         display: "flex",
         flexDirection: "column",
+        justifyContent: "space-around",
+        alignItems: "center",
       }}
     >
-      <UpvoteIcon
-        color={upvoted ? COLORS.ORANGE : COLORS.BLACK}
-        onMouseEnter={() => setMouseOverUpvote(true)}
-        onMouseLeave={() => setMouseOverUpvote(false)}
-        backgroundColor={
-          mouseOverUpvote ? COLORS.TRANSPARENT_LIGHT_GRAY : undefined
-        }
-        onClick={() => {
-          setUpvoted(true);
-          setDownvoted(false);
+      <IoChevronUpOutline
+        size={30}
+        onClick={() => {}}
+        style={{
+          cursor: "pointer",
+          color: upvoted ? COLORS.ORANGE : COLORS.BLACK,
         }}
       />
-      <DownvoteIcon
-        color={downvoted ? COLORS.BLUE : COLORS.BLACK}
-        onMouseEnter={() => setMouseOverDownvote(true)}
-        onMouseLeave={() => setMouseOverDownvote(false)}
-        backgroundColor={
-          mouseOverDownvote ? COLORS.TRANSPARENT_LIGHT_GRAY : undefined
-        }
-        onClick={() => {
-          setUpvoted(false);
-          setDownvoted(true);
+      <IoChevronDownOutline
+        size={30}
+        onClick={() => {}}
+        style={{
+          cursor: "pointer",
+          color: downvoted ? COLORS.BLUE : COLORS.BLACK,
         }}
       />
     </div>

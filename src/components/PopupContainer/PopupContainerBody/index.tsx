@@ -3,7 +3,6 @@ import { COLORS, FONTS } from "../../../const";
 import NodeNameInput from "./NodeNameInput";
 import CommunityTypeSelector from "./CommunityTypeSelector";
 import AdultContentSelector from "./AdultContentSelector";
-import { ReactiveVar } from "@apollo/client";
 
 const PopupContainerBody = () => {
   return (

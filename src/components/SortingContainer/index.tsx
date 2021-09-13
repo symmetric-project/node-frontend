@@ -1,5 +1,6 @@
 import React from "react";
-import GenericSortingButton from "./GenericSortingButton";
+import { IoAlertOutline, IoBulbOutline, IoStar, IoStarOutline, IoTrendingUpOutline } from "react-icons/io5";
+import GenericSortingButton from "./SortingContainerButton";
 
 const SortingContainer = () => {
   return (
@@ -22,10 +23,18 @@ const SortingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <GenericSortingButton name="Best" iconName="star-large" />
-      <GenericSortingButton name="Trending" iconName="graph-line" />
-      <GenericSortingButton name="New" iconName="/editor/hint" />
-      <GenericSortingButton name="Worst" iconName="trash" />
+      <GenericSortingButton name="Best">
+        <IoStarOutline size={25} />
+      </GenericSortingButton>
+      <GenericSortingButton name="Trending">
+        <IoTrendingUpOutline size={25} />
+      </GenericSortingButton>
+      <GenericSortingButton name="New">
+        <IoBulbOutline size={25} />
+      </GenericSortingButton>
+      <GenericSortingButton name="Controversial">
+        <IoAlertOutline size={25} />
+      </GenericSortingButton>
     </div>
   );
 };

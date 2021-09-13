@@ -1,4 +1,3 @@
-import { makeVar } from "@apollo/client";
 import React from "react";
 import { COLORS } from "../../const";
 import Divider from "../Divider";
@@ -8,8 +7,6 @@ import PopupContainerFooter from "./PopupContainerFooter";
 import PopupContainerHeader from "./PopupContainerHeader";
 
 const PopupContainer = () => {
-  const accessTypeVar = makeVar("");
-  const nsfwVar = makeVar(false);
   return (
     <div
       style={{

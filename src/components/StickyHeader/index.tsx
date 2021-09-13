@@ -5,8 +5,8 @@ import SVG from "react-inlinesvg";
 import {
   IoAddOutline,
   IoChatbubbleEllipsesOutline,
-  IoNotificationsOutline,
 } from "react-icons/io5";
+import NotificationsIcon from "./Notifications";
 
 const StickyHeader = () => {
   return (
@@ -94,19 +94,9 @@ const StickyHeader = () => {
         >
           <IoChatbubbleEllipsesOutline color={COLORS.GRAY} size={23} />
         </div>
-        <div
-          style={{
-            width: 30,
-            height: 30,
-            margin: 5,
-            marginRight: 5,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <IoNotificationsOutline color={COLORS.GRAY} size={25} />
-        </div>
-        <div
+        <NotificationsIcon />
+        <a
+          href="/create-post"
           style={{
             width: 30,
             height: 30,
@@ -117,7 +107,7 @@ const StickyHeader = () => {
           }}
         >
           <IoAddOutline color={COLORS.GRAY} size={30} />
-        </div>
+        </a>
         <UserOptions />
       </div>
     </div>

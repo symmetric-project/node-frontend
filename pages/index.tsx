@@ -1,14 +1,14 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { POSTS } from "../src/api/queries";
 import PostCards from "../src/components/PostCards";
 import PostingContainer from "../src/components/PostingContainer";
 import RightCard from "../src/components/cards/GenericCard";
 import SortingContainer from "../src/components/SortingContainer";
 import TopNodesCard from "../src/components/cards/TrendingNodesCard";
+import { QUERY_POSTS } from "../src/api/queries";
 
 const IndexPage = () => {
-  const { loading, error, data } = useQuery(POSTS);
+  const { loading, error, data } = useQuery(QUERY_POSTS);
   if (loading) return null;
   if (error) return null;
   return (
