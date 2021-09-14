@@ -1,12 +1,14 @@
 import React from "react";
 import { COLORS } from "../../../const";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { stickyHeaderSubmenuVar } from "../../../states/ui";
 import { useReactiveVar } from "@apollo/client";
 import NotificationsPopup from "./NotificationsPopup";
+import { uiVars } from "../../../states/ui";
 
 const Notifications = () => {
-  const stickyHeaderSubmenuReactiveVar = useReactiveVar(stickyHeaderSubmenuVar);
+  const stickyHeaderSubmenuReactiveVar = useReactiveVar(
+    uiVars.stickyHeaderSubmenu
+  );
   return (
     <div
       style={{
@@ -24,9 +26,9 @@ const Notifications = () => {
       }}
       onClick={() => {
         if (stickyHeaderSubmenuReactiveVar == "") {
-          stickyHeaderSubmenuVar("notifications");
+          uiVars.stickyHeaderSubmenu("notifications");
         } else {
-          stickyHeaderSubmenuVar("");
+          uiVars.stickyHeaderSubmenu("");
         }
       }}
     >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SVG from "react-inlinesvg";
 import { COLORS } from "../../../const";
 import {
@@ -8,11 +8,13 @@ import {
   IoChevronDown,
 } from "react-icons/io5";
 import UserOption from "./UserOption";
-import { popupVar, stickyHeaderSubmenuVar } from "../../../states/ui";
 import { useReactiveVar } from "@apollo/client";
+import { uiVars } from "../../../states/ui";
 
 const UserOptions = () => {
-  const stickyHeaderSubmenuReactiveVar = useReactiveVar(stickyHeaderSubmenuVar);
+  const stickyHeaderSubmenuReactiveVar = useReactiveVar(
+    uiVars.stickyHeaderSubmenu
+  );
 
   return (
     <div>
@@ -42,9 +44,9 @@ const UserOptions = () => {
         }}
         onClick={() => {
           if (stickyHeaderSubmenuReactiveVar === "") {
-            stickyHeaderSubmenuVar("user-options");
+            uiVars.stickyHeaderSubmenu("user-options");
           } else {
-            stickyHeaderSubmenuVar("");
+            uiVars.stickyHeaderSubmenu("");
           }
         }}
       >
@@ -86,7 +88,10 @@ const UserOptions = () => {
             justifyContent: "center",
           }}
         >
-          <IoChevronDown size={25} style={{ color: COLORS.ICON_GRAY, right: 0 }} />
+          <IoChevronDown
+            size={25}
+            style={{ color: COLORS.ICON_GRAY, right: 0 }}
+          />
         </div>
       </div>
       {stickyHeaderSubmenuReactiveVar === "user-options" ? (
@@ -124,7 +129,7 @@ const UserOptions = () => {
           <UserOption
             icon={<IoAddSharp size={30} />}
             name="Create Node"
-            onClick={() => popupVar("create-node")}
+            onClick={() => uiVars.popup("create-node")}
           />
         </div>
       ) : null}

@@ -1,4 +1,6 @@
 import { makeVar } from "@apollo/client";
 
-export const stickyHeaderSubmenuVar = makeVar<string>("");
-export const popupVar = makeVar<string>("");
+export const uiVars = {
+  stickyHeaderSubmenu: makeVar<string>(""),
+  popup: makeVar<string>(""),
+};
