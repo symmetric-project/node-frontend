@@ -34,7 +34,7 @@ const GenericButton = ({
         fontWeight: 700,
         cursor: "pointer",
 
-        backgroundColor: COLORS.BUTTON_BLUE,
+        backgroundColor: COLORS.BLUE,
         textDecoration: "none",
 
         ...style,

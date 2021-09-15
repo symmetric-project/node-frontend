@@ -18,7 +18,7 @@ const UserOption = ({
       style={{
         display: "flex",
         alignItems: "center",
-        marginBottom: 10,
+        marginTop: 10,
         textDecoration: "none",
         color: COLORS.BLACK,
         cursor: "pointer",

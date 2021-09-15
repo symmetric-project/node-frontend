@@ -21,7 +21,7 @@ const TagLabel = ({ children }: { children: React.ReactChild }) => {
         margin: 5,
         cursor: "pointer",
 
-        color: COLORS.BUTTON_BLUE,
+        color: COLORS.BLUE,
         fontSize: 12,
         fontWeight: 700,
         fontFamily: "NotoSans",

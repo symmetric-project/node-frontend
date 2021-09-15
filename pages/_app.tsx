@@ -5,10 +5,10 @@ import client from "../src/api/client";
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
 import StickyHeader from "../src/components/StickyHeader";
 import PopupContainer from "../src/components/PopupContainer";
-import { uiVars } from "../src/states/ui";
+import vars from "../src/vars";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const popupReactiveVar = useReactiveVar(uiVars.popup);
+  const popupReactiveVar = useReactiveVar(vars.ui.popup);
   return (
     <ApolloProvider client={client}>
       {popupReactiveVar !== "" ? <PopupContainer /> : null}

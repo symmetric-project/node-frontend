@@ -1,7 +1,7 @@
 import React from "react";
-import { COLORS } from "../../../const";
+import { COLORS } from "../../../../const";
 
-const TextEditorHeaderButton = ({
+const TypeSelectorContainerButton = ({
   children,
   text,
   selected,
@@ -17,7 +17,7 @@ const TextEditorHeaderButton = ({
   return (
     <div
       style={{
-        width: "25%",
+        width: "33.33%",
         height: "100%",
 
         display: "flex",
@@ -28,6 +28,12 @@ const TextEditorHeaderButton = ({
         color: selected ? COLORS.BLUE : COLORS.GRAY,
         backgroundColor: selected ? "rgba(0,121,211,0.1)" : COLORS.WHITE,
 
+        borderWidth: 0,
+        borderBottomWidth: selected ? 2 : 0,
+        borderColor: COLORS.BLUE,
+        borderStyle: "solid",
+
+        userSelect: "none",
         cursor: "pointer",
 
         ...style,
@@ -40,4 +46,4 @@ const TextEditorHeaderButton = ({
   );
 };
 
-export default TextEditorHeaderButton;
+export default TypeSelectorContainerButton;

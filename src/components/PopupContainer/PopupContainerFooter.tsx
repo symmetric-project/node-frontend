@@ -2,8 +2,7 @@ import { useMutation } from "@apollo/client";
 import React from "react";
 import { CREATE_NODE } from "../../api/mutations";
 import { COLORS } from "../../const";
-import { popupVar } from "../../states/ui";
-import { CreateNodePopupVars } from "../../states/ui/createNodePopup";
+import vars from "../../vars";
 import GenericButton from "../buttons/GenericButton";
 
 const PopupContainerFooter = () => {
@@ -25,16 +24,16 @@ const PopupContainerFooter = () => {
       <GenericButton
         name="Cancel"
         style={{ marginRight: 10 }}
-        onClick={() => popupVar("")}
+        onClick={() => vars.ui.popup("")}
       />
       <GenericButton
         name="Create node"
         onClick={() =>
           createNode({
             variables: {
-              name: CreateNodePopupVars.name(),
-              access: CreateNodePopupVars.access(),
-              nsfw: CreateNodePopupVars.nsfw(),
+              name: vars.createNode.name(),
+              access: vars.createNode.access(),
+              nsfw: vars.createNode.nsfw(),
             },
           })
         }

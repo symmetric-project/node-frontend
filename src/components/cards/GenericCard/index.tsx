@@ -41,9 +41,10 @@ const GenericCard = ({
             color: "white",
             fontWeight: 700,
             fontSize: 14,
-            lineHeight: 18,
 
             fontFamily: "NotoSans",
+
+            userSelect: "none",
 
             padding: 15,
           }}

@@ -8,8 +8,9 @@ const Divider = (style: { style?: React.CSSProperties }) => {
         width: "100%",
         height: 1,
         backgroundColor: COLORS.GRAY_DIVIDER,
-        marginLeft: 10,
-        marginRight: 10,
+        margin: 10,
+        marginLeft: 0,
+        marginRight: 0,
         ...style,
       }}
     ></div>

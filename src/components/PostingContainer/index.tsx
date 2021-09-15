@@ -2,6 +2,7 @@ import React from "react";
 import { COLORS } from "../../const";
 import SVG from "react-inlinesvg";
 import { IoImage, IoLink } from "react-icons/io5";
+import Input from "../Input";
 
 const PostingContainer = () => {
   return (
@@ -40,11 +41,12 @@ const PostingContainer = () => {
           title={"My Page"}
         />
       </div>
-      <input
+
+      <Input
+        onChange={() => {}}
         placeholder="Create Post"
         style={{
           width: 470,
-          height: 15,
           backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
           borderStyle: "solid",
           borderWidth: 1,
@@ -52,7 +54,6 @@ const PostingContainer = () => {
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
-          padding: 10,
           borderRadius: 4,
         }}
       />

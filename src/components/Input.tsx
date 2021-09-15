@@ -20,7 +20,7 @@ const Input = ({
       style={{
         width: "100%",
         height: 15,
-        backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
+        backgroundColor: COLORS.WHITE,
         borderStyle: "solid",
         borderWidth: 1,
         borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
@@ -28,7 +28,7 @@ const Input = ({
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-        padding: 10,
+        padding: 15,
         borderRadius: 4,
         ...style,
       }}

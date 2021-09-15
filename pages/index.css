@@ -6,7 +6,7 @@ html {
   background-color: #dae0e6;
 }
 
-div {
+div, input {
   box-sizing: border-box;
 }
 

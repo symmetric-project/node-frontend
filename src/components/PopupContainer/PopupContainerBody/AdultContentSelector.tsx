@@ -1,12 +1,12 @@
 import { useReactiveVar } from "@apollo/client";
-import React, { useState } from "react";
+import React from "react";
 import { FONTS } from "../../../const";
-import { CreateNodePopupVars } from "../../../states/ui/createNodePopup";
+import vars from "../../../vars";
 import Checkbox from "../../Checkbox";
 import GenericLabel from "../../labels/GenericLabel";
 
 const AdultContentSelector = () => {
-  const nsfwReactiveVar = useReactiveVar(CreateNodePopupVars.nsfw);
+  const nsfw = useReactiveVar(vars.createNode.nsfw);
   return (
     <div
       style={{
@@ -31,9 +31,9 @@ const AdultContentSelector = () => {
       >
         <Checkbox
           name="nsfw"
-          checked={nsfwReactiveVar}
+          checked={nsfw}
           onChange={(_, checked) => {
-            CreateNodePopupVars.nsfw(checked);
+            vars.createNode.nsfw(checked);
           }}
         />
         <GenericLabel>NSFW</GenericLabel>

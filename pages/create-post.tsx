@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import RightCard from "../src/components/cards/GenericCard";
 import { QUERY_POSTS } from "../src/api/queries";
-import TextEditorContainer from "../src/components/TextEditorContainer";
+import PostEditorContainer from "../src/components/editors/PostEditorContainer";
 
 const IndexPage = () => {
   const { loading, error, data } = useQuery(QUERY_POSTS);
@@ -25,7 +25,7 @@ const IndexPage = () => {
           alignItems: "center ",
         }}
       >
-        <TextEditorContainer />
+        <PostEditorContainer />
       </div>
       <div style={{ display: "flex", flexDirection: "column", marginTop: 30 }}>
         <RightCard title="Posting to Symmetric">

@@ -2,11 +2,9 @@ import React from "react";
 import { COLORS } from "../../const";
 import UserOptions from "./UserOptions";
 import SVG from "react-inlinesvg";
-import {
-  IoAddOutline,
-  IoChatbubbleEllipsesOutline,
-} from "react-icons/io5";
+import { IoAddOutline, IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import NotificationsIcon from "./Notifications";
+import Input from "../Input";
 
 const StickyHeader = () => {
   return (
@@ -56,12 +54,12 @@ const StickyHeader = () => {
           backgroundColor: "transparent",
         }}
       >
-        <input
+        <Input
+          onChange={() => {}}
           placeholder="Search Symmetric"
           style={{
             maxWidth: 850,
             width: "100%",
-            height: 15,
             backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
             borderStyle: "solid",
             borderWidth: 1,
@@ -70,7 +68,6 @@ const StickyHeader = () => {
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            padding: 10,
             borderRadius: 4,
           }}
         />

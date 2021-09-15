@@ -3,12 +3,10 @@ import { COLORS } from "../../../const";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useReactiveVar } from "@apollo/client";
 import NotificationsPopup from "./NotificationsPopup";
-import { uiVars } from "../../../states/ui";
+import vars from "../../../vars";
 
 const Notifications = () => {
-  const stickyHeaderSubmenuReactiveVar = useReactiveVar(
-    uiVars.stickyHeaderSubmenu
-  );
+  const stickyHeaderSubmenu = useReactiveVar(vars.ui.stickyHeaderSubmenu);
   return (
     <div
       style={{
@@ -25,17 +23,15 @@ const Notifications = () => {
         cursor: "pointer",
       }}
       onClick={() => {
-        if (stickyHeaderSubmenuReactiveVar == "") {
-          uiVars.stickyHeaderSubmenu("notifications");
+        if (stickyHeaderSubmenu === "") {
+          vars.ui.stickyHeaderSubmenu("notifications");
         } else {
-          uiVars.stickyHeaderSubmenu("");
+          vars.ui.stickyHeaderSubmenu("");
         }
       }}
     >
       <IoNotificationsOutline color={COLORS.GRAY} size={25} />
-      {stickyHeaderSubmenuReactiveVar === "notifications" ? (
-        <NotificationsPopup />
-      ) : null}
+      {stickyHeaderSubmenu === "notifications" ? <NotificationsPopup /> : null}
     </div>
   );
 };

@@ -9,12 +9,10 @@ import {
 } from "react-icons/io5";
 import UserOption from "./UserOption";
 import { useReactiveVar } from "@apollo/client";
-import { uiVars } from "../../../states/ui";
+import vars from "../../../vars";
 
 const UserOptions = () => {
-  const stickyHeaderSubmenuReactiveVar = useReactiveVar(
-    uiVars.stickyHeaderSubmenu
-  );
+  const stickyHeaderSubmenu = useReactiveVar(vars.ui.stickyHeaderSubmenu);
 
   return (
     <div>
@@ -43,10 +41,10 @@ const UserOptions = () => {
             : null), */
         }}
         onClick={() => {
-          if (stickyHeaderSubmenuReactiveVar === "") {
-            uiVars.stickyHeaderSubmenu("user-options");
+          if (stickyHeaderSubmenu === "") {
+            vars.ui.stickyHeaderSubmenu("user-options");
           } else {
-            uiVars.stickyHeaderSubmenu("");
+            vars.ui.stickyHeaderSubmenu("");
           }
         }}
       >
@@ -94,7 +92,7 @@ const UserOptions = () => {
           />
         </div>
       </div>
-      {stickyHeaderSubmenuReactiveVar === "user-options" ? (
+      {stickyHeaderSubmenu === "user-options" ? (
         <div
           style={{
             position: "absolute",
@@ -114,6 +112,8 @@ const UserOptions = () => {
             boxShadow: "0 4px 4px rgb(0 0 0 / 25%)",
 
             padding: 15,
+            paddingTop: 0,
+            paddingBottom: 10,
           }}
         >
           <UserOption
@@ -129,7 +129,7 @@ const UserOptions = () => {
           <UserOption
             icon={<IoAddSharp size={30} />}
             name="Create Node"
-            onClick={() => uiVars.popup("create-node")}
+            onClick={() => vars.ui.popup("create-node")}
           />
         </div>
       ) : null}

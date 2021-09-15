@@ -28,7 +28,6 @@ export const COLORS = {
   TAG_GRAY: "rgb(246, 247, 248)",
   TAG_RED: "rgb(255, 88, 91)",
   ICON_GRAY: "rgb(135, 138, 140)",
-  BUTTON_BLUE: "rgb(0, 121, 211)",
   GREEN: "rgb(70, 209, 96)",
   GRAY: "gray",
   GRAY_DIVIDER: "rgb(237, 239, 241)",
