@@ -3,7 +3,7 @@ import { Post } from "../../types";
 import LeftVotingBar from "./LeftVotingBar";
 import RightContent from "./RightContent";
 
-const PostCard = (props: { post: Post }) => {
+const PostCard = ({ post }: { post: Post }) => {
   return (
     <div
       style={{
@@ -22,7 +22,7 @@ const PostCard = (props: { post: Post }) => {
       }}
     >
       <LeftVotingBar />
-      <RightContent post={props.post} />
+      <RightContent post={post} />
     </div>
   );
 };

@@ -16,7 +16,9 @@ const vars = {
     nsfw: makeVar<boolean>(false),
   },
   createPost: {
-    delta: makeVar<string>(""),
+    title: makeVar<string>("Title"),
+    delta: makeVar<string>("{}"),
+    link: makeVar<string>(""),
     type: makeVar<string>("text"),
   },
 };

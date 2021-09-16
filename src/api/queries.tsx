@@ -4,9 +4,9 @@ export const QUERY_POSTS = gql`
   query {
     posts {
       id
-      name
-      content
+      title
       link
+      delta
     }
   }
 `;

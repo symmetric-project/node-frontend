@@ -4,7 +4,7 @@ import UserOptions from "./UserOptions";
 import SVG from "react-inlinesvg";
 import { IoAddOutline, IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import NotificationsIcon from "./Notifications";
-import Input from "../Input";
+import Select from "../Select";
 
 const StickyHeader = () => {
   return (
@@ -39,7 +39,7 @@ const StickyHeader = () => {
         <SVG
           src={`https://avatars.dicebear.com/api/jdenticon/symmetric/.svg`}
           width={30}
-          height="auto"
+          height="100%"
           cursor="pointer"
           title={"Avatar"}
           style={{ marginLeft: 20, marginRight: 10 }}
@@ -54,23 +54,9 @@ const StickyHeader = () => {
           backgroundColor: "transparent",
         }}
       >
-        <Input
-          onChange={() => {}}
-          placeholder="Search Symmetric"
-          style={{
-            maxWidth: 850,
-            width: "100%",
-            backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
-            borderStyle: "solid",
-            borderWidth: 1,
-            borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
-            margin: 10,
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            borderRadius: 4,
-          }}
-        />
+        <div style={{ width: "50%" }}>
+          <Select />
+        </div>
       </div>
       <div
         style={{

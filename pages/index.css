@@ -20,7 +20,7 @@ input {
   font-family: "NotoSans";
 }
 
-input:focus {
+.input-component:focus {
   outline: none;
   box-shadow: 0 0 3px rgb(0, 121, 211);
 }

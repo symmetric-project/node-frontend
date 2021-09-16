@@ -1,10 +1,14 @@
+import { useMutation } from "@apollo/client";
 import React from "react";
 import { IoInformationCircleOutline } from "react-icons/io5";
+import { CREATE_POST } from "../../../../api/mutations";
 import { COLORS } from "../../../../const";
+import vars from "../../../../vars";
 import GenericButton from "../../../buttons/GenericButton";
 import Checkbox from "../../../Checkbox";
 
 const PostEditorContainerFooter = ({}: {}) => {
+  const [createPost, { data, loading, error }] = useMutation(CREATE_POST);
   return (
     <div
       style={{
@@ -31,7 +35,21 @@ const PostEditorContainerFooter = ({}: {}) => {
           backgroundColor: COLORS.WHITE,
         }}
       >
-        <GenericButton name="Post" />
+        <GenericButton
+          onClick={() => {
+            createPost({
+              variables: {
+                newPost: {
+                  type: vars.createPost.type(),
+                  title: vars.createPost.title(),
+                  link: vars.createPost.link(),
+                  delta: vars.createPost.delta(),
+                },
+              },
+            });
+          }}
+          name="Post"
+        />
       </div>
       <div
         style={{
@@ -55,7 +73,12 @@ const PostEditorContainerFooter = ({}: {}) => {
             fontWeight: 500,
           }}
         >
-          <Checkbox checked={true} name="reply-notifications" onChange={(_, checked) => {}} style={{ width: 15, height: 15, marginLeft: 0 }} />
+          <Checkbox
+            checked={true}
+            name="reply-notifications"
+            onChange={(_, checked) => {}}
+            style={{ width: 15, height: 15, marginLeft: 0 }}
+          />
           <div style={{ marginLeft: 5 }}> Send me post reply notifications</div>
         </div>
         <div

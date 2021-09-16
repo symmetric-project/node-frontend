@@ -2,11 +2,11 @@ import { useReactiveVar } from "@apollo/client";
 import React from "react";
 import { IoEye, IoLockClosed, IoPerson } from "react-icons/io5";
 import { COLORS } from "../../../const";
-import { CreateNodePopupVars } from "../../../vars/ui/createNodePopup";
+import vars from "../../../vars";
 import Checkbox from "../../Checkbox";
 
 const CommunityTypeSelector = () => {
-  const nodeAccessTypeReactiveVar = useReactiveVar(CreateNodePopupvars.access)
+  const access = useReactiveVar(vars.createNode.access);
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <div style={{ fontSize: 16, fontWeight: 500, marginBottom: 10 }}>
@@ -28,8 +28,8 @@ const CommunityTypeSelector = () => {
         >
           <Checkbox
             name="public"
-            checked={nodeAccessTypeReactiveVar === "public"}
-            onChange={(name) => CreateNodePopupvars.access(name)}
+            checked={access === "public"}
+            onChange={(name) => vars.createNode.access(name)}
           />
           <IoPerson size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5 }}>Public</div>
@@ -40,8 +40,8 @@ const CommunityTypeSelector = () => {
         <label style={{ display: "flex", alignItems: "center", fontSize: 12 }}>
           <Checkbox
             name="restricted"
-            checked={nodeAccessTypeReactiveVar === "restricted"}
-            onChange={(name) => CreateNodePopupvars.access(name)}
+            checked={access === "restricted"}
+            onChange={(name) => vars.createNode.access(name)}
           />
           <IoEye size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5, color: COLORS.BLACK }}>
@@ -54,8 +54,8 @@ const CommunityTypeSelector = () => {
         <label style={{ display: "flex", alignItems: "center", fontSize: 12 }}>
           <Checkbox
             name="private"
-            checked={nodeAccessTypeReactiveVar === "private"}
-            onChange={(name) => CreateNodePopupvars.access(name)}
+            checked={access === "private"}
+            onChange={(name) => vars.createNode.access(name)}
           />
           <IoLockClosed size={20} style={{ marginLeft: 5, marginRight: 5 }} />
           <div style={{ fontSize: 14, marginRight: 5 }}>Private</div>

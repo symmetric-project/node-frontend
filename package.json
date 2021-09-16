@@ -12,9 +12,9 @@
     "@apollo/client": "^3.4.11",
     "graphql": "^15.5.3",
     "next": "11.1.2",
+    "quill-delta-to-html": "^0.12.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-draft-wysiwyg": "^1.14.7",
     "react-icons": "^4.2.0",
     "react-inlinesvg": "^2.3.0",
     "react-placeholder": "^4.1.0",
@@ -24,7 +24,6 @@
   "devDependencies": {
     "@types/react": "17.0.21",
     "@types/react-dom": "^17.0.9",
-    "@types/react-draft-wysiwyg": "^1.13.3",
     "@types/react-select": "^4.0.17",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

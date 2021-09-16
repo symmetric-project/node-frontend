@@ -60,7 +60,7 @@ const UserOptions = () => {
           <SVG
             src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
             width={50}
-            height="auto"
+            height="100%"
             cursor="pointer"
             title={"Avatar"}
           />

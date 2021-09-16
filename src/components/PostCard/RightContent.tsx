@@ -1,8 +1,15 @@
+import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
+import { deltaToHTMLConverterConfig } from "../../configs";
 import { COLORS, FONTS } from "../../const";
 import { Post } from "../../types";
 
-const RightContent = (props: { post: Post }) => {
+const RightContent = ({ post }: { post: Post }) => {
+  const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
+    JSON.parse(post.delta as string),
+    deltaToHTMLConverterConfig
+  );
+  const html = deltaToHTMLConverter.convert();
   return (
     <div
       style={{
@@ -42,10 +49,10 @@ const RightContent = (props: { post: Post }) => {
             fontSize: 18,
           }}
         >
-          {props.post.name}
+          {post.title}
         </div>
         <div style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}>
-          {props.post.content}
+          {post.delta}
         </div>
       </div>
     </div>

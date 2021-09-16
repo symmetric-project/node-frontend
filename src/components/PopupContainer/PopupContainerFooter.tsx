@@ -31,9 +31,11 @@ const PopupContainerFooter = () => {
         onClick={() =>
           createNode({
             variables: {
-              name: vars.createNode.name(),
-              access: vars.createNode.access(),
-              nsfw: vars.createNode.nsfw(),
+              newNode: {
+                name: vars.createNode.name(),
+                access: vars.createNode.access(),
+                nsfw: vars.createNode.nsfw(),
+              },
             },
           })
         }

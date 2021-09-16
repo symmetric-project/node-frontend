@@ -14,6 +14,7 @@ const Input = ({
 }) => {
   return (
     <input
+      className="input-component"
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange(e.target.value)}

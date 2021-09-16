@@ -32,7 +32,7 @@ const NotificationCard = ({
         <SVG
           src={`https://avatars.dicebear.com/api/jdenticon/${"notification"}/.svg`}
           width={50}
-          height="auto"
+          height="100%"
           cursor="pointer"
           title={"My Page"}
         />

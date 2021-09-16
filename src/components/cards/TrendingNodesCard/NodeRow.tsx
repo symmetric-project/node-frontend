@@ -53,7 +53,7 @@ const NodeRow = ({
         <SVG
           src={`https://avatars.dicebear.com/api/jdenticon/${nodeName}/.svg`}
           width={35}
-          height="auto"
+          height="100%"
           cursor="pointer"
           title={nodeName}
           style={{ marginRight: 10 }}

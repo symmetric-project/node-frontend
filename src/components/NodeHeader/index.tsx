@@ -54,7 +54,7 @@ const NodeHeader = () => {
           <SVG
             src={`https://avatars.dicebear.com/api/jdenticon/${"nodename"}/.svg`}
             width={50}
-            height="auto"
+            height="100%"
             cursor="pointer"
             title={"Avatar"}
             /* style={{ backgroundColor: props.backgroundColor, ...props.style }} */

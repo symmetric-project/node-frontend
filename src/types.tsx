@@ -1,6 +1,12 @@
 export type Post = {
   id: string | null;
-  name: string;
-  content: string | null;
+  title: string;
   link: string | null;
+  delta: string | null;
+};
+
+export type Node = {
+  id: string | null;
+  name: string;
+  description: string | null;
 };
