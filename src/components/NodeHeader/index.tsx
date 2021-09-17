@@ -1,9 +1,10 @@
 import React from "react";
-import { COLORS } from "../../const";
+import { COLORS, FRONTEND_URL } from "../../const";
 import JoinTransparentButton from "../buttons/JoinTransparentButton";
 import SVG from "react-inlinesvg";
+import { Node } from "../../types";
 
-const NodeHeader = () => {
+const NodeHeader = ({ node }: { node: Node }) => {
   return (
     <div
       style={{
@@ -57,7 +58,6 @@ const NodeHeader = () => {
             height="100%"
             cursor="pointer"
             title={"Avatar"}
-            /* style={{ backgroundColor: props.backgroundColor, ...props.style }} */
           />
         </div>
         <div
@@ -71,7 +71,7 @@ const NodeHeader = () => {
             paddingRight: 20,
           }}
         >
-          <div style={{ fontSize: 28, fontWeight: 700 }}>Node Name</div>
+          <div style={{ fontSize: 28, fontWeight: 700 }}>{node.name}</div>
           <div
             style={{
               color: COLORS.METATEXT,
@@ -79,8 +79,8 @@ const NodeHeader = () => {
               flexDirection: "row",
             }}
           >
-            <div>symmetric.</div>
-            <div style={{ fontWeight: 500 }}>nodename.com</div>
+            <div>{FRONTEND_URL}/n/</div>
+            <div style={{ fontWeight: 500 }}>{node.name}</div>
           </div>
         </div>
 

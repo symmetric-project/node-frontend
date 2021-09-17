@@ -9,4 +9,5 @@ export type Node = {
   id: string | null;
   name: string;
   description: string | null;
+  imageId: string | null;
 };

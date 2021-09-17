@@ -21,6 +21,9 @@ const vars = {
     link: makeVar<string>(""),
     type: makeVar<string>("text"),
   },
+  search: {
+    category: makeVar<string>("best-results"),
+  },
 };
 
 export default vars;

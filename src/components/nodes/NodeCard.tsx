@@ -1,24 +1,24 @@
 import React from "react";
+import { Node } from "../../types";
+import NodeIcon from "../NodeIcon";
 
-const NodeCard = ({
-  name,
-  description,
-}: {
-  name: string;
-  description: string;
-}) => {
+const NodeCard = ({ node }: { node: Node }) => {
   return (
-    <div
+    <a
+      href="/"
       style={{
         height: 50,
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
+
+        marginTop: 10,
       }}
     >
-      <div>{name}</div>
-      <div>{description}</div>
-    </div>
+      <NodeIcon node={node} style={{ marginRight: 10 }} />
+      <div style={{ width: "50%" }}>{node.name}</div>
+      <div style={{ width: "50%" }}>{node.description}</div>
+    </a>
   );
 };
 

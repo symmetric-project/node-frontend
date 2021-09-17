@@ -4,6 +4,8 @@ import { QUERY_NODES } from "../src/api/queries";
 import GenericButton from "../src/components/buttons/GenericButton";
 import GenericCard from "../src/components/cards/GenericCard";
 import NodeCard from "../src/components/nodes/NodeCard";
+import CategoryButton from "../src/components/pages/search/CategoryButton";
+import SearchHeader from "../src/components/pages/search/SearchHeader";
 import Select from "../src/components/Select";
 import { COLORS } from "../src/const";
 import { Node } from "../src/types";
@@ -16,23 +18,7 @@ const SearchPage = () => {
 
   return (
     <div>
-      <div
-        style={{
-          width: "100%",
-          height: 145,
-          backgroundColor: COLORS.WHITE,
-
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "flex-start",
-
-          paddingLeft: 20,
-        }}
-      >
-        <div>query</div>
-        <div>Search results</div>
-      </div>
+      <SearchHeader />
       <div
         style={{
           display: "flex",
@@ -57,13 +43,13 @@ const SearchPage = () => {
             <div
               style={{ display: "flex", alignItems: "center", marginRight: 10 }}
             >
-              <div style={{ marginRight: 10}}>Sort by</div>
+              <div style={{ marginRight: 10 }}>Sort by</div>
               <div style={{ width: 150 }}>
                 <Select />
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <div style={{ marginRight: 10}}>From</div>
+              <div style={{ marginRight: 10 }}>From</div>
               <div style={{ width: 150 }}>
                 <Select />
               </div>
@@ -75,16 +61,17 @@ const SearchPage = () => {
               height: "auto",
               backgroundColor: COLORS.WHITE,
               marginTop: 20,
+
+              padding: 20,
+              paddingTop: 0,
             }}
           >
-            <div>
-              {data.nodes.map((node: Node) => (
-                <NodeCard name={node.name} description="Description" />
-              ))}
-            </div>
+            {data.nodes.map((node: Node) => (
+              <NodeCard node={node} />
+            ))}
           </div>
         </div>
-        <div style={{ marginTop: 65}}>
+        <div style={{ marginTop: 65 }}>
           <GenericCard title="Title" header={false}>
             <div
               style={{
