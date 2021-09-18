@@ -1,14 +1,17 @@
-import { useQuery } from "@apollo/client";
+import { ApolloError, ApolloQueryResult, useQuery } from "@apollo/client";
 import React from "react";
 import PostCards from "../src/components/PostCards";
 import PostingContainer from "../src/components/PostingContainer";
 import RightCard from "../src/components/cards/GenericCard";
 import SortingContainer from "../src/components/SortingContainer";
 import TopNodesCard from "../src/components/cards/TrendingNodesCard";
-import { QUERY_POSTS } from "../src/api/queries";
+import { POSTS } from "../src/api/queries";
+import { GetStaticPropsContext } from "next";
+import client from "../src/api/client";
+import { Post } from "../src/types";
 
-const IndexPage = () => {
-  const { loading, error, data } = useQuery(QUERY_POSTS);
+const IndexPage = ({ posts }: { posts: Post[] }) => {
+  const { loading, error, data } = useQuery(POSTS);
   if (loading) return null;
   if (error) return null;
   return (
@@ -30,7 +33,7 @@ const IndexPage = () => {
       >
         <PostingContainer />
         <SortingContainer />
-        <PostCards posts={data.posts} />
+        <PostCards posts={posts} />
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <TopNodesCard />
@@ -52,3 +55,29 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  let payload: any = {
+    props: {
+      posts: null,
+    },
+    revalidate: 1,
+    /* revalidate - An optional amount in seconds after which a page re-generation can occur. Defaults to false.
+    When revalidate is false it means that there is no revalidation, so the page will be cached as built until the next build. */
+  };
+
+  await client
+    .query({
+      query: POSTS,
+      fetchPolicy: "no-cache",
+    })
+    .then(
+      (res: ApolloQueryResult<any>) => {
+        payload.props.posts = res.data.posts;
+      },
+      (err: ApolloError) => {
+        console.log(err);
+      }
+    );
+  return payload;
+}

@@ -11,3 +11,8 @@ export type Node = {
   description: string | null;
   imageId: string | null;
 };
+
+export type User = {
+  id: string,
+  name: string,
+}

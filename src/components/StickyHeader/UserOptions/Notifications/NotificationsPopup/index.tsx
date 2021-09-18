@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS } from "../../../../const";
+import { COLORS } from "../../../../../const";
 import NotificationsPopupBody from "./NotificationsPopupBody";
 import NotificationsPopupFooter from "./NotificationsPopupFooter";
 import NotificationsPopupHeader from "./NotificationsPopupHeader";

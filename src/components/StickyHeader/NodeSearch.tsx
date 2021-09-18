@@ -1,7 +1,7 @@
 import React from "react";
-import AsyncSelect from "react-select/async";
+import Select from "../Select";
 
-const NodeSearchContainer = () => {
+const NodeSearch = () => {
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
@@ -13,7 +13,7 @@ const NodeSearchContainer = () => {
     );
   };
 
-  const promiseOptions = (inputValue: any) =>
+  const promiseOptions: any = (inputValue: any) =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(filterColors(inputValue));
@@ -30,15 +30,15 @@ const NodeSearchContainer = () => {
       }}
     >
       <div style={{ width: "50%" }}>
-        <AsyncSelect
-          placeholder="Search Symmetric"
+        <Select
+          /* placeholder="Search Symmetric"
           cacheOptions
           defaultOptions
-          loadOptions={promiseOptions}
+          loadOptions={promiseOptions} */
         />
       </div>
     </div>
   );
 };
 
-export default NodeSearchContainer;
+export default NodeSearch;

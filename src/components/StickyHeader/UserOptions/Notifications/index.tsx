@@ -1,9 +1,9 @@
 import React from "react";
-import { COLORS } from "../../../const";
+import { COLORS } from "../../../../const";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useReactiveVar } from "@apollo/client";
 import NotificationsPopup from "./NotificationsPopup";
-import vars from "../../../vars";
+import vars from "../../../../vars";
 
 const Notifications = () => {
   const stickyHeaderSubmenu = useReactiveVar(vars.ui.stickyHeaderSubmenu);

@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import RightCard from "../src/components/cards/GenericCard";
-import { QUERY_POSTS } from "../src/api/queries";
+import { POSTS } from "../src/api/queries";
 import PostEditorContainer from "../src/components/editors/PostEditorContainer";
 
 const IndexPage = () => {
-  const { loading, error, data } = useQuery(QUERY_POSTS);
+  const { loading, error, data } = useQuery(POSTS);
   if (loading) return null;
   if (error) return null;
   return (

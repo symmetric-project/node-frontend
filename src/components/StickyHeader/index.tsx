@@ -1,12 +1,12 @@
+import { useReactiveVar } from "@apollo/client";
 import React from "react";
-import { COLORS } from "../../const";
+import vars from "../../vars";
+import Logo from "./Logo";
+import NodeSearch from "./NodeSearch";
 import UserOptions from "./UserOptions";
-import SVG from "react-inlinesvg";
-import { IoAddOutline, IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import NotificationsIcon from "./Notifications";
-import Select from "../Select";
 
 const StickyHeader = () => {
+  const user = useReactiveVar(vars.auth.user);
   return (
     <div
       style={{
@@ -26,73 +26,9 @@ const StickyHeader = () => {
         zIndex: 10,
       }}
     >
-      <a
-        href="/"
-        style={{
-          userSelect: "none",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          textDecoration: "none",
-        }}
-      >
-        <SVG
-          src={`https://avatars.dicebear.com/api/jdenticon/symmetric/.svg`}
-          width={30}
-          height="100%"
-          cursor="pointer"
-          title={"Avatar"}
-          style={{ marginLeft: 20, marginRight: 10 }}
-        />
-        symmetric
-      </a>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          backgroundColor: "transparent",
-        }}
-      >
-        <div style={{ width: "50%" }}>
-          <Select />
-        </div>
-      </div>
-      <div
-        style={{
-          width: "auto",
-          display: "flex",
-          justifyContent: "flex-end",
-          right: 0,
-        }}
-      >
-        <div
-          style={{
-            width: 30,
-            height: 30,
-            margin: 5,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <IoChatbubbleEllipsesOutline color={COLORS.GRAY} size={23} />
-        </div>
-        <NotificationsIcon />
-        <a
-          href="/create-post"
-          style={{
-            width: 30,
-            height: 30,
-            margin: 5,
-            marginLeft: 0,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <IoAddOutline color={COLORS.GRAY} size={30} />
-        </a>
-        <UserOptions />
-      </div>
+      <Logo />
+      <NodeSearch />
+      {user ? <UserOptions /> : null}
     </div>
   );
 };

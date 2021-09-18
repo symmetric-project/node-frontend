@@ -1,10 +1,14 @@
-import { makeVar } from "@apollo/client";
+import { ApolloError, ApolloQueryResult, makeVar } from "@apollo/client";
+import client from "./api/client";
+import { USER } from "./api/queries";
+import { User } from "./types";
 
 const vars = {
   auth: {
-    isLoggedInVar: process.browser
+    user: makeVar<User | null>(null),
+    loggedIn: process.browser
       ? makeVar<boolean>(!!localStorage.getItem("jwt"))
-      : undefined,
+      : null,
   },
   ui: {
     stickyHeaderSubmenu: makeVar<string>(""),
@@ -25,5 +29,18 @@ const vars = {
     category: makeVar<string>("best-results"),
   },
 };
+
+client
+  .query({
+    query: USER,
+  })
+  .then(
+    (res: ApolloQueryResult<any>) => {
+      vars.auth.user(res.data.user);
+    },
+    (err: ApolloError) => {
+      console.log(err);
+    }
+  );
 
 export default vars;

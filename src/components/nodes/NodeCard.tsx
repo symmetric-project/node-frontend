@@ -5,7 +5,7 @@ import NodeIcon from "../NodeIcon";
 const NodeCard = ({ node }: { node: Node }) => {
   return (
     <a
-      href="/"
+      href={`/n/${node.name}`}
       style={{
         height: 50,
         display: "flex",

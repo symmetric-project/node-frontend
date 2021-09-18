@@ -1,10 +1,9 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { QUERY_NODES } from "../src/api/queries";
+import { NODES } from "../src/api/queries";
 import GenericButton from "../src/components/buttons/GenericButton";
 import GenericCard from "../src/components/cards/GenericCard";
 import NodeCard from "../src/components/nodes/NodeCard";
-import CategoryButton from "../src/components/pages/search/CategoryButton";
 import SearchHeader from "../src/components/pages/search/SearchHeader";
 import Select from "../src/components/Select";
 import { COLORS } from "../src/const";
@@ -12,7 +11,7 @@ import { Node } from "../src/types";
 import vars from "../src/vars";
 
 const SearchPage = () => {
-  const { loading, error, data } = useQuery(QUERY_NODES);
+  const { loading, error, data } = useQuery(NODES);
   if (loading) return null;
   if (error) return null;
 

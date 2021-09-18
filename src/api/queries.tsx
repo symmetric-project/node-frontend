@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const QUERY_POST = gql`
+export const POST = gql`
   query GetPost($id: String!) {
     post(post: $id) {
       id
@@ -10,7 +10,7 @@ export const QUERY_POST = gql`
   }
 `;
 
-export const QUERY_POSTS = gql`
+export const POSTS = gql`
   query GetPosts($nodeName: String) {
     posts(nodeName: $nodeName) {
       id
@@ -20,8 +20,8 @@ export const QUERY_POSTS = gql`
   }
 `;
 
-export const QUERY_NODE = gql`
-  query GetNode($name: String!) {
+export const NODE = gql`
+  query GetNode($name: ID!) {
     node(name: $name) {
       name
       description
@@ -29,11 +29,19 @@ export const QUERY_NODE = gql`
   }
 `;
 
-export const QUERY_NODES = gql`
+export const NODES = gql`
   query {
     nodes {
       name
       description
+    }
+  }
+`;
+
+export const USER = gql`
+  query GetUser($id: ID) {
+    user(id: $id) {
+      bases
     }
   }
 `;

@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Select = dynamic(() => import("./StaticSelect"), {
+const Select = dynamic(() => import("./DynamicSelect"), {
   ssr: false,
 });
 
