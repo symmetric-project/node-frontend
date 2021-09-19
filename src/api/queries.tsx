@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const POST = gql`
-  query GetPost($id: String!) {
+  query ($id: String!) {
     post(post: $id) {
       id
       title
@@ -11,7 +11,7 @@ export const POST = gql`
 `;
 
 export const POSTS = gql`
-  query GetPosts($nodeName: String) {
+  query ($nodeName: String) {
     posts(nodeName: $nodeName) {
       id
       title
@@ -21,7 +21,7 @@ export const POSTS = gql`
 `;
 
 export const NODE = gql`
-  query GetNode($name: ID!) {
+  query ($name: ID!) {
     node(name: $name) {
       name
       description
@@ -39,8 +39,9 @@ export const NODES = gql`
 `;
 
 export const USER = gql`
-  query GetUser($id: ID) {
-    user(id: $id) {
+  query ($name: ID) {
+    user(name: $id) {
+      name
       bases
     }
   }

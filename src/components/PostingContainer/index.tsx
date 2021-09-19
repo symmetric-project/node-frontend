@@ -1,10 +1,13 @@
 import React from "react";
 import { COLORS } from "../../const";
-import SVG from "react-inlinesvg";
 import { IoImage, IoLink } from "react-icons/io5";
 import Input from "../Input";
+import UserIcon from "./UserIcon";
+import { useReactiveVar } from "@apollo/client";
+import vars from "../../vars";
 
 const PostingContainer = () => {
+  const user = useReactiveVar(vars.auth.user);
   return (
     <div
       style={{
@@ -24,23 +27,7 @@ const PostingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <div
-        style={{
-          width: 50,
-          height: 50,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <SVG
-          src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
-          width={50}
-          height="100%"
-          cursor="pointer"
-          title={"My Page"}
-        />
-      </div>
+      {user ? <UserIcon user={user} /> : null}
 
       <Input
         onChange={() => {}}

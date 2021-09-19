@@ -12,6 +12,7 @@ import { useReactiveVar } from "@apollo/client";
 import vars from "../../../../vars";
 
 const UserOptions = () => {
+  const user = useReactiveVar(vars.auth.user);
   const stickyHeaderSubmenu = useReactiveVar(vars.ui.stickyHeaderSubmenu);
   return (
     <div>
@@ -29,15 +30,6 @@ const UserOptions = () => {
           userSelect: "none",
 
           paddingRight: 20,
-
-          /* ...(mouseOver
-            ? {
-                borderStyle: "solid",
-                borderWidth: 1,
-                borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
-                borderRadius: 5,
-              }
-            : null), */
         }}
         onClick={() => {
           if (stickyHeaderSubmenu === "") {
@@ -57,11 +49,11 @@ const UserOptions = () => {
           }}
         >
           <SVG
-            src={`https://avatars.dicebear.com/api/personas/${"user_id"}/.svg`}
+            src={`https://avatars.dicebear.com/api/personas/${user?.name}/.svg`}
             width={50}
             height="100%"
             cursor="pointer"
-            title={"Avatar"}
+            title={user?.name}
           />
         </div>
         <div
@@ -72,8 +64,8 @@ const UserOptions = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ fontWeight: 500 }}>{"user.name"}</div>
-          <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>x bases</div>
+          <div style={{ fontWeight: 500 }}>{user?.name}</div>
+          <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>{user?.bases} bases</div>
         </div>
 
         <div
