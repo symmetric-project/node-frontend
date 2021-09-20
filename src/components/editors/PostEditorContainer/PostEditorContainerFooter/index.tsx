@@ -40,6 +40,7 @@ const PostEditorContainerFooter = ({}: {}) => {
             createPost({
               variables: {
                 newPost: {
+                  nodeName: vars.createPost.nodeName(),
                   type: vars.createPost.type(),
                   title: vars.createPost.title(),
                   link: vars.createPost.link(),

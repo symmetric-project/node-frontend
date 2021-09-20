@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import React from "react";
 import { ActionMeta, OptionTypeBase } from "react-select";
 
 const DynamicSelectAsync = dynamic(() => import("./StaticSelectAsync"), {
@@ -8,16 +9,25 @@ const DynamicSelectAsync = dynamic(() => import("./StaticSelectAsync"), {
 const SelectAsync = ({
   loadOptions,
   onChange,
+  defaultOptions,
+  cacheOptions,
 }: {
   loadOptions: any;
-  onChange:
-    | ((
-        value: OptionTypeBase | null,
-        action: ActionMeta<OptionTypeBase>
-      ) => void)
-    | undefined;
+  onChange: (
+    value: OptionTypeBase | null,
+    action: ActionMeta<OptionTypeBase>
+  ) => void;
+  defaultOptions: boolean;
+  cacheOptions: boolean;
 }) => {
-  return <DynamicSelectAsync loadOptions={loadOptions} onChange={onChange} />;
+  return (
+    <DynamicSelectAsync
+      loadOptions={loadOptions}
+      onChange={onChange}
+      defaultOptions={defaultOptions}
+      cacheOptions={cacheOptions}
+    />
+  );
 };
 
 export default SelectAsync;

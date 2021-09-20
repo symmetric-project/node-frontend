@@ -3,19 +3,19 @@ import TypeSelectorContainer from "./TypeSelectorContainer";
 import SelectAsync from "../../../SelectAsync";
 import client from "../../../../api/client";
 import { NODES } from "../../../../api/queries";
-import { ApolloError, ApolloQueryResult } from "@apollo/client";
+import { ApolloError, ApolloQueryResult, useReactiveVar } from "@apollo/client";
 import { Node } from "../../../../types";
 import vars from "../../../../vars";
 
 const PostEditorContainerHeader = ({}: {}) => {
-  const promiseOptions = (inputValue: any): any => {
+  const loadOptions = (nodeName: any): any =>
     new Promise((resolve) => {
       client
         .query({
           query: NODES,
           fetchPolicy: "no-cache",
           variables: {
-            substring: inputValue,
+            substring: nodeName,
           },
         })
         .then(
@@ -34,8 +34,6 @@ const PostEditorContainerHeader = ({}: {}) => {
           }
         );
     });
-  };
-
   return (
     <div
       style={{
@@ -46,12 +44,14 @@ const PostEditorContainerHeader = ({}: {}) => {
     >
       <div style={{ width: 300, marginBottom: 10 }}>
         <SelectAsync
-          loadOptions={promiseOptions}
+          loadOptions={loadOptions}
           onChange={(value) => {
             if (value !== null) {
               vars.createPost.nodeName(value.label);
             }
           }}
+          defaultOptions={true}
+          cacheOptions={true}
         />
       </div>
       <TypeSelectorContainer />

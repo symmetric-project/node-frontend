@@ -1,23 +1,37 @@
+import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
+import client from "../../api/client";
+import { NODES } from "../../api/queries";
+import { Node } from "../../types";
+import vars from "../../vars";
 import SelectAsync from "../SelectAsync";
 
 const NodeSearch = () => {
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
-  const filterColors = (inputValue: string) => {
-    return options.filter((i) =>
-      i.label.toLowerCase().includes(inputValue.toLowerCase())
-    );
-  };
-
-  const promiseOptions: any = (inputValue: any) =>
+  const loadOptions = (nodeName: any): any =>
     new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(filterColors(inputValue));
-      }, 1000);
+      client
+        .query({
+          query: NODES,
+          fetchPolicy: "no-cache",
+          variables: {
+            substring: nodeName,
+          },
+        })
+        .then(
+          (res: ApolloQueryResult<any>) => {
+            let nodeOptions: {}[] = [];
+            res.data.nodes.forEach((node: Node) => {
+              nodeOptions.push({
+                value: "node",
+                label: node.name,
+              });
+            });
+            resolve(nodeOptions);
+          },
+          (err: ApolloError) => {
+            console.log(err);
+          }
+        );
     });
 
   return (
@@ -31,10 +45,14 @@ const NodeSearch = () => {
     >
       <div style={{ width: "50%" }}>
         <SelectAsync
-          /* placeholder="Search Symmetric"
-          cacheOptions
-          defaultOptions
-          loadOptions={promiseOptions} */
+          loadOptions={loadOptions}
+          onChange={(value) => {
+            if (value !== null) {
+              vars.search.nodeNameSubstring(value.label);
+            }
+          }}
+          defaultOptions={true}
+          cacheOptions={true}
         />
       </div>
     </div>

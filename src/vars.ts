@@ -36,6 +36,7 @@ class Vars {
     };
     this.search = {
       category: makeVar<string>("best-results"),
+      nodeNameSubstring: makeVar<string>(""),
     };
     this.queryUser();
   }
