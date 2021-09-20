@@ -5,7 +5,7 @@ import GenericButton from "../src/components/buttons/GenericButton";
 import GenericCard from "../src/components/cards/GenericCard";
 import NodeCard from "../src/components/nodes/NodeCard";
 import SearchHeader from "../src/components/pages/search/SearchHeader";
-import Select from "../src/components/Select";
+import Select from "../src/components/SelectSync";
 import { COLORS } from "../src/const";
 import { Node } from "../src/types";
 import vars from "../src/vars";

@@ -1,22 +1,41 @@
 import React from "react";
-import Divider from "../../../Divider";
 import TypeSelectorContainer from "./TypeSelectorContainer";
-import Select from "react-select";
+import SelectAsync from "../../../SelectAsync";
+import client from "../../../../api/client";
+import { NODES } from "../../../../api/queries";
+import { ApolloError, ApolloQueryResult } from "@apollo/client";
+import { Node } from "../../../../types";
+import vars from "../../../../vars";
 
 const PostEditorContainerHeader = ({}: {}) => {
-  const styles = {
-    control: (styles: any) => ({ ...styles }),
-    option: (styles: any, { data, isDisabled, isFocused, isSelected }: any) => {
-      return {
-        ...styles,
-      };
-    },
+  const promiseOptions = (inputValue: any): any => {
+    new Promise((resolve) => {
+      client
+        .query({
+          query: NODES,
+          fetchPolicy: "no-cache",
+          variables: {
+            substring: inputValue,
+          },
+        })
+        .then(
+          (res: ApolloQueryResult<any>) => {
+            let nodeOptions: {}[] = [];
+            res.data.nodes.forEach((node: Node) => {
+              nodeOptions.push({
+                value: "node",
+                label: node.name,
+              });
+            });
+            resolve(nodeOptions);
+          },
+          (err: ApolloError) => {
+            console.log(err);
+          }
+        );
+    });
   };
-  const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-  ];
+
   return (
     <div
       style={{
@@ -25,10 +44,15 @@ const PostEditorContainerHeader = ({}: {}) => {
         flexDirection: "column",
       }}
     >
-      {/* <div style={{ fontSize: 16, fontWeight: 500, marginBottom: 5}}>Create a post</div>
-      <Divider /> */}
-      <div style={{ width: 300, marginBottom: 10}}>
-        <Select styles={styles} options={options} />
+      <div style={{ width: 300, marginBottom: 10 }}>
+        <SelectAsync
+          loadOptions={promiseOptions}
+          onChange={(value) => {
+            if (value !== null) {
+              vars.createPost.nodeName(value.label);
+            }
+          }}
+        />
       </div>
       <TypeSelectorContainer />
     </div>

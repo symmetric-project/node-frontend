@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "../Select";
+import SelectAsync from "../SelectAsync";
 
 const NodeSearch = () => {
   const options = [
@@ -30,7 +30,7 @@ const NodeSearch = () => {
       }}
     >
       <div style={{ width: "50%" }}>
-        <Select
+        <SelectAsync
           /* placeholder="Search Symmetric"
           cacheOptions
           defaultOptions

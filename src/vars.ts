@@ -28,15 +28,16 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
+      nodeName: makeVar<string>(""),
       title: makeVar<string>("Title"),
-      delta: makeVar<string>("{}"),
+      delta: makeVar<string>(""),
       link: makeVar<string>(""),
       type: makeVar<string>("text"),
     };
     this.search = {
       category: makeVar<string>("best-results"),
     };
-    this.createUser();
+    this.queryUser();
   }
 
   queryUser() {
@@ -46,11 +47,10 @@ class Vars {
       })
       .then(
         (res: ApolloQueryResult<any>) => {
-          console.log(res);
           this.auth.user(res.data.user);
         },
         (err: ApolloError) => {
-          console.log(err);
+          console.log(JSON.stringify(err));
         }
       );
   }
@@ -65,7 +65,6 @@ class Vars {
       })
       .then(
         (res) => {
-          console.log(res);
           this.auth.user(res.data.createUser);
         },
         (err: ApolloError) => {
