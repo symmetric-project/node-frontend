@@ -1,6 +1,6 @@
 import React from "react";
 import { Post } from "../types";
-import PostCard from "./PostCard";
+import PostCard from "./posts/PostCard";
 
 const PostCards = (props: { posts: Post[] }) => {
   return (

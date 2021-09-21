@@ -28,7 +28,7 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
-      nodeName: makeVar<string>(""),
+      nodeName: makeVar<string|null>(null),
       title: makeVar<string>("Title"),
       delta: makeVar<string>(""),
       link: makeVar<string>(""),

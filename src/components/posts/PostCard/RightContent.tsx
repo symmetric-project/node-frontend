@@ -1,15 +1,15 @@
 import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
-import { deltaToHTMLConverterConfig } from "../../configs";
-import { COLORS, FONTS } from "../../const";
-import { Post } from "../../types";
+import { deltaToHTMLConverterConfig } from "../../../configs";
+import { COLORS, FONTS } from "../../../const";
+import { Post } from "../../../types";
 
 const RightContent = ({ post }: { post: Post }) => {
-  const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
+  /* const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
     JSON.parse(post.delta as string),
     deltaToHTMLConverterConfig
   );
-  const html = deltaToHTMLConverter.convert();
+  const html = deltaToHTMLConverter.convert(); */
   return (
     <div
       style={{

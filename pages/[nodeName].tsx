@@ -1,18 +1,17 @@
 import { ApolloError, useQuery } from "@apollo/client";
 import React from "react";
-import { NODE, NODES, POSTS } from "../../src/api/queries";
-import GenericCard from "../../src/components/cards/GenericCard";
-import NodeHeader from "../../src/components/NodeHeader";
-import PostCards from "../../src/components/PostCards";
-import PostingContainer from "../../src/components/PostingContainer";
-import SortingContainer from "../../src/components/SortingContainer";
-import { Node, Post } from "../../src/types";
-import client from "../../src/api/client";
+import { NODE, NODES, POSTS } from "../src/api/queries";
+import GenericCard from "../src/components/cards/GenericCard";
+import NodeHeader from "../src/components/NodeHeader";
+import PostCards from "../src/components/PostCards";
+import PostingContainer from "../src/components/PostingContainer";
+import SortingContainer from "../src/components/SortingContainer";
+import { Node, Post } from "../src/types";
+import client from "../src/api/client";
 import { GetStaticPropsContext } from "next";
 
 const NodePage = ({
   node,
-  params,
   posts,
 }: {
   node: Node;
@@ -73,7 +72,7 @@ export async function getStaticPaths() {
       res.data.nodes.forEach((node: Node) => {
         paths.push({
           params: {
-            name: node.name,
+            nodeName: node.name,
           },
         });
       });
@@ -102,7 +101,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   await client
     .query({
       query: NODE,
-      variables: { name: context.params!.name },
+      variables: { name: context.params!.nodeName },
     })
     .then(
       (res) => {
@@ -115,7 +114,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   await client
     .query({
       query: POSTS,
-      variables: { nodeName: context.params!.name },
+      variables: { nodeName: context.params!.nodeName },
       fetchPolicy: "no-cache",
     })
     .then(

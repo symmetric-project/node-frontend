@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-import { COLORS } from "../../const";
+import { COLORS } from "../../../const";
 
 const LeftVotingBar = () => {
   const [mouseOverUpvote, setMouseOverUpvote] = useState(false);

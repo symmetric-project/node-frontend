@@ -1,6 +1,6 @@
 {
   "name": "node-frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.11",
-    "graphql": "^15.5.3",
+    "@apollo/client": "^3.4.13",
+    "graphql": "^15.6.0",
+    "javascript-time-ago": "^2.3.8",
     "next": "11.1.2",
     "quill-delta-to-html": "^0.12.0",
     "react": "17.0.2",
@@ -22,7 +23,8 @@
     "react-select": "^4.3.1"
   },
   "devDependencies": {
-    "@types/react": "17.0.21",
+    "@types/javascript-time-ago": "^2.0.3",
+    "@types/react": "17.0.22",
     "@types/react-dom": "^17.0.9",
     "@types/react-select": "^4.0.17",
     "eslint": "7.32.0",

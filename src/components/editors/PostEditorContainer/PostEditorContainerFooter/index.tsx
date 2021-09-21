@@ -1,14 +1,23 @@
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { CREATE_POST } from "../../../../api/mutations";
 import { COLORS } from "../../../../const";
+import { Post } from "../../../../types";
 import vars from "../../../../vars";
 import GenericButton from "../../../buttons/GenericButton";
 import Checkbox from "../../../Checkbox";
 
 const PostEditorContainerFooter = ({}: {}) => {
-  const [createPost, { data, loading, error }] = useMutation(CREATE_POST);
+  const router = useRouter();
+  const onCompleted = (data: any) => {
+    let post: Post = data.createPost;
+    router.push(`/${post.nodeName}/${post.id}/${post.slug}`);
+  };
+  const [createPost, { data, loading, error }] = useMutation(CREATE_POST, {
+    onCompleted,
+  });
   return (
     <div
       style={{

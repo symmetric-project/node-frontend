@@ -3,6 +3,8 @@ export type Post = {
   title: string;
   link: string | null;
   delta: string | null;
+  nodeName: string;
+  slug: string;
 };
 
 export type Node = {
@@ -13,6 +15,6 @@ export type Node = {
 };
 
 export type User = {
-  name: string,
-  bases: number,
-}
+  name: string;
+  bases: number;
+};

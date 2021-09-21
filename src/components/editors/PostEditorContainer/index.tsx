@@ -1,5 +1,4 @@
 import React from "react";
-import { COLORS } from "../../../const";
 import TextEditorContainerHeader from "./PostEditorContainerHeader/index";
 import TextEditorContainerFooter from "./PostEditorContainerFooter";
 import PostEditor from "../PostEditor";

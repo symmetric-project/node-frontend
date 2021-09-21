@@ -13,8 +13,9 @@ export const CREATE_POST = gql`
     createPost(newPost: $newPost) {
       id
       title
-      link
       delta
+      nodeName
+      slug
     }
   }
 `;
