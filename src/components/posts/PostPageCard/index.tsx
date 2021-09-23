@@ -62,7 +62,7 @@ const PostCardSingleton = ({ post }: { post: Post }) => {
             {post.title}
           </div>
           <div style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}>
-            {post.delta}
+            {post.deltaOps}
           </div>
         </div>
       </div>
