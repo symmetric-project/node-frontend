@@ -10,11 +10,13 @@ The frontend for a Symmetric node.
 
 Create a `env.local` file with the following parameters:
 ```
-NEXT_PUBLIC_MODE=dev
+NEXT_PUBLIC_MODE=prod
+NEXT_PUBLIC_NODE_DOMAIN_DEV=localhost:3000
+NEXT_PUBLIC_NODE_DOMAIN_PROD=lipslist.com
 NEXT_PUBLIC_FRONTEND_BASE_URL_DEV=http://localhost:3000
-NEXT_PUBLIC_FRONTEND_BASE_URL_PROD=https://symmetric.nodename.com
+NEXT_PUBLIC_FRONTEND_BASE_URL_PROD=https://symmetric.lipslist.com
 NEXT_PUBLIC_BACKEND_BASE_URL_DEV=http://localhost:4000
-NEXT_PUBLIC_BACKEND_BASE_URL_PROD=https://symmetric.nodename.com/api
+NEXT_PUBLIC_BACKEND_BASE_URL_PROD=https://symmetric-api.lipslist.com
 BACKDOOR_JWT=
 ```
 
