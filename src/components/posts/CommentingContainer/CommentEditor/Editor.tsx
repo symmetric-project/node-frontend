@@ -5,7 +5,6 @@ import "react-quill/dist/quill.snow.css";
 import vars from "../../../../vars";
 
 const Editor = () => {
-  const delta = useReactiveVar(vars.createPost.delta);
   const modules = {
     toolbar: [
       [{ header: [1, 2, false] }],
@@ -39,8 +38,6 @@ const Editor = () => {
       theme="snow"
       modules={modules}
       formats={formats}
-      value={delta}
-      onChange={(delta) => vars.createPost.delta(delta)}
     />
   );
 };

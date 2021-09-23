@@ -13,7 +13,7 @@ export const CREATE_POST = gql`
     createPost(newPost: $newPost) {
       id
       title
-      delta
+      deltaOps
       nodeName
       slug
     }

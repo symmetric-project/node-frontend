@@ -5,7 +5,7 @@ export const POST = gql`
     post(id: $id, slug: $slug) {
       id
       title
-      delta
+      deltaOps
       slug
     }
   }
@@ -16,7 +16,7 @@ export const POSTS = gql`
     posts(nodeName: $nodeName) {
       id
       title
-      delta
+      deltaOps
       nodeName
       slug
     }

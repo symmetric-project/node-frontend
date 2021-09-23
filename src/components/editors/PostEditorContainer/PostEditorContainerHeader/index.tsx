@@ -6,6 +6,7 @@ import { NODES } from "../../../../api/queries";
 import { ApolloError, ApolloQueryResult, useReactiveVar } from "@apollo/client";
 import { Node } from "../../../../types";
 import vars from "../../../../vars";
+import { logError } from "../../../../utils/errors";
 
 const PostEditorContainerHeader = ({}: {}) => {
   const loadOptions = (nodeName: any): any =>
@@ -30,7 +31,7 @@ const PostEditorContainerHeader = ({}: {}) => {
             resolve(nodeOptions);
           },
           (err: ApolloError) => {
-            console.log(err);
+            logError(err)
           }
         );
     });

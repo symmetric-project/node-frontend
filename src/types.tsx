@@ -2,7 +2,7 @@ export type Post = {
   id: string | null;
   title: string;
   link: string | null;
-  delta: string | null;
+  deltaOps: string | null;
   nodeName: string;
   slug: string;
 };

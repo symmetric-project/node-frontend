@@ -9,6 +9,7 @@ import { POSTS } from "../src/api/queries";
 import { GetStaticPropsContext } from "next";
 import client from "../src/api/client";
 import { Post } from "../src/types";
+import { logError } from "../src/utils/errors";
 
 const IndexPage = ({ posts }: { posts: Post[] }) => {
   const { loading, error, data } = useQuery(POSTS);
@@ -76,7 +77,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         payload.props.posts = res.data.posts;
       },
       (err: ApolloError) => {
-        console.log(err);
+        logError(err);
       }
     );
   return payload;

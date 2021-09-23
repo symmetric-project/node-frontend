@@ -8,6 +8,7 @@ import { GetStaticPropsContext } from "next";
 import PostPageCard from "../../../src/components/posts/PostPageCard";
 import CommentingContainer from "../../../src/components/posts/CommentingContainer";
 import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlaceholder";
+import { logError } from "../../../src/utils/errors";
 
 const PostPage = ({ node, post }: { node: Node; post: Post }) => {
   const { loading, error, data } = useQuery(POSTS);
@@ -63,7 +64,7 @@ export async function getStaticPaths() {
       });
     },
     (err) => {
-      console.log(err);
+      logError(err);
     }
   );
 
@@ -94,7 +95,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         staticProps.props.node = res.data.node;
       },
       (err: ApolloError) => {
-        console.log(JSON.stringify(err));
+        logError(err)
       }
     );
 
@@ -112,7 +113,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         staticProps.props.post = res.data.post;
       },
       (err: ApolloError) => {
-        console.log(err);
+        logError(err);
       }
     );
 

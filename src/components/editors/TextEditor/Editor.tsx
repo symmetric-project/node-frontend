@@ -1,11 +1,9 @@
-import { useReactiveVar } from "@apollo/client";
 import React from "react";
 import ReactQuill from "react-quill";
 import vars from "../../../vars";
 import "react-quill/dist/quill.snow.css";
 
 const Editor = () => {
-  const delta = useReactiveVar(vars.createPost.delta);
   const modules = {
     toolbar: [
       [{ header: [1, 2, false] }],
@@ -39,8 +37,10 @@ const Editor = () => {
       theme="snow"
       modules={modules}
       formats={formats}
-      value={delta}
-      onChange={(delta) => vars.createPost.delta(delta)}
+      /* value={delta} */
+      onChange={(content, delta, source, editor) => {
+        vars.createPost.deltaOps(editor.getContents().ops);
+      }}
     />
   );
 };

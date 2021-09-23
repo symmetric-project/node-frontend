@@ -53,7 +53,7 @@ const PostEditorContainerFooter = ({}: {}) => {
                   type: vars.createPost.type(),
                   title: vars.createPost.title(),
                   link: vars.createPost.link(),
-                  delta: vars.createPost.delta(),
+                  deltaOps: JSON.stringify(vars.createPost.deltaOps()),
                 },
               },
             });

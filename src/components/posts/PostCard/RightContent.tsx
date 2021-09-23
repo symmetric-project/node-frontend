@@ -5,11 +5,11 @@ import { COLORS, FONTS } from "../../../const";
 import { Post } from "../../../types";
 
 const RightContent = ({ post }: { post: Post }) => {
-  /* const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
-    JSON.parse(post.delta as string),
+  const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
+    JSON.parse(post.deltaOps as string),
     deltaToHTMLConverterConfig
   );
-  const html = deltaToHTMLConverter.convert(); */
+  const htmlContent = deltaToHTMLConverter.convert();
   return (
     <div
       style={{
@@ -51,9 +51,12 @@ const RightContent = ({ post }: { post: Post }) => {
         >
           {post.title}
         </div>
-        <div style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}>
-          {post.delta}
-        </div>
+        <div
+          style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}
+          dangerouslySetInnerHTML={{
+            __html: `${htmlContent}`,
+          }}
+        />
       </div>
     </div>
   );

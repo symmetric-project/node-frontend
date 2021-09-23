@@ -3,6 +3,7 @@ import client from "./api/client";
 import { CREATE_USER } from "./api/mutations";
 import { USER } from "./api/queries";
 import { User } from "./types";
+import { logError } from "./utils/errors";
 
 class Vars {
   auth;
@@ -28,9 +29,9 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
-      nodeName: makeVar<string|null>(null),
+      nodeName: makeVar<string | null>(null),
       title: makeVar<string>("Title"),
-      delta: makeVar<string>(""),
+      deltaOps: makeVar<{}[]>([]),
       link: makeVar<string>(""),
       type: makeVar<string>("text"),
     };
@@ -51,7 +52,7 @@ class Vars {
           this.auth.user(res.data.user);
         },
         (err: ApolloError) => {
-          console.log(JSON.stringify(err));
+          logError(err);
         }
       );
   }
@@ -69,7 +70,7 @@ class Vars {
           this.auth.user(res.data.createUser);
         },
         (err: ApolloError) => {
-          console.log(err);
+          logError(err)
         }
       );
   }

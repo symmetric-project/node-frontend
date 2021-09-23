@@ -3,6 +3,7 @@ import React from "react";
 import client from "../../api/client";
 import { NODES } from "../../api/queries";
 import { Node } from "../../types";
+import { logError } from "../../utils/errors";
 import vars from "../../vars";
 import SelectAsync from "../SelectAsync";
 
@@ -29,7 +30,7 @@ const NodeSearch = () => {
             resolve(nodeOptions);
           },
           (err: ApolloError) => {
-            console.log(err);
+            logError(err)
           }
         );
     });

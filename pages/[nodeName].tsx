@@ -9,6 +9,7 @@ import SortingContainer from "../src/components/SortingContainer";
 import { Node, Post } from "../src/types";
 import client from "../src/api/client";
 import { GetStaticPropsContext } from "next";
+import { logError } from "../src/utils/errors";
 
 const NodePage = ({
   node,
@@ -78,7 +79,7 @@ export async function getStaticPaths() {
       });
     },
     (err) => {
-      console.log(err);
+      logError(err);
     }
   );
   return {
@@ -108,7 +109,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         staticProps.props.node = res.data.node;
       },
       (err: ApolloError) => {
-        console.log(err);
+        logError(err);
       }
     );
   await client
@@ -122,7 +123,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         staticProps.props.posts = res.data.posts;
       },
       (err: ApolloError) => {
-        console.log(err);
+        logError(err);
       }
     );
   return staticProps;
