@@ -1,6 +1,6 @@
 import React from "react";
 import SelectAsync from "react-select/async";
-import { ActionMeta, OptionTypeBase } from "react-select/src/types";
+
 const StaticSelectAsync = ({
   loadOptions,
   onChange,
@@ -8,12 +8,7 @@ const StaticSelectAsync = ({
   cacheOptions,
 }: {
   loadOptions: any;
-  onChange:
-    | ((
-        value: OptionTypeBase | null,
-        action: ActionMeta<OptionTypeBase>
-      ) => void)
-    | undefined;
+  onChange: ((value: any, action: any) => void) | undefined;
   defaultOptions: boolean;
   cacheOptions: boolean;
 }) => {
