@@ -18,3 +18,9 @@ export type User = {
   name: string;
   bases: number;
 };
+
+export type Comment = {
+  id: string;
+  postId: string;
+  deltaOps: string;
+};

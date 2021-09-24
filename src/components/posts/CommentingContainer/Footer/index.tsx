@@ -2,24 +2,30 @@ import { ApolloError } from "@apollo/client";
 import React from "react";
 import "react-placeholder/lib/reactPlaceholder.css";
 import client from "../../../../api/client";
-import { CREATE_COMMENT, CREATE_USER } from "../../../../api/mutations";
+import { CREATE_COMMENT } from "../../../../api/mutations";
 import { logError } from "../../../../utils/errors";
 import vars from "../../../../vars";
 import GenericButton from "../../../buttons/GenericButton";
 
 const Footer = () => {
   const sendComment = () => {
+    let postId = window.location.pathname.split("/")[2];
     client
       .mutate({
         mutation: CREATE_COMMENT,
         variables: {
           newComment: {
-            deltaOps: vars.writeComment.deltaOps(),
+            postId,
+            deltaOps: JSON.stringify(vars.writeComment.deltaOps()),
           },
         },
       })
       .then(
-        (res) => {},
+        (res) => {
+          let newComments = [];
+          newComments.push(res.data.newComment);
+          vars.commenting.newComments(newComments);
+        },
         (err: ApolloError) => {
           logError(err);
         }

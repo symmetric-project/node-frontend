@@ -10,6 +10,7 @@ class Vars {
   ui;
   createNode;
   createPost;
+  commenting;
   writeComment;
   search;
 
@@ -35,6 +36,10 @@ class Vars {
       deltaOps: makeVar<{}[]>([]),
       link: makeVar<string>(""),
       type: makeVar<string>("text"),
+    };
+    this.commenting = {
+      newComments: makeVar<{}[]>([]),
+      deltaOps: makeVar<{}[]>([]),
     };
     this.writeComment = {
       deltaOps: makeVar<string | null>(null),

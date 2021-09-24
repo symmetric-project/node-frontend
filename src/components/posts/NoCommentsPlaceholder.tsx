@@ -13,8 +13,7 @@ const NoCommentsPlaceholder = () => {
 
         backgroundColor: COLORS.WHITE,
 
-        borderTopLeftRadius: 3,
-        borderTopRightRadius: 3,
+        borderRadius: 3,
 
         display: "flex",
         flexDirection: "column",

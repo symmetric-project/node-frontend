@@ -1,5 +1,5 @@
 import { ApolloError, useQuery } from "@apollo/client";
-import React from "react";
+import React, { useEffect } from "react";
 import { NODE, POST, POSTS } from "../../../src/api/queries";
 import GenericCard from "../../../src/components/cards/GenericCard";
 import { Node, Post } from "../../../src/types";
@@ -9,6 +9,7 @@ import CommentingContainer from "../../../src/components/posts/CommentingContain
 import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlaceholder";
 import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
+import CommentsContainer from "../../../src/components/posts/CommentsContainer";
 
 const PostPage = ({ node, post }: { node: Node; post: Post }) => {
   const { loading, error, data } = useQuery(POSTS);
@@ -35,6 +36,7 @@ const PostPage = ({ node, post }: { node: Node; post: Post }) => {
         <PostCard post={post} />
         <CommentingContainer post={post} />
         <NoCommentsPlaceholder />
+        <CommentsContainer comments={[]} />
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <GenericCard title="About Community">
