@@ -7,8 +7,7 @@ const Editor = dynamic(() => import("./Editor"), {
   ssr: false,
   loading: () => (
     <ReactPlaceholder
-      type="media"
-      rows={9}
+      type="rect"
       ready={false}
       showLoadingAnimation
       children={undefined}

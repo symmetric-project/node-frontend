@@ -10,6 +10,7 @@ class Vars {
   ui;
   createNode;
   createPost;
+  writeComment;
   search;
 
   constructor() {
@@ -34,6 +35,9 @@ class Vars {
       deltaOps: makeVar<{}[]>([]),
       link: makeVar<string>(""),
       type: makeVar<string>("text"),
+    };
+    this.writeComment = {
+      deltaOps: makeVar<string | null>(null),
     };
     this.search = {
       category: makeVar<string>("best-results"),
@@ -70,7 +74,7 @@ class Vars {
           this.auth.user(res.data.createUser);
         },
         (err: ApolloError) => {
-          logError(err)
+          logError(err);
         }
       );
   }

@@ -1,21 +1,17 @@
 import React from "react";
-import Image from "next/image";
 import SVG from "react-inlinesvg";
-import { Node } from "../types";
 
 const NodeIcon = ({
-  node,
+  nodeName,
   style,
 }: {
-  node: Node;
+  nodeName: string;
   style: React.CSSProperties;
 }) => {
-  return node.imageId ? (
-    <Image src="" />
-  ) : (
+  return (
     <SVG
-      src={`https://avatars.dicebear.com/api/jdenticon/${node.name}/.svg`}
-      width={50}
+      src={`https://avatars.dicebear.com/api/jdenticon/${nodeName}/.svg`}
+      width={15}
       height="100%"
       cursor="pointer"
       title={"My Page"}

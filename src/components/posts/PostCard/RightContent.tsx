@@ -3,6 +3,7 @@ import React from "react";
 import { deltaToHTMLConverterConfig } from "../../../configs";
 import { COLORS, FONTS } from "../../../const";
 import { Post } from "../../../types";
+import NodeIcon from "../../icons/NodeIcon";
 
 const RightContent = ({ post }: { post: Post }) => {
   const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
@@ -28,21 +29,36 @@ const RightContent = ({ post }: { post: Post }) => {
           justifyContent: "flex-start",
           alignItems: "center",
           paddingLeft: 5,
+
+          fontSize: 12,
         }}
       >
         <div
           style={{
-            width: 15,
-            height: 15,
-            backgroundColor: COLORS.GRAY,
-            margin: 5,
+            height: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            paddingLeft: 5,
+
+            fontSize: 12,
           }}
-        ></div>
-        nodename.com - Posted by u/virtumondeObjective 5 hours ago
+        >
+          <NodeIcon nodeName={post.nodeName} style={{ marginRight: 2 }} />
+          nodename.com
+        </div>
+        <div style={{ marginLeft: 5, color: COLORS.GRAY_TEXT_BACKGROUND }}>
+          u/virtumondeObjective
+        </div>
+        <div style={{ marginLeft: 5, color: COLORS.GRAY_TEXT_BACKGROUND }}>
+          5 hours ago
+        </div>
       </div>
 
       <div style={{ padding: 10 }}>
-        <div
+        <a
+          href={`/${post.nodeName}/${post.id}/${post.slug}`}
           style={{
             fontFamily: FONTS.IBMXPLEXSANS,
             fontWeight: 500,
@@ -50,7 +66,7 @@ const RightContent = ({ post }: { post: Post }) => {
           }}
         >
           {post.title}
-        </div>
+        </a>
         <div
           style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}
           dangerouslySetInnerHTML={{

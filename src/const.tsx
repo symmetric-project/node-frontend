@@ -1,16 +1,16 @@
 export const MODE = process.env.NEXT_PUBLIC_MODE as string;
 export const NODE_DOMAIN =
   MODE == "prod"
-    ? process.env.NEXT_PUBLIC_NODE_DOMAIN_PROD as string
-    : process.env.NEXT_PUBLIC_NODE_DOMAIN_DEV as string;
+    ? (process.env.NEXT_PUBLIC_NODE_DOMAIN_PROD as string)
+    : (process.env.NEXT_PUBLIC_NODE_DOMAIN_DEV as string);
 export const FRONTEND_URL =
   MODE == "prod"
-    ? process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_PROD as string
-    : process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_DEV as string;
+    ? (process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_PROD as string)
+    : (process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_DEV as string);
 export const CLIENT_URL =
   MODE == "prod"
-    ? process.env.NEXT_PUBLIC_BACKEND_BASE_URL_PROD as string
-    : process.env.NEXT_PUBLIC_BACKEND_BASE_URL_DEV as string;
+    ? (process.env.NEXT_PUBLIC_BACKEND_BASE_URL_PROD as string)
+    : (process.env.NEXT_PUBLIC_BACKEND_BASE_URL_DEV as string);
 
 export const COLORS = {
   BUTTON: "#0079D3",
@@ -32,6 +32,7 @@ export const COLORS = {
   GRAY: "gray",
   GRAY_DIVIDER: "rgb(237, 239, 241)",
   GRAY_TEXT: "rgb(124, 124, 124)",
+  GRAY_TEXT_BACKGROUND: "rgb(120, 124, 126)",
   GRAY_BACKGROUND: "rgb(237, 239, 241)",
   BLACK: "black",
 };

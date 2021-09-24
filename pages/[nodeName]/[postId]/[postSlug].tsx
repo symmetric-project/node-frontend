@@ -5,10 +5,10 @@ import GenericCard from "../../../src/components/cards/GenericCard";
 import { Node, Post } from "../../../src/types";
 import client from "../../../src/api/client";
 import { GetStaticPropsContext } from "next";
-import PostPageCard from "../../../src/components/posts/PostPageCard";
 import CommentingContainer from "../../../src/components/posts/CommentingContainer";
 import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlaceholder";
 import { logError } from "../../../src/utils/errors";
+import PostCard from "../../../src/components/posts/PostCard";
 
 const PostPage = ({ node, post }: { node: Node; post: Post }) => {
   const { loading, error, data } = useQuery(POSTS);
@@ -32,7 +32,7 @@ const PostPage = ({ node, post }: { node: Node; post: Post }) => {
           marginTop: 10,
         }}
       >
-        <PostPageCard post={post} />
+        <PostCard post={post} />
         <CommentingContainer post={post} />
         <NoCommentsPlaceholder />
       </div>
@@ -95,7 +95,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
         staticProps.props.node = res.data.node;
       },
       (err: ApolloError) => {
-        logError(err)
+        logError(err);
       }
     );
 

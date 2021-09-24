@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const CREATE_NODE = gql`
-  mutation($newNode: NewNode!), {
+  mutation ($newNode: NewNode!) {
     createNode(newNode: $newNode) {
       name
     }
@@ -9,7 +9,7 @@ export const CREATE_NODE = gql`
 `;
 
 export const CREATE_POST = gql`
-  mutation($newPost: NewPost!) {
+  mutation ($newPost: NewPost!) {
     createPost(newPost: $newPost) {
       id
       title
@@ -21,10 +21,18 @@ export const CREATE_POST = gql`
 `;
 
 export const CREATE_USER = gql`
-  mutation($newUser: NewUser!) {
+  mutation ($newUser: NewUser!) {
     createUser(newUser: $newUser) {
       name
       bases
+    }
+  }
+`;
+
+export const CREATE_COMMENT = gql`
+  mutation ($newComment: NewComment!) {
+    createComment(newComment: $newComment) {
+      deltaOps
     }
   }
 `;
