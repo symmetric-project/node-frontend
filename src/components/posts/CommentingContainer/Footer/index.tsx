@@ -10,21 +10,22 @@ import GenericButton from "../../../buttons/GenericButton";
 const Footer = () => {
   const sendComment = () => {
     let postId = window.location.pathname.split("/")[2];
+    let postSlug = window.location.pathname.split("/")[3];
     client
       .mutate({
         mutation: CREATE_COMMENT,
         variables: {
           newComment: {
             postId,
-            deltaOps: JSON.stringify(vars.writeComment.deltaOps()),
+            deltaOps: JSON.stringify(vars.createComment.deltaOps()),
+            userId: vars.auth.user()?.id,
+            postSlug,
           },
         },
       })
       .then(
         (res) => {
-          let newComments = [];
-          newComments.push(res.data.newComment);
-          vars.commenting.newComments(newComments);
+          window.location.reload();
         },
         (err: ApolloError) => {
           logError(err);

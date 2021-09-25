@@ -40,4 +40,5 @@ export const COLORS = {
 
 export const FONTS = {
   IBMXPLEXSANS: "IBMPlexSans",
+  NOTO_SANS: "NotoSans",
 };

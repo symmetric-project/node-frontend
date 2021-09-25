@@ -2,7 +2,7 @@ import { ApolloError, useQuery } from "@apollo/client";
 import React from "react";
 import { NODE, POST, POSTS } from "../../../src/api/queries";
 import GenericCard from "../../../src/components/cards/GenericCard";
-import { Node, Post } from "../../../src/types";
+import { Comment, Node, Post } from "../../../src/types";
 import client from "../../../src/api/client";
 import { GetStaticPropsContext } from "next";
 import CommentingContainer from "../../../src/components/posts/CommentingContainer";
@@ -11,7 +11,15 @@ import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
 import CommentsContainer from "../../../src/components/posts/CommentsContainer";
 
-const PostPage = ({ node, post }: { node: Node; post: Post }) => {
+const PostPage = ({
+  node,
+  post,
+  comments,
+}: {
+  node: Node;
+  post: Post;
+  comments: Comment[];
+}) => {
   const { loading, error, data } = useQuery(POSTS);
   if (loading) return null;
   if (error) return null;
@@ -34,9 +42,12 @@ const PostPage = ({ node, post }: { node: Node; post: Post }) => {
         }}
       >
         <PostCard post={post} />
-        <CommentingContainer post={post} />
-        <NoCommentsPlaceholder />
-        <CommentsContainer comments={[]} />
+        <CommentingContainer />
+        {comments.length > 0 ? (
+          <CommentsContainer comments={comments} />
+        ) : (
+          <NoCommentsPlaceholder />
+        )}
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <GenericCard title="About Community">
@@ -113,6 +124,8 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     .then(
       (res) => {
         staticProps.props.post = res.data.post;
+        staticProps.props.comments = res.data.comments;
+        console.log(res.data);
       },
       (err: ApolloError) => {
         logError(err);

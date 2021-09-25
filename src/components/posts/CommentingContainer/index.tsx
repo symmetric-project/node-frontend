@@ -1,10 +1,9 @@
 import React from "react";
 import { COLORS } from "../../../const";
-import { Post } from "../../../types";
 import CommentEditor from "./CommentEditor";
 import Footer from "./Footer";
 
-const CommentingContainer = ({ post }: { post: Post }) => {
+const CommentingContainer = () => {
   return (
     <div
       style={{

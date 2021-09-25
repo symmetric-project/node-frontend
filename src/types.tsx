@@ -15,6 +15,7 @@ export type Node = {
 };
 
 export type User = {
+  id: string;
   name: string;
   bases: number;
 };
@@ -23,4 +24,6 @@ export type Comment = {
   id: string;
   postId: string;
   deltaOps: string;
+  author: User;
+  creationTimestamp: number;
 };

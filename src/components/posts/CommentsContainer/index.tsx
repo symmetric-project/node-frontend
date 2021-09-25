@@ -19,10 +19,9 @@ const CommentsContainer = ({ comments }: { comments: Comment[] }) => {
         alignItems: "center",
       }}
     >
-      <CommentCard />
-      <CommentCard />
-      <CommentCard />
-      <CommentCard />
+      {comments.map((comment: Comment) => (
+        <CommentCard comment={comment} />
+      ))}
     </div>
   );
 };

@@ -10,8 +10,7 @@ class Vars {
   ui;
   createNode;
   createPost;
-  commenting;
-  writeComment;
+  createComment;
   search;
 
   constructor() {
@@ -37,12 +36,8 @@ class Vars {
       link: makeVar<string>(""),
       type: makeVar<string>("text"),
     };
-    this.commenting = {
-      newComments: makeVar<{}[]>([]),
-      deltaOps: makeVar<{}[]>([]),
-    };
-    this.writeComment = {
-      deltaOps: makeVar<string | null>(null),
+    this.createComment = {
+      deltaOps: makeVar<{}[] | null>(null),
     };
     this.search = {
       category: makeVar<string>("best-results"),

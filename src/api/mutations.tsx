@@ -23,6 +23,7 @@ export const CREATE_POST = gql`
 export const CREATE_USER = gql`
   mutation ($newUser: NewUser!) {
     createUser(newUser: $newUser) {
+      id
       name
       bases
     }

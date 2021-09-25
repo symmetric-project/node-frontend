@@ -9,6 +9,14 @@ export const POST = gql`
       nodeName
       slug
     }
+    comments(postId: $id, postSlug: $slug) {
+      author {
+        id
+        name
+      }
+      deltaOps
+      creationTimestamp
+    }
   }
 `;
 
@@ -43,8 +51,9 @@ export const NODES = gql`
 `;
 
 export const USER = gql`
-  query ($name: ID) {
-    user(name: $name) {
+  query ($id: ID) {
+    user(id: $id) {
+      id
       name
       bases
     }

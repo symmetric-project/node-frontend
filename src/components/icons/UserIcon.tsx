@@ -1,20 +1,23 @@
 import React from "react";
 import SVG from "react-inlinesvg";
+import { User } from "../../types";
 
 const UserIcon = ({
-  userName,
+  size,
+  user,
   style,
 }: {
-  userName: string;
-  style: React.CSSProperties;
+  size: number;
+  user: User;
+  style?: React.CSSProperties;
 }) => {
   return (
     <SVG
-      src={`https://avatars.dicebear.com/api/personas/${userName}/.svg`}
-      width={40}
+      src={`https://avatars.dicebear.com/api/personas/${user.id}/.svg`}
+      width={size}
       height="100%"
       cursor="pointer"
-      title={userName}
+      title={user.name}
       style={{ ...style }}
     />
   );

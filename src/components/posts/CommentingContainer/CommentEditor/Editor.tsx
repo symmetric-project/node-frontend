@@ -1,4 +1,3 @@
-import { useReactiveVar } from "@apollo/client";
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -34,10 +33,13 @@ const Editor = () => {
   ];
   return (
     <ReactQuill
-      style={{ height: 135, width: "100%"}}
+      style={{ height: 135, width: "100%" }}
       theme="snow"
       modules={modules}
       formats={formats}
+      onChange={(content, delta, source, editor) => {
+        vars.createComment.deltaOps(editor.getContents().ops);
+      }}
     />
   );
 };
