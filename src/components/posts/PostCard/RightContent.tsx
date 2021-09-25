@@ -46,7 +46,7 @@ const RightContent = ({ post }: { post: Post }) => {
           }}
         >
           <NodeIcon nodeName={post.nodeName} style={{ marginRight: 2 }} />
-          nodename.com
+          {post.nodeName}
         </div>
         <div style={{ marginLeft: 5, color: COLORS.GRAY_TEXT_BACKGROUND }}>
           u/virtumondeObjective
@@ -63,12 +63,15 @@ const RightContent = ({ post }: { post: Post }) => {
             fontFamily: FONTS.IBMXPLEXSANS,
             fontWeight: 500,
             fontSize: 18,
+
+            color: COLORS.BLACK_POST_TITLE,
+            textDecoration: "none",
           }}
         >
           {post.title}
         </a>
         <div
-          style={{ padding: 10, paddingLeft: 0, paddingBottom: 0 }}
+          style={{}}
           dangerouslySetInnerHTML={{
             __html: `${htmlContent}`,
           }}

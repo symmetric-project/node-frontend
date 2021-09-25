@@ -1,5 +1,5 @@
 import { ApolloError, useQuery } from "@apollo/client";
-import React, { useEffect } from "react";
+import React from "react";
 import { NODE, POST, POSTS } from "../../../src/api/queries";
 import GenericCard from "../../../src/components/cards/GenericCard";
 import { Node, Post } from "../../../src/types";

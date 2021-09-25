@@ -31,7 +31,7 @@ const PostEditor = () => {
         }}
       >
         <Input
-          onChange={() => {}}
+          onChange={(title) => vars.createPost.title(title)}
           placeholder="Title"
           style={{
             marginLeft: 0,
@@ -40,7 +40,7 @@ const PostEditor = () => {
             padding: 19,
 
             borderRadius: 0,
-            borderColor: "rgb(204, 204, 204)"
+            borderColor: "rgb(204, 204, 204)",
           }}
         />
       </div>

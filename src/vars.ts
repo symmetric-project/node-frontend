@@ -32,7 +32,7 @@ class Vars {
     };
     this.createPost = {
       nodeName: makeVar<string | null>(null),
-      title: makeVar<string>("Title"),
+      title: makeVar<string>(""),
       deltaOps: makeVar<{}[]>([]),
       link: makeVar<string>(""),
       type: makeVar<string>("text"),

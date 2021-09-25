@@ -35,6 +35,7 @@ export const COLORS = {
   GRAY_TEXT_BACKGROUND: "rgb(120, 124, 126)",
   GRAY_BACKGROUND: "rgb(237, 239, 241)",
   BLACK: "black",
+  BLACK_POST_TITLE: "rgb(34, 34, 34)",
 };
 
 export const FONTS = {
