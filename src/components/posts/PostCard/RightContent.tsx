@@ -3,6 +3,7 @@ import React from "react";
 import { deltaToHTMLConverterConfig } from "../../../configs";
 import { COLORS, FONTS } from "../../../const";
 import { Post } from "../../../types";
+import { newTimeAgo } from "../../../utils/time";
 import NodeIcon from "../../icons/NodeIcon";
 
 const RightContent = ({ post }: { post: Post }) => {
@@ -33,7 +34,8 @@ const RightContent = ({ post }: { post: Post }) => {
           fontSize: 12,
         }}
       >
-        <div
+        <a
+          href={`/${post.nodeName}`}
           style={{
             height: "100%",
             display: "flex",
@@ -43,20 +45,28 @@ const RightContent = ({ post }: { post: Post }) => {
             paddingLeft: 5,
 
             fontSize: 12,
+            textDecoration: "none",
           }}
         >
           <NodeIcon nodeName={post.nodeName} style={{ marginRight: 2 }} />
           {post.nodeName}
-        </div>
+        </a>
+        <a
+          href={`/u/${post.author.name}`}
+          style={{
+            marginLeft: 5,
+            color: COLORS.GRAY_TEXT_BACKGROUND,
+            textDecoration: "none",
+          }}
+        >
+          {post.author.name}
+        </a>
         <div style={{ marginLeft: 5, color: COLORS.GRAY_TEXT_BACKGROUND }}>
-          u/virtumondeObjective
-        </div>
-        <div style={{ marginLeft: 5, color: COLORS.GRAY_TEXT_BACKGROUND }}>
-          5 hours ago
+          {newTimeAgo(post.creationTimestamp)}
         </div>
       </div>
 
-      <div style={{ padding: 10 }}>
+      <div style={{ padding: 10, paddingTop: 0 }}>
         <a
           href={`/${post.nodeName}/${post.id}/${post.slug}`}
           style={{
@@ -71,7 +81,9 @@ const RightContent = ({ post }: { post: Post }) => {
           {post.title}
         </a>
         <div
-          style={{}}
+          style={{
+            paddingTop: 5,
+          }}
           dangerouslySetInnerHTML={{
             __html: `${htmlContent}`,
           }}

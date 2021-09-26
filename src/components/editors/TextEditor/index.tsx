@@ -17,7 +17,7 @@ const Editor = dynamic(() => import("./Editor"), {
 
 const TextEditor = () => {
   return (
-    <div style={{ height: 200, borderWidth: 20 }}>
+    <div style={{ height: 200, outlineWidth: 20 }}>
       <Editor />
     </div>
   );

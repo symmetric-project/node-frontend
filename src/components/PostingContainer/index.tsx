@@ -35,9 +35,6 @@ const PostingContainer = () => {
         style={{
           width: 470,
           backgroundColor: COLORS.TRANSPARENT_LIGHTER_GRAY,
-          borderStyle: "solid",
-          borderWidth: 1,
-          borderColor: COLORS.TRANSPARENT_LIGHTISH_GRAY,
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",

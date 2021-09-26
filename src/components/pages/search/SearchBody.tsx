@@ -20,10 +20,10 @@ const SearchBody = ({
         color: selected ? COLORS.BLACK : COLORS.GRAY_TEXT,
         fontWeight: 700,
 
-        borderWidth: 0,
+        outlineWidth: 0,
         borderBottomWidth: selected ? 3 : 0,
-        borderStyle: "solid",
-        borderColor: COLORS.BLUE,
+        outlineStyle: "solid",
+        outlineColor: COLORS.BLUE,
       }}
     >
       {children}

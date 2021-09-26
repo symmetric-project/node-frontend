@@ -5,6 +5,8 @@ export type Post = {
   deltaOps: string | null;
   nodeName: string;
   slug: string;
+  creationTimestamp: number;
+  author: User;
 };
 
 export type Node = {

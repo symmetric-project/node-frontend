@@ -14,9 +14,9 @@ const TransparentButton = (props: { joined: boolean }) => {
 
         borderRadius: 20,
 
-        borderColor: COLORS.BLUE,
-        borderStyle: "solid",
-        borderWidth: 1,
+        outlineColor: COLORS.BLUE,
+        outlineStyle: "solid",
+        outlineWidth: 1,
 
         display: "flex",
         flexDirection: "row",

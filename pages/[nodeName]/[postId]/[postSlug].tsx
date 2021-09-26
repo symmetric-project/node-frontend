@@ -43,7 +43,7 @@ const PostPage = ({
       >
         <PostCard post={post} />
         <CommentingContainer />
-        {comments.length > 0 ? (
+        {comments ? (
           <CommentsContainer comments={comments} />
         ) : (
           <NoCommentsPlaceholder />

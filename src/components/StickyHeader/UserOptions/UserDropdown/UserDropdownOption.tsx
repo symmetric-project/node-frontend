@@ -20,8 +20,9 @@ const UserOption = ({
         alignItems: "center",
         marginTop: 10,
         textDecoration: "none",
-        color: COLORS.BLACK,
+        color: COLORS.GRAY_TEXT_BACKGROUND,
         cursor: "pointer",
+        fontSize: 14,
       }}
       onClick={onClick ? () => onClick() : undefined}
     >

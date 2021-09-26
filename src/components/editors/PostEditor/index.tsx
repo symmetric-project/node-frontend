@@ -40,7 +40,7 @@ const PostEditor = () => {
             padding: 19,
 
             borderRadius: 0,
-            borderColor: "rgb(204, 204, 204)",
+            outlineColor: "rgb(204, 204, 204)",
           }}
         />
       </div>

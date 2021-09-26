@@ -14,13 +14,12 @@ const Input = ({
 }) => {
   return (
     <input
-      className="input-component"
+      className="input"
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       style={{
         width: "100%",
-        height: 15,
         backgroundColor: COLORS.WHITE,
         borderStyle: "solid",
         borderWidth: 1,
@@ -29,7 +28,7 @@ const Input = ({
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-        padding: 15,
+        padding: 10,
         borderRadius: 4,
         ...style,
       }}

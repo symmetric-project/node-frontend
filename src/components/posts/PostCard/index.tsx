@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Post } from "../../../types";
 import LeftVotingBar from "./LeftVotingBar";
 import RightContent from "./RightContent";
 
 const PostCard = ({ post }: { post: Post }) => {
+  const [mouseOn, setMouseOn] = useState(false);
   return (
-    <div
+    <a
+      href={`/${post.nodeName}/${post.id}/${post.slug}`}
+      onMouseEnter={() => setMouseOn(true)}
+      onMouseLeave={() => setMouseOn(false)}
       style={{
         position: "relative",
         height: "auto",
-        minHeight: 175,
         width: 640,
         margin: 10,
 
@@ -19,11 +22,15 @@ const PostCard = ({ post }: { post: Post }) => {
         display: "flex",
         flexDirection: "row",
         alignItems: "stretch",
+
+        outlineColor: "black",
+        outlineWidth: mouseOn ? 1 : 0,
+        outlineStyle: "solid",
       }}
     >
-      <LeftVotingBar />
+      {/* <LeftVotingBar /> */}
       <RightContent post={post} />
-    </div>
+    </a>
   );
 };
 

@@ -43,9 +43,9 @@ const NodeHeader = ({ node }: { node: Node }) => {
             color: COLORS.WHITE,
             fontSize: 30,
 
-            borderWidth: 5,
-            borderStyle: "solid",
-            borderColor: COLORS.WHITE,
+            outlineWidth: 5,
+            outlineStyle: "solid",
+            outlineColor: COLORS.WHITE,
 
             display: "flex",
             justifyContent: "center",

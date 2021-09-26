@@ -28,10 +28,10 @@ const TypeSelectorContainerButton = ({
         color: selected ? COLORS.BLUE : COLORS.GRAY,
         backgroundColor: selected ? "rgba(0,121,211,0.1)" : COLORS.WHITE,
 
-        borderWidth: 0,
+        outlineWidth: 0,
         borderBottomWidth: selected ? 2 : 0,
-        borderColor: COLORS.BLUE,
-        borderStyle: "solid",
+        outlineColor: COLORS.BLUE,
+        outlineStyle: "solid",
 
         userSelect: "none",
         cursor: "pointer",

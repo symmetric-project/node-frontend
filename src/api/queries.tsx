@@ -8,6 +8,12 @@ export const POST = gql`
       deltaOps
       nodeName
       slug
+      creationTimestamp
+      author {
+        id
+        name
+        bases
+      }
     }
     comments(postId: $id, postSlug: $slug) {
       author {
@@ -26,8 +32,14 @@ export const POSTS = gql`
       id
       title
       deltaOps
+      creationTimestamp
       nodeName
       slug
+      author {
+        id
+        name
+        bases
+      }
     }
   }
 `;

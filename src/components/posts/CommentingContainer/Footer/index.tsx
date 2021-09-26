@@ -18,7 +18,7 @@ const Footer = () => {
           newComment: {
             postId,
             deltaOps: JSON.stringify(vars.createComment.deltaOps()),
-            userId: vars.auth.user()?.id,
+            authorId: vars.auth.user()?.id,
             postSlug,
           },
         },

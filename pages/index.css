@@ -6,28 +6,30 @@ html {
   background-color: #dae0e6;
 }
 
-/* Delta rendering fix */
+/* Post delta rendering fix */
 p {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
 
+html,
+a,
 div,
 input {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   font-family: IBMPlexSans;
   font-size: 14px;
 }
 
 input {
+  border: none;
   font-family: "NotoSans";
 }
 
-.input-component:focus {
+.input:focus {
   outline: none;
   box-shadow: 0 0 3px rgb(0, 121, 211);
 }

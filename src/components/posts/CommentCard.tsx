@@ -1,7 +1,7 @@
 import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
 import { deltaToHTMLConverterConfig } from "../../configs";
-import { FONTS } from "../../const";
+import { COLORS, FONTS } from "../../const";
 import { Comment } from "../../types";
 import { newTimeAgo } from "../../utils/time";
 import UserIcon from "../icons/UserIcon";
@@ -35,10 +35,12 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
         }}
       >
         <UserIcon size={40} user={comment.author} style={{}} />
-        <div style={{ fontWeight: 500, marginRight: 5 }}>
+        <div style={{ fontWeight: 500, marginRight: 5, fontSize: 12 }}>
           {comment.author.name}
         </div>
-        <div>{newTimeAgo(comment.creationTimestamp)}</div>
+        <div style={{ color: COLORS.GRAY_TEXT, fontSize: 12 }}>
+          {newTimeAgo(comment.creationTimestamp)}
+        </div>
       </div>
       <div
         style={{
