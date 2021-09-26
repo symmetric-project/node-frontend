@@ -65,7 +65,9 @@ const UserOptions = () => {
           }}
         >
           <div style={{ fontWeight: 500 }}>{user?.name}</div>
-          <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>{user?.bases} bases</div>
+          <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>
+            {user?.bases} bases
+          </div>
         </div>
 
         <div
@@ -96,29 +98,26 @@ const UserOptions = () => {
 
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center",
             alignItems: "flex-start",
 
             userSelect: "none",
 
             boxShadow: "0 4px 4px rgb(0 0 0 / 25%)",
-
-            padding: 15,
-            paddingTop: 0,
-            paddingBottom: 10,
           }}
         >
           <UserOption
-            icon={<IoPersonCircleOutline size={30} />}
+            icon={<IoPersonCircleOutline size={25} />}
             name="Profile"
-            href="/"
+            href={`/u/${user?.name}`}
           />
-          <UserOption
-            icon={<IoSettingsOutline size={30} />}
+          {/* <UserOption
+            icon={<IoSettingsOutline size={25} />}
             name="Settings"
             href="/"
-          />
+          /> */}
           <UserOption
-            icon={<IoAddSharp size={30} />}
+            icon={<IoAddSharp size={25} />}
             name="Create Node"
             onClick={() => vars.ui.popup("create-node")}
           />

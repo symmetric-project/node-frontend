@@ -19,6 +19,8 @@ const RightContent = ({ post }: { post: Post }) => {
         backgroundColor: COLORS.WHITE,
         width: "100%",
         top: 0,
+
+        borderRadius: 4,
       }}
     >
       <div
