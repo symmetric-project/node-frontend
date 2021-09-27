@@ -19,9 +19,7 @@ const NodePage = ({
   params: { name: string };
   posts: Post[];
 }) => {
-  const { loading, error, data } = useQuery(POSTS);
-  if (loading) return null;
-  if (error) return null;
+  /* const { loading, error, data } = useQuery(POSTS); */
   return (
     <div>
       <NodeHeader node={node} />

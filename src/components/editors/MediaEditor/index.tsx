@@ -1,6 +1,7 @@
 import React from "react";
 import { COLORS } from "../../../const";
 import GenericButton from "../../buttons/GenericButton";
+import MediaDropzone from "./MediaDropzone";
 
 const MediaEditor = () => {
   return (
@@ -17,9 +18,7 @@ const MediaEditor = () => {
         alignItems: "center",
       }}
     >
-      <div style={{ fontSize: 16, color: COLORS.BLUE }}>
-        Drag and drop images or
-      </div>
+      <MediaDropzone />
       <GenericButton name="Upload" style={{ marginLeft: 10 }} />
     </div>
   );

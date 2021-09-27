@@ -37,7 +37,7 @@ const PostEditor = () => {
             marginLeft: 0,
             marginRight: 0,
             backgroundColor: "transparent",
-            padding: 19,
+            padding: 10,
 
             borderRadius: 0,
             outlineColor: "rgb(204, 204, 204)",

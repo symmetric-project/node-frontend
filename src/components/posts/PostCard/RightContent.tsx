@@ -16,7 +16,6 @@ const RightContent = ({ post }: { post: Post }) => {
     <div
       style={{
         position: "relative",
-        backgroundColor: COLORS.WHITE,
         width: "100%",
         top: 0,
 
@@ -50,7 +49,7 @@ const RightContent = ({ post }: { post: Post }) => {
             textDecoration: "none",
           }}
         >
-          <NodeIcon nodeName={post.nodeName} style={{ marginRight: 2 }} />
+          <NodeIcon size={20} name={post.nodeName} style={{ marginRight: 2 }} />
           {post.nodeName}
         </a>
         <a

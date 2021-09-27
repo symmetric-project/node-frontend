@@ -3,13 +3,13 @@ import SVG from "react-inlinesvg";
 import { COLORS } from "../../../../const";
 import {
   IoPersonCircleOutline,
-  IoSettingsOutline,
   IoAddSharp,
   IoChevronDown,
 } from "react-icons/io5";
 import UserOption from "./UserDropdownOption";
 import { useReactiveVar } from "@apollo/client";
 import vars from "../../../../vars";
+import UserIcon from "../../../icons/UserIcon";
 
 const UserOptions = () => {
   const user = useReactiveVar(vars.auth.user);
@@ -48,13 +48,7 @@ const UserOptions = () => {
             justifyContent: "center",
           }}
         >
-          <SVG
-            src={`https://avatars.dicebear.com/api/personas/${user?.name}/.svg`}
-            width={50}
-            height="100%"
-            cursor="pointer"
-            title={user?.name}
-          />
+          <UserIcon size={50} user={user!} />
         </div>
         <div
           style={{

@@ -30,6 +30,7 @@ export const COLORS = {
   ICON_GRAY: "rgb(135, 138, 140)",
   GREEN: "rgb(70, 209, 96)",
   GRAY: "gray",
+  CARD_BORDER_SELECTED: "#898989",
   GRAY_DIVIDER: "rgb(237, 239, 241)",
   GRAY_TEXT: "rgb(124, 124, 124)",
   GRAY_TEXT_BACKGROUND: "rgb(120, 124, 126)",

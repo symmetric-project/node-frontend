@@ -1,23 +1,26 @@
-import React from "react";
+import React, { ReactEventHandler } from "react";
 import { COLORS } from "../const";
 
 const Input = ({
   style,
   placeholder,
   value,
+  onSelect,
   onChange,
 }: {
   style?: React.CSSProperties;
   placeholder?: string;
   value?: string;
-  onChange: (value: string) => void;
+  onSelect?: ReactEventHandler<HTMLInputElement>;
+  onChange?: (value: string) => void;
 }) => {
   return (
     <input
       className="input"
       placeholder={placeholder}
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onSelect={onSelect ? (e) => onSelect(e) : undefined}
+      onChange={onChange ? (e) => onChange(e.target.value) : undefined}
       style={{
         width: "100%",
         backgroundColor: COLORS.WHITE,

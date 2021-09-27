@@ -1,8 +1,8 @@
 import React from "react";
 import { COLORS, FRONTEND_URL } from "../../const";
 import JoinTransparentButton from "../buttons/JoinTransparentButton";
-import SVG from "react-inlinesvg";
 import { Node } from "../../types";
+import NodeIcon from "../icons/NodeIcon";
 
 const NodeHeader = ({ node }: { node: Node }) => {
   return (
@@ -32,33 +32,17 @@ const NodeHeader = ({ node }: { node: Node }) => {
       >
         <div
           style={{
-            position: "relative",
-            top: -10,
-
-            width: 72,
-            height: 72,
-            borderRadius: "50%",
-            backgroundColor: COLORS.BLUE,
+            height: "100%",
 
             color: COLORS.WHITE,
             fontSize: 30,
-
-            outlineWidth: 5,
-            outlineStyle: "solid",
-            outlineColor: COLORS.WHITE,
 
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <SVG
-            src={`https://avatars.dicebear.com/api/jdenticon/${"nodename"}/.svg`}
-            width={50}
-            height="100%"
-            cursor="pointer"
-            title={"Avatar"}
-          />
+          <NodeIcon size={60} name={node.name} />
         </div>
         <div
           style={{

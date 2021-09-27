@@ -3,6 +3,7 @@ import { Post } from "../../../types";
 import LeftVotingBar from "./LeftVotingBar";
 import RightContent from "./RightContent";
 import { useRouter } from "next/router";
+import { COLORS } from "../../../const";
 
 const PostCard = ({ post }: { post: Post }) => {
   const router = useRouter();
@@ -24,11 +25,14 @@ const PostCard = ({ post }: { post: Post }) => {
         flexDirection: "row",
         alignItems: "stretch",
 
-        outlineColor: "black",
-        outlineWidth: mouseOn ? 1 : 0,
-        outlineStyle: "solid",
+        backgroundColor: COLORS.WHITE,
+
+        boxShadow: mouseOn
+          ? `0px 0px 0px 1px ${COLORS.CARD_BORDER_SELECTED}`
+          : undefined,
 
         cursor: "pointer",
+        paddingTop: 5,
       }}
     >
       {/* <LeftVotingBar /> */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Node } from "../../types";
-import NodeIcon from "../NodeIcon";
+import NodeIcon from "../icons/NodeIcon";
 
 const NodeCard = ({ node }: { node: Node }) => {
   return (
@@ -15,7 +15,7 @@ const NodeCard = ({ node }: { node: Node }) => {
         marginTop: 10,
       }}
     >
-      <NodeIcon node={node} style={{ marginRight: 10 }} />
+      <NodeIcon size={30} name={node.name} style={{ marginRight: 10 }} />
       <div style={{ width: "50%" }}>{node.name}</div>
       <div style={{ width: "50%" }}>{node.description}</div>
     </a>

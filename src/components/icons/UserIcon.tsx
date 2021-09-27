@@ -12,14 +12,16 @@ const UserIcon = ({
   style?: React.CSSProperties;
 }) => {
   return (
-    <SVG
-      src={`https://avatars.dicebear.com/api/personas/${user.id}/.svg`}
-      width={size}
-      height="100%"
-      cursor="pointer"
-      title={user.name}
-      style={{ ...style }}
-    />
+    <a href={`/u/${user.name}`}>
+      <SVG
+        src={`https://avatars.dicebear.com/api/personas/${user.id}/.svg`}
+        width={size}
+        height="100%"
+        cursor="pointer"
+        title={user.name}
+        style={{ ...style }}
+      />
+    </a>
   );
 };
 

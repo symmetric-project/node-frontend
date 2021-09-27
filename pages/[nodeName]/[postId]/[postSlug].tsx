@@ -1,4 +1,4 @@
-import { ApolloError, useQuery } from "@apollo/client";
+import { ApolloError } from "@apollo/client";
 import React from "react";
 import { NODE, POST, POSTS } from "../../../src/api/queries";
 import GenericCard from "../../../src/components/cards/GenericCard";
@@ -10,6 +10,7 @@ import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlace
 import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
 import CommentsContainer from "../../../src/components/posts/CommentsContainer";
+import NodeHeader from "../../../src/components/NodeHeader";
 
 const PostPage = ({
   node,
@@ -20,40 +21,40 @@ const PostPage = ({
   post: Post;
   comments: Comment[];
 }) => {
-  const { loading, error, data } = useQuery(POSTS);
-  if (loading) return null;
-  if (error) return null;
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start ",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center ",
-          marginTop: 10,
-        }}
-      >
-        <PostCard post={post} />
-        <CommentingContainer />
-        {comments ? (
-          <CommentsContainer comments={comments} />
-        ) : (
-          <NoCommentsPlaceholder />
-        )}
-      </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <GenericCard title="About Community">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </GenericCard>
+      <NodeHeader node={node} />
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center ",
+            marginTop: 10,
+          }}
+        >
+          <PostCard post={post} />
+          <CommentingContainer />
+          {comments ? (
+            <CommentsContainer comments={comments} />
+          ) : (
+            <NoCommentsPlaceholder />
+          )}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <GenericCard title="About Community">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </GenericCard>
+        </div>
       </div>
     </div>
   );
@@ -125,7 +126,6 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       (res) => {
         staticProps.props.post = res.data.post;
         staticProps.props.comments = res.data.comments;
-        console.log(res.data);
       },
       (err: ApolloError) => {
         logError(err);

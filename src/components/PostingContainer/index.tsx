@@ -2,11 +2,13 @@ import React from "react";
 import { COLORS } from "../../const";
 import { IoImage, IoLink } from "react-icons/io5";
 import Input from "../Input";
-import UserIcon from "./UserIcon";
 import { useReactiveVar } from "@apollo/client";
 import vars from "../../vars";
+import UserIcon from "../icons/UserIcon";
+import { useRouter } from "next/router";
 
 const PostingContainer = () => {
+  const router = useRouter();
   const user = useReactiveVar(vars.auth.user);
   return (
     <div
@@ -23,14 +25,21 @@ const PostingContainer = () => {
         justifyContent: "flex-start",
         alignItems: "center",
 
-        borderTopLeftRadius: 3,
-        borderTopRightRadius: 3,
+        borderRadius: 3,
+        padding: 10,
       }}
     >
-      {user ? <UserIcon user={user} /> : null}
-
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {user ? <UserIcon size={50} user={user} /> : null}
+      </div>
       <Input
-        onChange={() => {}}
+        onSelect={() => router.push("/create-post")}
         placeholder="Create Post"
         style={{
           width: 470,
