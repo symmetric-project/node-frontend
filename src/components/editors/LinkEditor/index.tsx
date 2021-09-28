@@ -10,7 +10,7 @@ const LinkEditor = () => {
         width: "100%",
         height: "100%",
 
-        marginBottom: 10,
+        paddingBottom: 10,
       }}
     >
       <Input
@@ -19,7 +19,6 @@ const LinkEditor = () => {
         style={{
           marginLeft: 0,
           marginRight: 0,
-          backgroundColor: "transparent",
           padding: 10,
 
           borderRadius: 0,

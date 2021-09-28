@@ -11,12 +11,11 @@ import Checkbox from "../../../Checkbox";
 
 const PostEditorContainerFooter = ({}: {}) => {
   const router = useRouter();
-  const onCompleted = (data: any) => {
-    let post: Post = data.createPost;
-    router.push(`/${post.nodeName}/${post.id}/${post.slug}`);
-  };
   const [createPost, { data, loading, error }] = useMutation(CREATE_POST, {
-    onCompleted,
+    onCompleted: (data: any) => {
+      let post: Post = data.createPost;
+      router.push(`/${post.nodeName}/${post.id}/${post.slug}`);
+    },
   });
   return (
     <div
@@ -50,7 +49,6 @@ const PostEditorContainerFooter = ({}: {}) => {
               variables: {
                 newPost: {
                   nodeName: vars.createPost.nodeName(),
-                  type: vars.createPost.type(),
                   title: vars.createPost.title(),
                   link: vars.createPost.link(),
                   deltaOps: JSON.stringify(vars.createPost.deltaOps()),

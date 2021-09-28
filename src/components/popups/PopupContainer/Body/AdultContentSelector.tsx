@@ -1,9 +1,9 @@
 import { useReactiveVar } from "@apollo/client";
 import React from "react";
-import { FONTS } from "../../../const";
-import vars from "../../../vars";
-import Checkbox from "../../Checkbox";
-import GenericLabel from "../../labels/GenericLabel";
+import { FONTS } from "../../../../const";
+import vars from "../../../../vars";
+import Checkbox from "../../../Checkbox";
+import GenericLabel from "../../../labels/GenericLabel";
 
 const AdultContentSelector = () => {
   const nsfw = useReactiveVar(vars.createNode.nsfw);

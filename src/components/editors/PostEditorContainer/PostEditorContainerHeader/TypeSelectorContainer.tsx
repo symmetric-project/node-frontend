@@ -24,15 +24,15 @@ const TypeSelectorContainer = () => {
     >
       <TypeSelectorContainerButton
         onClick={() => {
-          vars.createPost.type("text");
+          vars.createPost.type("TEXT");
         }}
-        selected={postTypeReactiveVar === "text"}
+        selected={postTypeReactiveVar === "TEXT"}
         text="Post"
         style={{ borderTopLeftRadius: 5 }}
       >
         <IoDocumentTextOutline
           color={
-            postTypeReactiveVar === "text" ? COLORS.BLUE : COLORS.ICON_GRAY
+            postTypeReactiveVar === "TEXT" ? COLORS.BLUE : COLORS.ICON_GRAY
           }
           size={20}
           style={{ marginRight: 5 }}
@@ -40,15 +40,15 @@ const TypeSelectorContainer = () => {
       </TypeSelectorContainerButton>
       <TypeSelectorContainerButton
         onClick={() => {
-          vars.createPost.type("media");
+          vars.createPost.type("MEDIA");
         }}
-        selected={postTypeReactiveVar === "media"}
+        selected={postTypeReactiveVar === "MEDIA"}
         text="Images & Video"
         style={{}}
       >
         <IoImageOutline
           color={
-            postTypeReactiveVar === "media" ? COLORS.BLUE : COLORS.ICON_GRAY
+            postTypeReactiveVar === "MEDIA" ? COLORS.BLUE : COLORS.ICON_GRAY
           }
           size={20}
           style={{ marginRight: 5 }}
@@ -56,15 +56,15 @@ const TypeSelectorContainer = () => {
       </TypeSelectorContainerButton>
       <TypeSelectorContainerButton
         onClick={() => {
-          vars.createPost.type("link");
+          vars.createPost.type("LINK");
         }}
-        selected={postTypeReactiveVar === "link"}
+        selected={postTypeReactiveVar === "LINK"}
         text="Link"
         style={{ borderTopRightRadius: 5, width: "34%" }}
       >
         <IoLinkOutline
           color={
-            postTypeReactiveVar === "link" ? COLORS.BLUE : COLORS.ICON_GRAY
+            postTypeReactiveVar === "LINK" ? COLORS.BLUE : COLORS.ICON_GRAY
           }
           size={20}
           style={{ width: "20%", marginRight: 5 }}

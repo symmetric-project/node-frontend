@@ -1,8 +1,8 @@
 import { useReactiveVar } from "@apollo/client";
 import React from "react";
-import { COLORS } from "../../../const";
-import vars from "../../../vars";
-import Input from "../../Input";
+import { COLORS } from "../../../../const";
+import vars from "../../../../vars";
+import Input from "../../../Input";
 
 const NodeNameInput = () => {
   const name = useReactiveVar(vars.createNode.name);

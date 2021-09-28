@@ -1,5 +1,4 @@
 import React from "react";
-import SVG from "react-inlinesvg";
 import { COLORS } from "../../../../const";
 import {
   IoPersonCircleOutline,

@@ -21,22 +21,32 @@ const LeftVotingBar = () => {
         alignItems: "center",
       }}
     >
-      <IoChevronUpOutline
-        size={30}
-        onClick={() => {}}
-        style={{
-          cursor: "pointer",
-          color: upvoted ? COLORS.ORANGE : COLORS.BLACK,
-        }}
-      />
-      <IoChevronDownOutline
-        size={30}
-        onClick={() => {}}
-        style={{
-          cursor: "pointer",
-          color: downvoted ? COLORS.BLUE : COLORS.BLACK,
-        }}
-      />
+      <div
+        onMouseOver={() => setMouseOverUpvote(true)}
+        onMouseOut={() => setMouseOverUpvote(false)}
+      >
+        <IoChevronUpOutline
+          size={30}
+          onClick={() => {}}
+          style={{
+            cursor: "pointer",
+            color: mouseOverUpvote ? COLORS.ORANGE : COLORS.BLACK,
+          }}
+        />
+      </div>
+      <div
+        onMouseOver={() => setMouseOverDownvote(true)}
+        onMouseOut={() => setMouseOverDownvote(false)}
+      >
+        <IoChevronDownOutline
+          size={30}
+          onClick={() => {}}
+          style={{
+            cursor: "pointer",
+            color: mouseOverDownvote ? COLORS.BLUE : COLORS.BLACK,
+          }}
+        />
+      </div>
     </div>
   );
 };

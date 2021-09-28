@@ -1,11 +1,14 @@
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 import React from "react";
-import { CREATE_NODE } from "../../api/mutations";
-import { COLORS } from "../../const";
-import vars from "../../vars";
-import GenericButton from "../buttons/GenericButton";
+import { CREATE_NODE } from "../../../api/mutations";
+import { COLORS } from "../../../const";
+import { Node } from "../../../types";
+import vars from "../../../vars";
+import GenericButton from "../../buttons/GenericButton";
 
-const PopupContainerFooter = () => {
+const Footer = () => {
+  const router = useRouter();
   const [createNode, { data, loading, error }] = useMutation(CREATE_NODE);
   return (
     <div
@@ -37,6 +40,11 @@ const PopupContainerFooter = () => {
                 nsfw: vars.createNode.nsfw(),
               },
             },
+            onCompleted: (data: any) => {
+              console.log(data);
+              let node: Node = data.createNode;
+              router.push(`/${node.name}/`);
+            },
           })
         }
       />
@@ -44,4 +52,4 @@ const PopupContainerFooter = () => {
   );
 };
 
-export default PopupContainerFooter;
+export default Footer;

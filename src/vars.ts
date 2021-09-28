@@ -26,7 +26,7 @@ class Vars {
     };
     this.createNode = {
       name: makeVar<string>(""),
-      access: makeVar<string>(""),
+      access: makeVar<string>("PUBLIC"),
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
@@ -34,7 +34,7 @@ class Vars {
       title: makeVar<string>(""),
       deltaOps: makeVar<{}[]>([]),
       link: makeVar<string>(""),
-      type: makeVar<string>("text"),
+      type: makeVar<"TEXT" | "MEDIA" | "LINK">("TEXT"),
     };
     this.createComment = {
       deltaOps: makeVar<{}[] | null>(null),

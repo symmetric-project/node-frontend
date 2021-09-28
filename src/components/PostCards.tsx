@@ -6,7 +6,7 @@ const PostCards = (props: { posts: Post[] }) => {
   return (
     <div>
       {props.posts.map((post: any) => (
-        <PostCard key={post.id} post={post} />
+        <PostCard key={post.id} post={post} inList={true} />
       ))}
     </div>
   );

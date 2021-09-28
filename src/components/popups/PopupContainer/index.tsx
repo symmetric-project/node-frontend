@@ -1,10 +1,10 @@
 import React from "react";
-import { COLORS } from "../../const";
-import Divider from "../Divider";
-import PopupContainerBody from "./PopupContainerBody";
+import { COLORS } from "../../../const";
+import Divider from "../../Divider";
+import Body from "./Body";
 import PopupContainerCard from "./PopupContainerCard";
-import PopupContainerFooter from "./PopupContainerFooter";
-import PopupContainerHeader from "./PopupContainerHeader";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const PopupContainer = () => {
   return (
@@ -22,12 +22,10 @@ const PopupContainer = () => {
       }}
     >
       <PopupContainerCard>
-        <React.Fragment>
-          <PopupContainerHeader>Create node</PopupContainerHeader>
-          <Divider />
-          <PopupContainerBody />
-          <PopupContainerFooter />
-        </React.Fragment>
+        <Header>Create node</Header>
+        <Divider />
+        <Body />
+        <Footer />
       </PopupContainerCard>
     </div>
   );

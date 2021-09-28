@@ -6,6 +6,7 @@ export const POST = gql`
       id
       title
       deltaOps
+      link
       nodeName
       slug
       creationTimestamp
@@ -32,6 +33,7 @@ export const POSTS = gql`
       id
       title
       deltaOps
+      link
       creationTimestamp
       nodeName
       slug

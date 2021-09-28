@@ -1,10 +1,10 @@
 import React from "react";
-import { COLORS, FONTS } from "../../../const";
+import { COLORS, FONTS } from "../../../../const";
 import NodeNameInput from "./NodeNameInput";
 import CommunityTypeSelector from "./CommunityTypeSelector";
 import AdultContentSelector from "./AdultContentSelector";
 
-const PopupContainerBody = () => {
+const Body = () => {
   return (
     <div
       style={{
@@ -50,4 +50,4 @@ const PopupContainerBody = () => {
   );
 };
 
-export default PopupContainerBody;
+export default Body;

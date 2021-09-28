@@ -1,9 +1,9 @@
 import { useReactiveVar } from "@apollo/client";
 import React from "react";
 import { IoEye, IoLockClosed, IoPerson } from "react-icons/io5";
-import { COLORS } from "../../../const";
-import vars from "../../../vars";
-import Checkbox from "../../Checkbox";
+import { COLORS } from "../../../../const";
+import vars from "../../../../vars";
+import Checkbox from "../../../Checkbox";
 
 const CommunityTypeSelector = () => {
   const access = useReactiveVar(vars.createNode.access);
@@ -27,8 +27,8 @@ const CommunityTypeSelector = () => {
           }}
         >
           <Checkbox
-            name="public"
-            checked={access === "public"}
+            name="PUBLIC"
+            checked={access === "PUBLIC"}
             onChange={(name) => vars.createNode.access(name)}
           />
           <IoPerson size={20} style={{ marginLeft: 5, marginRight: 5 }} />
@@ -39,8 +39,8 @@ const CommunityTypeSelector = () => {
         </label>
         <label style={{ display: "flex", alignItems: "center", fontSize: 12 }}>
           <Checkbox
-            name="restricted"
-            checked={access === "restricted"}
+            name="RESTRICTED"
+            checked={access === "RESTRICTED"}
             onChange={(name) => vars.createNode.access(name)}
           />
           <IoEye size={20} style={{ marginLeft: 5, marginRight: 5 }} />
@@ -53,8 +53,8 @@ const CommunityTypeSelector = () => {
         </label>
         <label style={{ display: "flex", alignItems: "center", fontSize: 12 }}>
           <Checkbox
-            name="private"
-            checked={access === "private"}
+            name="PRIVATE"
+            checked={access === "PRIVATE"}
             onChange={(name) => vars.createNode.access(name)}
           />
           <IoLockClosed size={20} style={{ marginLeft: 5, marginRight: 5 }} />

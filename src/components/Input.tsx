@@ -23,6 +23,7 @@ const Input = ({
       onChange={onChange ? (e) => onChange(e.target.value) : undefined}
       style={{
         width: "100%",
+        position: "relative",
         backgroundColor: COLORS.WHITE,
         borderStyle: "solid",
         borderWidth: 1,

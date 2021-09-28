@@ -45,9 +45,9 @@ const PostEditor = () => {
         />
       </div>
       <div style={{ width: "100%", height: "auto" }}>
-        {type === "text" ? <TextEditor /> : null}
-        {type === "media" ? <MediaEditor /> : null}
-        {type === "link" ? <LinkEditor /> : null}
+        {type === "TEXT" ? <TextEditor /> : null}
+        {type === "MEDIA" ? <MediaEditor /> : null}
+        {type === "LINK" ? <LinkEditor /> : null}
       </div>
     </div>
   );

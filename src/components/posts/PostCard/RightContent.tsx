@@ -1,5 +1,6 @@
 import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
+import { IoLinkOutline } from "react-icons/io5";
 import { deltaToHTMLConverterConfig } from "../../../configs";
 import { COLORS, FONTS } from "../../../const";
 import { Post } from "../../../types";
@@ -7,11 +8,32 @@ import { newTimeAgo } from "../../../utils/time";
 import NodeIcon from "../../icons/NodeIcon";
 
 const RightContent = ({ post }: { post: Post }) => {
+  const shortifyLink = (link: string) => {
+    if (link.includes("http://")) {
+      link = link.substring(7);
+    }
+    if (link.includes("https://")) {
+      link = link.substring(8);
+    }
+    if (link.includes("www.")) {
+      link = link.substring(4);
+    }
+    if (link.length > 20) {
+      link = link.slice(0, 20);
+      link = link + "...";
+    }
+    if (link.slice(-1) === "/") {
+      link = link.slice(0, -1);
+    }
+    return link;
+  };
+
   const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
     JSON.parse(post.deltaOps as string),
     deltaToHTMLConverterConfig
   );
   const htmlContent = deltaToHTMLConverter.convert();
+  
   return (
     <div
       style={{
@@ -31,6 +53,7 @@ const RightContent = ({ post }: { post: Post }) => {
           justifyContent: "flex-start",
           alignItems: "center",
           paddingLeft: 5,
+          paddingTop: 5,
 
           fontSize: 12,
         }}
@@ -67,7 +90,14 @@ const RightContent = ({ post }: { post: Post }) => {
         </div>
       </div>
 
-      <div style={{ padding: 10, paddingTop: 0 }}>
+      <div
+        style={{
+          padding: 10,
+          paddingTop: 0,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <a
           href={`/${post.nodeName}/${post.id}/${post.slug}`}
           style={{
@@ -81,14 +111,24 @@ const RightContent = ({ post }: { post: Post }) => {
         >
           {post.title}
         </a>
-        <div
-          style={{
-            paddingTop: 5,
-          }}
-          dangerouslySetInnerHTML={{
-            __html: `${htmlContent}`,
-          }}
-        />
+        {post.link ? (
+          <a
+            href={post.link}
+            style={{ marginTop: 5, display: "flex", alignItems: "center" }}
+          >
+            {shortifyLink(post.link)}{" "}
+            <IoLinkOutline style={{ marginLeft: 2 }} />
+          </a>
+        ) : (
+          <div
+            style={{
+              marginTop: 5,
+            }}
+            dangerouslySetInnerHTML={{
+              __html: `${htmlContent}`,
+            }}
+          />
+        )}
       </div>
     </div>
   );
