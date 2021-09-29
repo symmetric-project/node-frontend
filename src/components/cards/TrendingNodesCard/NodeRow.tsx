@@ -2,6 +2,7 @@ import React from "react";
 import SVG from "react-inlinesvg";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 import { NODE_DOMAIN } from "../../../const";
+import NodeIcon from "../../icons/NodeIcon";
 
 const NodeRow = ({
   place,
@@ -50,14 +51,7 @@ const NodeRow = ({
           textDecoration: "none",
         }}
       >
-        <SVG
-          src={`https://avatars.dicebear.com/api/jdenticon/${nodeName}/.svg`}
-          width={35}
-          height="100%"
-          cursor="pointer"
-          title={nodeName}
-          style={{ marginRight: 10 }}
-        />
+        <NodeIcon size={40} nodeName={nodeName} style={{ marginRight: 10 }} />
         {nodeName}
       </a>
     </div>

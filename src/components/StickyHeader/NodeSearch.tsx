@@ -1,4 +1,4 @@
-import { ApolloError, ApolloQueryResult } from "@apollo/client";
+import { ApolloError, ApolloQueryResult, useReactiveVar } from "@apollo/client";
 import React from "react";
 import client from "../../api/client";
 import { NODES } from "../../api/queries";
@@ -8,6 +8,7 @@ import vars from "../../vars";
 import SelectAsync from "../SelectAsync";
 
 const NodeSearch = () => {
+  const nodeNameSubstring = useReactiveVar(vars.search.nodeNameSubstring);
   const loadOptions = (nodeName: any): any =>
     new Promise((resolve) => {
       client
@@ -30,7 +31,7 @@ const NodeSearch = () => {
             resolve(nodeOptions);
           },
           (err: ApolloError) => {
-            logError(err)
+            logError(err);
           }
         );
     });
@@ -46,6 +47,7 @@ const NodeSearch = () => {
     >
       <div style={{ width: "50%" }}>
         <SelectAsync
+          value={nodeNameSubstring}
           loadOptions={loadOptions}
           onChange={(value) => {
             if (value !== null) {

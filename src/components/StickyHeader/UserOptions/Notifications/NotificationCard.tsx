@@ -1,6 +1,6 @@
 import React from "react";
 import { IoEllipsisHorizontal } from "react-icons/io5";
-import SVG from "react-inlinesvg";
+import NodeIcon from "../../../icons/NodeIcon";
 
 const NotificationCard = ({
   name,
@@ -29,13 +29,7 @@ const NotificationCard = ({
           alignItems: "center",
         }}
       >
-        <SVG
-          src={`https://avatars.dicebear.com/api/jdenticon/${"notification"}/.svg`}
-          width={50}
-          height="100%"
-          cursor="pointer"
-          title={"My Page"}
-        />
+        <NodeIcon size={40} nodeName={"node"} />
       </div>
       <div
         style={{

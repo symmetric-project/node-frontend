@@ -1,17 +1,18 @@
 import dynamic from "next/dynamic";
 import React from "react";
-import { ActionMeta } from "react-select";
 
 const DynamicSelectAsync = dynamic(() => import("./StaticSelectAsync"), {
   ssr: false,
 });
 
 const SelectAsync = ({
+  value,
   loadOptions,
   onChange,
   defaultOptions,
   cacheOptions,
 }: {
+  value: string;
   loadOptions: any;
   onChange: (value: any, action: any) => void;
   defaultOptions: boolean;
@@ -19,6 +20,7 @@ const SelectAsync = ({
 }) => {
   return (
     <DynamicSelectAsync
+      value={value}
       loadOptions={loadOptions}
       onChange={onChange}
       defaultOptions={defaultOptions}

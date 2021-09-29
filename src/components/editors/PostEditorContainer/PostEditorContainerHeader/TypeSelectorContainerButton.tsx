@@ -17,7 +17,7 @@ const TypeSelectorContainerButton = ({
   return (
     <div
       style={{
-        width: "33.33%",
+        flex: 1,
         height: "100%",
 
         display: "flex",

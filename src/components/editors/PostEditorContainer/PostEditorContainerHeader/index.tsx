@@ -9,6 +9,7 @@ import vars from "../../../../vars";
 import { logError } from "../../../../utils/errors";
 
 const PostEditorContainerHeader = ({}: {}) => {
+  const nodeName = useReactiveVar(vars.createPost.nodeName);
   const loadOptions = (nodeName: any): any =>
     new Promise((resolve) => {
       client
@@ -31,7 +32,7 @@ const PostEditorContainerHeader = ({}: {}) => {
             resolve(nodeOptions);
           },
           (err: ApolloError) => {
-            logError(err)
+            logError(err);
           }
         );
     });
@@ -45,6 +46,7 @@ const PostEditorContainerHeader = ({}: {}) => {
     >
       <div style={{ width: 300, marginBottom: 10 }}>
         <SelectAsync
+          value={nodeName!}
           loadOptions={loadOptions}
           onChange={(value) => {
             if (value !== null) {

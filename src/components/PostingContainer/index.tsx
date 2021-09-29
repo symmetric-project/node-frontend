@@ -36,7 +36,7 @@ const PostingContainer = () => {
           justifyContent: "center",
         }}
       >
-        {user ? <UserIcon size={50} user={user} /> : null}
+        {user ? <UserIcon size={40} user={user} /> : null}
       </div>
       <Input
         onSelect={() => router.push("/create-post")}

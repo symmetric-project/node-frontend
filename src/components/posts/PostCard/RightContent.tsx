@@ -33,7 +33,7 @@ const RightContent = ({ post }: { post: Post }) => {
     deltaToHTMLConverterConfig
   );
   const htmlContent = deltaToHTMLConverter.convert();
-  
+
   return (
     <div
       style={{
@@ -72,7 +72,11 @@ const RightContent = ({ post }: { post: Post }) => {
             textDecoration: "none",
           }}
         >
-          <NodeIcon size={20} name={post.nodeName} style={{ marginRight: 2 }} />
+          <NodeIcon
+            size={20}
+            nodeName={post.nodeName}
+            style={{ marginRight: 2 }}
+          />
           {post.nodeName}
         </a>
         <a

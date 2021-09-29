@@ -37,7 +37,6 @@ const Editor = () => {
       theme="snow"
       modules={modules}
       formats={formats}
-      /* value={delta} */
       onChange={(content, delta, source, editor) => {
         vars.createPost.deltaOps(editor.getContents().ops);
       }}

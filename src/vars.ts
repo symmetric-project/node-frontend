@@ -30,10 +30,10 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
-      nodeName: makeVar<string | null>(null),
+      nodeName: makeVar<string | null>("HiddenPolicy"),
       title: makeVar<string>(""),
       deltaOps: makeVar<{}[]>([]),
-      link: makeVar<string>(""),
+      link: makeVar<string | null>(null),
       type: makeVar<"TEXT" | "MEDIA" | "LINK">("TEXT"),
     };
     this.createComment = {

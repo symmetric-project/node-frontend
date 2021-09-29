@@ -47,7 +47,7 @@ const UserOptions = () => {
             justifyContent: "center",
           }}
         >
-          <UserIcon size={50} user={user!} />
+          <UserIcon size={40} user={user!} />
         </div>
         <div
           style={{

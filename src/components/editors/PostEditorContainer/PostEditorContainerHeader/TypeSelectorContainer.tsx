@@ -38,7 +38,7 @@ const TypeSelectorContainer = () => {
           style={{ marginRight: 5 }}
         />
       </TypeSelectorContainerButton>
-      <TypeSelectorContainerButton
+      {/* <TypeSelectorContainerButton
         onClick={() => {
           vars.createPost.type("MEDIA");
         }}
@@ -53,7 +53,7 @@ const TypeSelectorContainer = () => {
           size={20}
           style={{ marginRight: 5 }}
         />
-      </TypeSelectorContainerButton>
+      </TypeSelectorContainerButton> */}
       <TypeSelectorContainerButton
         onClick={() => {
           vars.createPost.type("LINK");

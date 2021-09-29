@@ -42,7 +42,7 @@ const NodeHeader = ({ node }: { node: Node }) => {
             alignItems: "center",
           }}
         >
-          <NodeIcon size={60} name={node.name} />
+          <NodeIcon size={60} nodeName={node.name} />
         </div>
         <div
           style={{
