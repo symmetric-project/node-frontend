@@ -6,7 +6,7 @@
 # node-frontend
 The frontend for a Symmetric node.
 
-![Preview](https://github.com/symmetric-project/node-frontend/blob/main/preview.png)
+![Preview](https://github.com/symmetric-project/node-frontend/blob/main/preview_v0.0.1.png)
 
 Create a `env.local` file with the following parameters:
 ```
