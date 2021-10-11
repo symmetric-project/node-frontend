@@ -1,8 +1,8 @@
 import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en";
+import en from "javascript-time-ago/locale/en.json";
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
-export const newTimeAgo = (timestamp: number): string => {
+export const newTimeAgo = (timestamp: number) => {
   return timeAgo.format(Date.now() - timestamp / 1000);
 };

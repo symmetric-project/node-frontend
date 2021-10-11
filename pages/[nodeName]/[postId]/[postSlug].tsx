@@ -41,7 +41,7 @@ const PostPage = ({
             marginTop: 10,
           }}
         >
-          <PostCard post={post} />
+          <PostCard inList={false} post={post} />
           <CommentingContainer />
           {comments ? (
             <CommentsContainer comments={comments} />

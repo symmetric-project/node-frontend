@@ -1,6 +1,5 @@
 import React from "react";
 import GenericButton from "../../buttons/GenericButton";
-import TagLabel from "../../labels/TagLabel";
 import GenericCard from "../GenericCard";
 import NodeRow from "./NodeRow";
 import NodeRowDivider from "./NodeRowDivider";
