@@ -12,9 +12,6 @@ import { Post } from "../src/types";
 import { logError } from "../src/utils/errors";
 
 const IndexPage = ({ posts }: { posts: Post[] }) => {
-  const { loading, error, data } = useQuery(POSTS);
-  if (loading) return null;
-  if (error) return null;
   return (
     <div
       style={{

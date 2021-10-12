@@ -35,7 +35,7 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
         }}
       >
         <UserIcon size={40} user={comment.author} style={{}} />
-        <div style={{ fontWeight: 500, marginRight: 5, fontSize: 12 }}>
+        <div style={{ fontWeight: 500, marginLeft: 5, marginRight: 5, fontSize: 12 }}>
           {comment.author.name}
         </div>
         <div style={{ color: COLORS.GRAY_TEXT, fontSize: 12 }}>
@@ -45,8 +45,8 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
       <div
         style={{
           width: "100%",
-          paddingLeft: 10,
-          paddingRight: 10,
+          paddingLeft: 45,
+          paddingRight: 40,
           fontFamily: FONTS.NOTO_SANS,
         }}
         dangerouslySetInnerHTML={{

@@ -11,7 +11,6 @@ const CommentingContainer = () => {
         height: "auto",
         minHeight: 175,
         width: 640,
-        margin: 10,
 
         backgroundColor: COLORS.WHITE,
 

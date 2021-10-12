@@ -9,8 +9,6 @@ const CommentsContainer = ({ comments }: { comments: Comment[] }) => {
       style={{
         position: "relative",
         width: 640,
-        margin: 10,
-
         backgroundColor: COLORS.WHITE,
 
         display: "flex",
