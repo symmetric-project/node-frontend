@@ -43,25 +43,28 @@ class Vars {
       category: makeVar<string>("best-results"),
       nodeNameSubstring: makeVar<string>(""),
     };
-    this.queryUser();
+    this.queryUser().then(
+      (res: ApolloQueryResult<any>) => {
+        let user = res.data.user;
+        if (user) {
+          this.auth.user(res.data.user);
+        }
+      },
+      (err: ApolloError) => {
+        this.createUser();
+        logError(err);
+      }
+    );
   }
 
   queryUser() {
-    client
-      .query({
-        query: USER,
-      })
-      .then(
-        (res: ApolloQueryResult<any>) => {
-          this.auth.user(res.data.user);
-        },
-        (err: ApolloError) => {
-          logError(err);
-        }
-      );
+    return client.query({
+      query: USER,
+    });
   }
 
   createUser() {
+    console.log("createUser");
     client
       .mutate({
         mutation: CREATE_USER,
@@ -71,6 +74,7 @@ class Vars {
       })
       .then(
         (res) => {
+          console.log(res);
           this.auth.user(res.data.createUser);
         },
         (err: ApolloError) => {
