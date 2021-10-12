@@ -51,8 +51,10 @@ class Vars {
         }
       },
       (err: ApolloError) => {
-        this.createUser();
         logError(err);
+        if (err.message === "no jwt in context") {
+          this.createUser();
+        }
       }
     );
   }

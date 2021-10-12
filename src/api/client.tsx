@@ -1,14 +1,10 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { CLIENT_URL } from "../const";
 
-const link = createHttpLink({
-  uri: CLIENT_URL,
-  credentials: 'include',
-});
-
 const client = new ApolloClient({
+  uri: CLIENT_URL,
+  credentials: "include",
   cache: new InMemoryCache(),
-  link,
 });
 
 export default client;
