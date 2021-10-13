@@ -1,7 +1,5 @@
-import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
 import { IoLinkOutline } from "react-icons/io5";
-import { deltaToHTMLConverterConfig } from "../../../configs";
 import { COLORS, FONTS } from "../../../const";
 import { Post } from "../../../types";
 import { newTimeAgo } from "../../../utils/time";
@@ -27,12 +25,6 @@ const RightContent = ({ post }: { post: Post }) => {
     }
     return link;
   };
-
-  const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
-    JSON.parse(post.deltaOps as string),
-    deltaToHTMLConverterConfig
-  );
-  const htmlContent = deltaToHTMLConverter.convert();
 
   return (
     <div
@@ -129,7 +121,7 @@ const RightContent = ({ post }: { post: Post }) => {
               marginTop: 5,
             }}
             dangerouslySetInnerHTML={{
-              __html: `${htmlContent}`,
+              __html: `${null }`,
             }}
           />
         )}

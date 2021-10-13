@@ -1,17 +1,10 @@
-import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import React from "react";
-import { deltaToHTMLConverterConfig } from "../../configs";
 import { COLORS, FONTS } from "../../const";
 import { Comment } from "../../types";
 import { newTimeAgo } from "../../utils/time";
 import UserIcon from "../icons/UserIcon";
 
 const CommentCard = ({ comment }: { comment: Comment }) => {
-  const deltaToHTMLConverter = new QuillDeltaToHtmlConverter(
-    JSON.parse(comment.deltaOps as string),
-    deltaToHTMLConverterConfig
-  );
-  const htmlContent = deltaToHTMLConverter.convert();
   return (
     <div
       style={{
@@ -50,7 +43,7 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
           fontFamily: FONTS.NOTO_SANS,
         }}
         dangerouslySetInnerHTML={{
-          __html: `${htmlContent}`,
+          __html: `${null}`,
         }}
       />
     </div>

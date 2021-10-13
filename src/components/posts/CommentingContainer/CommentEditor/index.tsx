@@ -2,8 +2,9 @@ import React from "react";
 import dynamic from "next/dynamic";
 import ReactPlaceholder from "react-placeholder";
 import "react-placeholder/lib/reactPlaceholder.css";
+import DraftEditor from "./DraftEditor";
 
-const Editor = dynamic(() => import("./Editor"), {
+const DynamicDraftEditor = dynamic(() => import("./DraftEditor"), {
   ssr: false,
   loading: () => (
     <ReactPlaceholder
@@ -18,7 +19,7 @@ const Editor = dynamic(() => import("./Editor"), {
 const CommentEditor = () => {
   return (
     <div style={{ height: 150, width: "100%" }}>
-      <Editor />
+      <DynamicDraftEditor />
     </div>
   );
 };
