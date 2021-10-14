@@ -13,7 +13,7 @@ export const CREATE_POST = gql`
     createPost(newPost: $newPost) {
       id
       title
-      deltaOps
+      rawState
       nodeName
       slug
     }
@@ -33,7 +33,7 @@ export const CREATE_USER = gql`
 export const CREATE_COMMENT = gql`
   mutation ($newComment: NewComment!) {
     createComment(newComment: $newComment) {
-      deltaOps
+      rawState
     }
   }
 `;

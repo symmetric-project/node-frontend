@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import { COLORS } from "../../../const";
 
-const LeftVotingBar = () => {
+const LeftContainer = () => {
   const [mouseOverUpvote, setMouseOverUpvote] = useState(false);
   const [mouseOverDownvote, setMouseOverDownvote] = useState(false);
   const [upvoted, setUpvoted] = useState(false);
@@ -51,4 +51,4 @@ const LeftVotingBar = () => {
   );
 };
 
-export default LeftVotingBar;
+export default LeftContainer;

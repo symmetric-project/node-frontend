@@ -1,7 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import ReactPlaceholder from "react-placeholder";
-import "react-placeholder/lib/reactPlaceholder.css";
 
 const DynamicDraftEditor = dynamic(() => import("./DraftEditor"), {
   ssr: false,

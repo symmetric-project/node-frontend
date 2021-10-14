@@ -5,7 +5,7 @@ export const POST = gql`
     post(id: $id, slug: $slug) {
       id
       title
-      deltaOps
+      rawState
       link
       nodeName
       slug
@@ -21,7 +21,7 @@ export const POST = gql`
         id
         name
       }
-      deltaOps
+      rawState
       creationTimestamp
     }
   }
@@ -32,7 +32,7 @@ export const POSTS = gql`
     posts(nodeName: $nodeName) {
       id
       title
-      deltaOps
+      rawState
       link
       creationTimestamp
       nodeName

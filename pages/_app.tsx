@@ -1,4 +1,5 @@
 import "./index.css";
+import "react-placeholder/lib/reactPlaceholder.css";
 import type { AppProps } from "next/app";
 import React from "react";
 import client from "../src/api/client";

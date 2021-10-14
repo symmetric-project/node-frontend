@@ -2,7 +2,7 @@ export type Post = {
   id: string | null;
   title: string;
   link: string | null;
-  deltaOps: string | null;
+  rawState: string | null;
   nodeName: string;
   slug: string;
   creationTimestamp: number;
@@ -24,7 +24,7 @@ export type User = {
 export type Comment = {
   id: string;
   postId: string;
-  deltaOps: string;
+  rawState: string;
   author: User;
   creationTimestamp: number;
 };

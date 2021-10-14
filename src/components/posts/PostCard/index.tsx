@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Post } from "../../../types";
-import LeftVotingBar from "./LeftVotingBar";
-import RightContent from "./RightContent";
 import { useRouter } from "next/router";
 import { COLORS } from "../../../const";
+import LeftContainer from "./LeftContainer";
+import RightContainer from "./RightContainer";
 
 const PostCard = ({ post, inList }: { post: Post; inList: boolean }) => {
   const router = useRouter();
@@ -27,6 +27,7 @@ const PostCard = ({ post, inList }: { post: Post; inList: boolean }) => {
       style={{
         position: "relative",
         height: "auto",
+        minHeight: 140,
         width: 640,
         margin: 10,
 
@@ -45,8 +46,8 @@ const PostCard = ({ post, inList }: { post: Post; inList: boolean }) => {
         cursor: inList ? "pointer" : undefined,
       }}
     >
-      <LeftVotingBar />
-      <RightContent post={post} />
+      <LeftContainer />
+      <RightContainer post={post} />
     </div>
   );
 };

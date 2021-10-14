@@ -1,6 +1,6 @@
 import { ApolloError } from "@apollo/client";
+import { convertToRaw } from "draft-js";
 import React from "react";
-import "react-placeholder/lib/reactPlaceholder.css";
 import client from "../../../../api/client";
 import { CREATE_COMMENT } from "../../../../api/mutations";
 import { logError } from "../../../../utils/errors";
@@ -17,7 +17,9 @@ const Footer = () => {
         variables: {
           newComment: {
             postId,
-            deltaOps: JSON.stringify(vars.createComment.deltaOps()),
+            rawState: JSON.stringify(
+              convertToRaw(vars.createPost.editorState() as any)
+            ),
             authorId: vars.auth.user()?.id,
             postSlug,
           },

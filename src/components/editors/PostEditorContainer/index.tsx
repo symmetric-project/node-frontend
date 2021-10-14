@@ -1,6 +1,6 @@
 import React from "react";
-import TextEditorContainerHeader from "./PostEditorContainerHeader/index";
-import TextEditorContainerFooter from "./PostEditorContainerFooter";
+import Header from "./Header";
+import Footer from "./Footer";
 import PostEditor from "../PostEditor";
 
 const PostEditorContainer = () => {
@@ -15,9 +15,9 @@ const PostEditorContainer = () => {
         borderTopRightRadius: 5,
       }}
     >
-      <TextEditorContainerHeader />
+      <Header />
       <PostEditor />
-      <TextEditorContainerFooter />
+      <Footer />
     </div>
   );
 };

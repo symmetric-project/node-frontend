@@ -8,7 +8,7 @@ import { Node } from "../../../../types";
 import vars from "../../../../vars";
 import { logError } from "../../../../utils/errors";
 
-const PostEditorContainerHeader = ({}: {}) => {
+const Header = ({}: {}) => {
   const nodeName = useReactiveVar(vars.createPost.nodeName);
   const loadOptions = (nodeName: any): any =>
     new Promise((resolve) => {
@@ -62,4 +62,4 @@ const PostEditorContainerHeader = ({}: {}) => {
   );
 };
 
-export default PostEditorContainerHeader;
+export default Header;

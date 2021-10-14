@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { convertToRaw } from "draft-js";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { IoInformationCircleOutline } from "react-icons/io5";
@@ -9,7 +10,7 @@ import vars from "../../../../vars";
 import GenericButton from "../../../buttons/GenericButton";
 import Checkbox from "../../../Checkbox";
 
-const PostEditorContainerFooter = ({}: {}) => {
+const Footer = ({}: {}) => {
   const router = useRouter();
   const [createPost, { data, loading, error }] = useMutation(CREATE_POST, {
     onCompleted: (data: any) => {
@@ -51,7 +52,9 @@ const PostEditorContainerFooter = ({}: {}) => {
                   nodeName: vars.createPost.nodeName(),
                   title: vars.createPost.title(),
                   link: vars.createPost.link(),
-                  deltaOps: JSON.stringify(vars.createPost.deltaOps()),
+                  rawState: JSON.stringify(
+                    convertToRaw(vars.createPost.editorState() as any)
+                  ),
                 },
               },
             });
@@ -112,4 +115,4 @@ const PostEditorContainerFooter = ({}: {}) => {
   );
 };
 
-export default PostEditorContainerFooter;
+export default Footer;

@@ -1,11 +1,12 @@
 import React from "react";
 import { IoLinkOutline } from "react-icons/io5";
-import { COLORS, FONTS } from "../../../const";
-import { Post } from "../../../types";
-import { newTimeAgo } from "../../../utils/time";
-import NodeIcon from "../../icons/NodeIcon";
+import { COLORS, FONTS } from "../../../../const";
+import { Post } from "../../../../types";
+import { convertDraftToHTML } from "../../../../utils/draft-to-html";
+import { newTimeAgo } from "../../../../utils/time";
+import NodeIcon from "../../../icons/NodeIcon";
 
-const RightContent = ({ post }: { post: Post }) => {
+const Header = ({ post }: { post: Post }) => {
   const shortifyLink = (link: string) => {
     if (link.includes("http://")) {
       link = link.substring(7);
@@ -27,15 +28,7 @@ const RightContent = ({ post }: { post: Post }) => {
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        top: 0,
-
-        borderRadius: 4,
-      }}
-    >
+    <div style={{}}>
       <div
         style={{
           width: "100%",
@@ -92,6 +85,7 @@ const RightContent = ({ post }: { post: Post }) => {
           paddingTop: 0,
           display: "flex",
           flexDirection: "column",
+          flexWrap: "wrap",
         }}
       >
         <a
@@ -100,7 +94,6 @@ const RightContent = ({ post }: { post: Post }) => {
             fontFamily: FONTS.IBMXPLEXSANS,
             fontWeight: 500,
             fontSize: 18,
-
             color: COLORS.BLACK_POST_TITLE,
             textDecoration: "none",
           }}
@@ -121,13 +114,14 @@ const RightContent = ({ post }: { post: Post }) => {
               marginTop: 5,
             }}
             dangerouslySetInnerHTML={{
-              __html: `${null }`,
+              __html: `${convertDraftToHTML(post.rawState!)}`,
             }}
           />
         )}
       </div>
+      <div style={{ height: 35 }} />
     </div>
   );
 };
 
-export default RightContent;
+export default Header;

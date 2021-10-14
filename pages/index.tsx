@@ -1,4 +1,4 @@
-import { ApolloError, ApolloQueryResult, useQuery } from "@apollo/client";
+import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
 import PostCards from "../src/components/PostCards";
 import PostingContainer from "../src/components/PostingContainer";

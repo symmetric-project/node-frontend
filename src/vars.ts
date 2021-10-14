@@ -1,4 +1,5 @@
 import { ApolloError, ApolloQueryResult, makeVar } from "@apollo/client";
+import { EditorState } from "draft-js";
 import client from "./api/client";
 import { CREATE_USER } from "./api/mutations";
 import { USER } from "./api/queries";
@@ -30,14 +31,14 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
+      editorState: makeVar<EditorState | null>(null),
       nodeName: makeVar<string | null>("HiddenPolicy"),
       title: makeVar<string>(""),
-      deltaOps: makeVar<{}[]>([]),
       link: makeVar<string | null>(null),
       type: makeVar<"TEXT" | "MEDIA" | "LINK">("TEXT"),
     };
     this.createComment = {
-      deltaOps: makeVar<{}[] | null>(null),
+      editorState: makeVar<EditorState | null>(null),
     };
     this.search = {
       category: makeVar<string>("best-results"),
