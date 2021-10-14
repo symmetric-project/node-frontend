@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Editor, EditorState } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { useReactiveVar } from "@apollo/client";
+import vars from "../../../../vars";
 
 const DraftEditor = () => {
-  const [editorState, setEditorState] = useState(null);
+  let editorState = useReactiveVar(vars.createComment.editorState);
   return (
     <Editor
       editorState={editorState}
-      toolbarClassName="toolbarClassName"
-      wrapperClassName="wrapperClassName"
-      editorClassName="editorClassName"
       onEditorStateChange={(editorState: EditorState) => {
-        setEditorState(editorState);
+        vars.createComment.editorState(editorState);
       }}
     />
   );

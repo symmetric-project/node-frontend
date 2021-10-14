@@ -8,7 +8,7 @@ const DraftEditor = () => {
   let editorState = useReactiveVar(vars.createPost.editorState);
   return (
     <Editor
-      editorState={editorState ? editorState : undefined}
+      editorState={editorState}
       onEditorStateChange={(editorState: EditorState) => {
         vars.createPost.editorState(editorState);
       }}

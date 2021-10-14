@@ -5,6 +5,7 @@ import { CREATE_USER } from "./api/mutations";
 import { USER } from "./api/queries";
 import { User } from "./types";
 import { logError } from "./utils/errors";
+import draftJS from "draft-js";
 
 class Vars {
   auth;
@@ -15,6 +16,7 @@ class Vars {
   search;
 
   constructor() {
+    let emptyEditorState = draftJS.EditorState.createEmpty();
     this.auth = {
       user: makeVar<User | null>(null),
       loggedIn: process.browser
@@ -31,14 +33,14 @@ class Vars {
       nsfw: makeVar<boolean>(false),
     };
     this.createPost = {
-      editorState: makeVar<EditorState | null>(null),
+      editorState: makeVar<EditorState>(emptyEditorState),
       nodeName: makeVar<string | null>("HiddenPolicy"),
       title: makeVar<string>(""),
       link: makeVar<string | null>(null),
       type: makeVar<"TEXT" | "MEDIA" | "LINK">("TEXT"),
     };
     this.createComment = {
-      editorState: makeVar<EditorState | null>(null),
+      editorState: makeVar<EditorState>(emptyEditorState),
     };
     this.search = {
       category: makeVar<string>("best-results"),
