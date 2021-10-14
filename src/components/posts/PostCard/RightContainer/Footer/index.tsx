@@ -1,13 +1,10 @@
 import React from "react";
-import { IoChatboxOutline, IoFlagOutline, IoLogoReddit, IoRepeatOutline } from "react-icons/io5";
-
-const Option = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div style={{ display: "flex", alignItems: "center", marginRight: 10 }}>
-      {children}
-    </div>
-  );
-};
+import {
+  IoChatboxOutline,
+  IoFlagOutline,
+  IoRepeatOutline,
+} from "react-icons/io5";
+import ButtonTransparent from "../../../../buttons/ButtonTransparent";
 
 const Footer = () => {
   return (
@@ -24,17 +21,17 @@ const Footer = () => {
         paddingRight: 10,
       }}
     >
-      <Option>
+      <ButtonTransparent>
         <IoChatboxOutline size={20} style={{ marginRight: 5 }} />0 comments
-      </Option>
-      <Option>
+      </ButtonTransparent>
+      <ButtonTransparent>
         <IoRepeatOutline size={20} style={{ marginRight: 5 }} />
         Repost
-      </Option>
-      <Option>
+      </ButtonTransparent>
+      <ButtonTransparent>
         <IoFlagOutline size={20} style={{ marginRight: 5 }} />
         Report
-      </Option>
+      </ButtonTransparent>
     </div>
   );
 };

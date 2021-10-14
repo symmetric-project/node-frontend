@@ -1,6 +1,11 @@
 import React from "react";
-import { IoAlertOutline, IoBulbOutline, IoStar, IoStarOutline, IoTrendingUpOutline } from "react-icons/io5";
-import GenericSortingButton from "./SortingContainerButton";
+import {
+  IoAlertOutline,
+  IoBulbOutline,
+  IoStarOutline,
+  IoTrendingUpOutline,
+} from "react-icons/io5";
+import ButtonTransparent from "../buttons/ButtonTransparent";
 
 const SortingContainer = () => {
   return (
@@ -23,18 +28,18 @@ const SortingContainer = () => {
         borderTopRightRadius: 3,
       }}
     >
-      <GenericSortingButton name="Best">
-        <IoStarOutline size={25} />
-      </GenericSortingButton>
-      <GenericSortingButton name="Trending">
-        <IoTrendingUpOutline size={25} />
-      </GenericSortingButton>
-      <GenericSortingButton name="New">
-        <IoBulbOutline size={25} />
-      </GenericSortingButton>
-      <GenericSortingButton name="Controversial">
-        <IoAlertOutline size={25} />
-      </GenericSortingButton>
+      <ButtonTransparent>
+        <IoStarOutline size={25} /> Best
+      </ButtonTransparent>
+      <ButtonTransparent>
+        <IoTrendingUpOutline size={25} /> Trending
+      </ButtonTransparent>
+      <ButtonTransparent>
+        <IoBulbOutline size={25} /> New
+      </ButtonTransparent>
+      <ButtonTransparent>
+        <IoAlertOutline size={25} /> Controversial
+      </ButtonTransparent>
     </div>
   );
 };

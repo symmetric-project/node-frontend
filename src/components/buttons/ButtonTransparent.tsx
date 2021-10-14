@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { COLORS } from "../../const";
 
 const SortingContainerButton = ({
-  name,
   children,
 }: {
-  name: string;
-  children: React.ReactChild;
+  children: React.ReactNode;
 }) => {
   const [mouseOver, setMouseOver] = useState(false);
   return (
@@ -25,7 +23,6 @@ const SortingContainerButton = ({
       onMouseLeave={() => setMouseOver(false)}
     >
       {children}
-      <div style={{ marginLeft: 5 }}>{name}</div>
     </div>
   );
 };
