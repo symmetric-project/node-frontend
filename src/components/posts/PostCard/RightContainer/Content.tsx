@@ -38,14 +38,15 @@ const Content = ({ post }: { post: Post }) => {
     return (
       <div
         style={{
-          marginTop: 5,
+          paddingLeft: 10,
+          paddingRight: 10,
         }}
         dangerouslySetInnerHTML={{
           __html: `${convertDraftToHTML(post.rawState!)}`,
         }}
       />
     );
-  } else {
+  } else if (post.imageUrl) {
     return (
       <div style={{ position: "relative", width: "100%" }}>
         <Image
@@ -57,7 +58,7 @@ const Content = ({ post }: { post: Post }) => {
         />
       </div>
     );
-  }
+  } else return <div></div>;
 };
 
 export default Content;

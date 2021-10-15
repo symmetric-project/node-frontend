@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-import { COLORS } from "../../../const";
+import { COLORS, FONTS } from "../../../const";
+import { Post } from "../../../types";
 
-const LeftContainer = () => {
+const LeftContainer = ({ post }: { post: Post }) => {
   const [mouseOverUpvote, setMouseOverUpvote] = useState(false);
   const [mouseOverDownvote, setMouseOverDownvote] = useState(false);
   const [upvoted, setUpvoted] = useState(false);
@@ -17,7 +18,7 @@ const LeftContainer = () => {
 
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-around",
+        justifyContent: "flex-start",
         alignItems: "center",
       }}
     >
@@ -33,6 +34,9 @@ const LeftContainer = () => {
             color: mouseOverUpvote ? COLORS.ORANGE : COLORS.BLACK,
           }}
         />
+      </div>
+      <div style={{ fontSize: 12, font: FONTS.IBMXPLEXSANS, fontWeight: 500 }}>
+        {post.bases}
       </div>
       <div
         onMouseOver={() => setMouseOverDownvote(true)}

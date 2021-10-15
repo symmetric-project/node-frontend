@@ -46,7 +46,7 @@ const PostCard = ({ post, inList }: { post: Post; inList: boolean }) => {
         cursor: inList ? "pointer" : undefined,
       }}
     >
-      <LeftContainer />
+      <LeftContainer post={post} />
       <RightContainer post={post} />
     </div>
   );

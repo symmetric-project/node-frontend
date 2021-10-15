@@ -17,6 +17,7 @@ export const POST = gql`
       }
       thumbnaillUrl
       imageUrl
+      bases
     }
     comments(postId: $id, postSlug: $slug) {
       author {
@@ -41,6 +42,7 @@ export const POSTS = gql`
       slug
       thumbnaillUrl
       imageUrl
+      bases
       author {
         id
         name
