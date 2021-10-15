@@ -7,6 +7,8 @@ export type Post = {
   slug: string;
   creationTimestamp: number;
   author: User;
+  thumbnailUrl: string
+  imageUrl: string
 };
 
 export type Node = {

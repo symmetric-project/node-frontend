@@ -69,7 +69,6 @@ class Vars {
   }
 
   createUser() {
-    console.log("createUser");
     client
       .mutate({
         mutation: CREATE_USER,
@@ -79,7 +78,7 @@ class Vars {
       })
       .then(
         (res) => {
-          console.log(res);
+          /* console.log(res); */
           this.auth.user(res.data.createUser);
         },
         (err: ApolloError) => {

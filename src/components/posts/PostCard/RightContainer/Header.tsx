@@ -1,32 +1,10 @@
 import React from "react";
-import { IoLinkOutline } from "react-icons/io5";
 import { COLORS, FONTS } from "../../../../const";
 import { Post } from "../../../../types";
-import { convertDraftToHTML } from "../../../../utils/draft-to-html";
 import { newTimeAgo } from "../../../../utils/time";
 import NodeIcon from "../../../icons/NodeIcon";
 
 const Header = ({ post }: { post: Post }) => {
-  const shortifyLink = (link: string) => {
-    if (link.includes("http://")) {
-      link = link.substring(7);
-    }
-    if (link.includes("https://")) {
-      link = link.substring(8);
-    }
-    if (link.includes("www.")) {
-      link = link.substring(4);
-    }
-    if (link.length > 20) {
-      link = link.slice(0, 20);
-      link = link + "...";
-    }
-    if (link.slice(-1) === "/") {
-      link = link.slice(0, -1);
-    }
-    return link;
-  };
-
   return (
     <div style={{}}>
       <div
@@ -100,26 +78,7 @@ const Header = ({ post }: { post: Post }) => {
         >
           {post.title}
         </a>
-        {post.link ? (
-          <a
-            href={post.link}
-            style={{ marginTop: 5, display: "flex", alignItems: "center" }}
-          >
-            {shortifyLink(post.link)}{" "}
-            <IoLinkOutline style={{ marginLeft: 2 }} />
-          </a>
-        ) : (
-          <div
-            style={{
-              marginTop: 5,
-            }}
-            dangerouslySetInnerHTML={{
-              __html: `${convertDraftToHTML(post.rawState!)}`,
-            }}
-          />
-        )}
       </div>
-      <div style={{ height: 35 }} />
     </div>
   );
 };

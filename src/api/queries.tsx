@@ -15,6 +15,8 @@ export const POST = gql`
         name
         bases
       }
+      thumbnaillUrl
+      imageUrl
     }
     comments(postId: $id, postSlug: $slug) {
       author {
@@ -37,6 +39,8 @@ export const POSTS = gql`
       creationTimestamp
       nodeName
       slug
+      thumbnaillUrl
+      imageUrl
       author {
         id
         name

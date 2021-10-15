@@ -41,7 +41,7 @@ const Footer = () => {
               },
             },
             onCompleted: (data: any) => {
-              console.log(data);
+              /* console.log(data); */
               let node: Node = data.createNode;
               router.push(`/${node.name}/`);
             },
