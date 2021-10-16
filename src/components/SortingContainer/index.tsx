@@ -29,13 +29,13 @@ const SortingContainer = () => {
       }}
     >
       <ButtonTransparent>
-        <IoStarOutline size={25} /> Best
+        <IoStarOutline size={25} style={{ marginRight: 5 }} /> Best
       </ButtonTransparent>
       <ButtonTransparent>
-        <IoTrendingUpOutline size={25} /> Trending
+        <IoTrendingUpOutline size={25} style={{ marginRight: 5 }} /> Trending
       </ButtonTransparent>
       <ButtonTransparent>
-        <IoBulbOutline size={25} /> New
+        <IoBulbOutline size={25} style={{ marginRight: 5 }} /> New
       </ButtonTransparent>
       <ButtonTransparent>
         <IoAlertOutline size={25} /> Controversial

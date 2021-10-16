@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { COLORS } from "../../const";
 
 const SortingContainerButton = ({
+  style,
   children,
 }: {
+  style?: React.CSSProperties;
   children: React.ReactNode;
 }) => {
   const [mouseOver, setMouseOver] = useState(false);
@@ -18,6 +20,7 @@ const SortingContainerButton = ({
         padding: 7,
         margin: 5,
         cursor: "pointer",
+        ...style,
       }}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}

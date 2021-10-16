@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { Post } from "../../../../types";
 import { IoLinkOutline } from "react-icons/io5";
 import { convertDraftToHTML } from "../../../../utils/draft-to-html";
@@ -49,11 +48,9 @@ const Content = ({ post }: { post: Post }) => {
   } else if (post.imageUrl) {
     return (
       <div style={{ position: "relative", width: "100%" }}>
-        <Image
+        <img
           width="100%"
           height="100%"
-          layout="responsive"
-          objectFit="contain"
           src={post.imageUrl}
         />
       </div>
