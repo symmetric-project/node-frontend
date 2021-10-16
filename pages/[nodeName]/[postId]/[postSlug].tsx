@@ -94,7 +94,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       node: null,
       post: null,
     },
-    revalidate: 1,
+    revalidate: 10,
     /* revalidate - An optional amount in seconds after which a page re-generation can occur. Defaults to false.
     When revalidate is false it means that there is no revalidation, so the page will be cached as built until the next build. */
   };

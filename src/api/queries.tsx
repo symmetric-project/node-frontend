@@ -31,8 +31,8 @@ export const POST = gql`
 `;
 
 export const POSTS = gql`
-  query ($nodeName: String) {
-    posts(nodeName: $nodeName) {
+  query ($nodeName: String, $limit: Int, $offset: Int) {
+    posts(nodeName: $nodeName, limit: $limit, offset: $offset) {
       id
       title
       rawState

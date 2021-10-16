@@ -67,6 +67,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   await client
     .query({
       query: POSTS,
+      variables: { limit: 10 },
       fetchPolicy: "no-cache",
     })
     .then(
