@@ -11,15 +11,18 @@ const SelectAsync = ({
   onChange,
   defaultOptions,
   cacheOptions,
+  placeholder,
 }: {
   value: string;
   loadOptions: any;
   onChange: (value: any, action: any) => void;
   defaultOptions: boolean;
   cacheOptions: boolean;
+  placeholder: React.ReactNode
 }) => {
   return (
     <DynamicSelectAsync
+      placeholder={placeholder}
       value={value}
       loadOptions={loadOptions}
       onChange={onChange}

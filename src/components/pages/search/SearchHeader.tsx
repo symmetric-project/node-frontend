@@ -35,11 +35,22 @@ const SearchHeader = () => {
       </div>
 
       <div style={{ position: "absolute", bottom: 0, display: "flex" }}>
-        <CategoryButton onClick={() => vars.search.category("best-results")} selected={category === "best-results"}>
+        <CategoryButton
+          onClick={() => vars.search.category("best-results")}
+          selected={category === "best-results"}
+        >
           Best results
         </CategoryButton>
-        <CategoryButton onClick={() => vars.search.category("posts")} selected={category === "posts"}>Posts</CategoryButton>
-        <CategoryButton onClick={() => vars.search.category("nodes-and-users")} selected={category === "nodes-and-users"}>
+        <CategoryButton
+          onClick={() => vars.search.category("posts")}
+          selected={category === "posts"}
+        >
+          Posts
+        </CategoryButton>
+        <CategoryButton
+          onClick={() => vars.search.category("nodes-and-users")}
+          selected={category === "nodes-and-users"}
+        >
           Nodes and users
         </CategoryButton>
       </div>

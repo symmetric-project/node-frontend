@@ -1,8 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { CLIENT_URL } from "../const";
+import { BACKEND_URL } from "../const";
 
 const client = new ApolloClient({
-  uri: CLIENT_URL,
+  uri: BACKEND_URL,
   credentials: "include",
   cache: new InMemoryCache(),
 });

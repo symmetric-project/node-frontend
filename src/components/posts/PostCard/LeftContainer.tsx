@@ -20,6 +20,9 @@ const LeftContainer = ({ post }: { post: Post }) => {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
+
+        borderTopLeftRadius: 4,
+        borderBottomLeftRadius: 4,
       }}
     >
       <div

@@ -1,7 +1,7 @@
 import React from "react";
 import SVG from "react-inlinesvg";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
-import { NODE_DOMAIN } from "../../../const";
+import { COLORS, NODE_DOMAIN } from "../../../const";
 import NodeIcon from "../../icons/NodeIcon";
 
 const NodeRow = ({
@@ -35,9 +35,9 @@ const NodeRow = ({
       </div>
       <div style={{ width: "10%", display: "flex", alignItems: "center" }}>
         {diff === "up" ? (
-          <IoChevronUp size={17} />
+          <IoChevronUp size={20} style={{ color: COLORS.GREEN }} />
         ) : (
-          <IoChevronDown size={17} />
+          <IoChevronDown size={20} style={{ color: COLORS.TAG_RED }} />
         )}
       </div>
       <a

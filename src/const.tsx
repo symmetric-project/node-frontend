@@ -7,7 +7,7 @@ export const FRONTEND_URL =
   MODE == "prod"
     ? (process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_PROD as string)
     : (process.env.NEXT_PUBLIC_FRONTEND_BASE_URL_DEV as string);
-export const CLIENT_URL =
+export const BACKEND_URL =
   MODE == "prod"
     ? (process.env.NEXT_PUBLIC_BACKEND_BASE_URL_PROD as string)
     : (process.env.NEXT_PUBLIC_BACKEND_BASE_URL_DEV as string);

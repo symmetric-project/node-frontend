@@ -62,8 +62,8 @@ export const NODE = gql`
 `;
 
 export const NODES = gql`
-  query ($substring: String) {
-    nodes(substring: $substring) {
+  query ($substring: String, $limit: Int, $sortingParams: SortingParams) {
+    nodes(substring: $substring, limit: $limit, sortingParams: $sortingParams) {
       name
       description
     }
@@ -73,6 +73,16 @@ export const NODES = gql`
 export const USER = gql`
   query ($id: ID) {
     user(id: $id) {
+      id
+      name
+      bases
+    }
+  }
+`;
+
+export const USERS = gql`
+  query ($userNameSubstring: String) {
+    users(userNameSubstring: $userNameSubstring) {
       id
       name
       bases

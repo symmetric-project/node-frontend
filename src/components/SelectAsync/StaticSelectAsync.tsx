@@ -7,16 +7,19 @@ const StaticSelectAsync = ({
   onChange,
   defaultOptions,
   cacheOptions,
+  placeholder,
 }: {
   value: string;
   loadOptions: any;
   onChange: ((value: any, action: any) => void) | undefined;
   defaultOptions: boolean;
   cacheOptions: boolean;
+  placeholder: React.ReactNode;
 }) => {
   return (
     <SelectAsync
-      value={{ label: value }}
+      placeholder={placeholder}
+      value={value}
       onChange={onChange}
       loadOptions={loadOptions}
       defaultOptions={defaultOptions}

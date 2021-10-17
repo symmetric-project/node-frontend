@@ -24,8 +24,7 @@ const SortingContainer = () => {
         justifyContent: "flex-start",
         alignItems: "center",
 
-        borderTopLeftRadius: 3,
-        borderTopRightRadius: 3,
+        borderRadius: 3,
       }}
     >
       <ButtonTransparent>
