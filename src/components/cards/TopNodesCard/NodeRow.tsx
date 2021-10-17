@@ -1,7 +1,7 @@
 import React from "react";
 import SVG from "react-inlinesvg";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
-import { COLORS, NODE_DOMAIN } from "../../../const";
+import { COLORS, FRONTEND_URL, NODE_DOMAIN } from "../../../const";
 import NodeIcon from "../../icons/NodeIcon";
 
 const NodeRow = ({
@@ -41,7 +41,7 @@ const NodeRow = ({
         )}
       </div>
       <a
-        href={`http://symmetric.${nodeName}.com`}
+        href={`${FRONTEND_URL}/${nodeName}`}
         style={{
           width: "80%",
           display: "flex",

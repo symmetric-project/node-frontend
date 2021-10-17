@@ -1,23 +1,24 @@
-import { ApolloError, useQuery } from "@apollo/client";
+import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
 import { NODE, NODES, POSTS } from "../src/api/queries";
-import GenericCard from "../src/components/cards/GenericCard";
-import NodeHeader from "../src/components/NodeHeader";
+import NodeHeader from "../src/components/pages/nodeName/NodeHeader";
 import PostCards from "../src/components/PostCards";
-import PostingContainer from "../src/components/PostingContainer";
 import SortingContainer from "../src/components/SortingContainer";
 import { Node, Post } from "../src/types";
 import client from "../src/api/client";
 import { GetStaticPropsContext } from "next";
 import { logError } from "../src/utils/errors";
+import RightCards from "../src/components/pages/nodeName/RightCards";
 
 const NodePage = ({
   node,
   posts,
+  topNodes,
 }: {
   node: Node;
   params: { name: string };
   posts: Post[];
+  topNodes: Node[];
 }) => {
   /* const { loading, error, data } = useQuery(POSTS); */
   return (
@@ -39,24 +40,11 @@ const NodePage = ({
             alignItems: "center ",
           }}
         >
-          <PostingContainer />
+          {/* <PostingContainer /> */}
           <SortingContainer />
           <PostCards posts={posts} />
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <GenericCard title="About Community">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </GenericCard>
-          <GenericCard title="About Community">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </GenericCard>
-          <GenericCard title="About Community">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </GenericCard>
-        </div>
+        <RightCards topNodes={topNodes} />
       </div>
     </div>
   );
@@ -91,6 +79,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       params: context.params,
       node: null,
+      topNodes: null,
     },
     revalidate: 1,
     /* revalidate - An optional amount in seconds after which a page re-generation can occur. Defaults to false.
@@ -119,6 +108,26 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     .then(
       (res) => {
         staticProps.props.posts = res.data.posts;
+      },
+      (err: ApolloError) => {
+        logError(err);
+      }
+    );
+  await client
+    .query({
+      query: NODES,
+      variables: {
+        limit: 6,
+        sortingParams: {
+          param: "members",
+          sort: "ASC",
+        },
+      },
+      fetchPolicy: "no-cache",
+    })
+    .then(
+      (res: ApolloQueryResult<any>) => {
+        staticProps.props.topNodes = res.data.nodes;
       },
       (err: ApolloError) => {
         logError(err);

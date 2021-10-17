@@ -1,13 +1,18 @@
 import React from "react";
 import { Node } from "../../../types";
 import GenericButton from "../../buttons/GenericButton";
-import GenericCard from "../GenericCard";
+import GenericCard from "../Card";
 import NodeRow from "./NodeRow";
 import NodeRowDivider from "./NodeRowDivider";
 
 const TopNodesCard = ({ nodes }: { nodes: Node[] }) => {
   return (
-    <GenericCard title="Best Political Nodes" headerHeight={80} header={false}>
+    <GenericCard
+      style={{ marginTop: 0, paddingTop: 0 }}
+      title="Best Political Nodes"
+      headerHeight={80}
+      header={false}
+    >
       <div
         style={{
           width: "100%",

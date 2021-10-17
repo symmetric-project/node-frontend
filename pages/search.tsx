@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { NODES } from "../src/api/queries";
 import GenericButton from "../src/components/buttons/GenericButton";
-import GenericCard from "../src/components/cards/GenericCard";
+import GenericCard from "../src/components/cards/Card";
 import NodeCard from "../src/components/nodes/NodeCard";
 import SearchHeader from "../src/components/pages/search/SearchHeader";
 import Select from "../src/components/SelectSync";

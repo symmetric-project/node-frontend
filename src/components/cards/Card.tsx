@@ -1,14 +1,16 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 const GenericCard = ({
   title,
   children,
   headerHeight = 46,
+  style,
   header = true,
 }: {
   title: string;
   children: React.ReactChild | React.ReactFragment;
   headerHeight?: number;
+  style?: CSSProperties;
   header?: boolean;
 }) => {
   return (
@@ -59,9 +61,6 @@ const GenericCard = ({
           padding: 15,
           fontFamily: "NotoSans",
           lineHeight: "21px",
-
-          display: "flex",
-          flexDirection: "column",
         }}
       >
         {children}

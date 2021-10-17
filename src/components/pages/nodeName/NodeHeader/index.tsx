@@ -1,8 +1,8 @@
 import React from "react";
-import { COLORS, FRONTEND_URL } from "../../const";
-import JoinTransparentButton from "../buttons/JoinTransparentButton";
-import { Node } from "../../types";
-import NodeIcon from "../icons/NodeIcon";
+import { COLORS, FRONTEND_URL } from "../../../../const";
+import JoinTransparentButton from "../../../buttons/JoinTransparentButton";
+import { Node } from "../../../../types";
+import NodeIcon from "../../../icons/NodeIcon";
 
 const NodeHeader = ({ node }: { node: Node }) => {
   return (

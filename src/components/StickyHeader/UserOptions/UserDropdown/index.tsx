@@ -1,10 +1,6 @@
 import React from "react";
 import { COLORS } from "../../../../const";
-import {
-  IoPersonCircleOutline,
-  IoAddSharp,
-  IoChevronDown,
-} from "react-icons/io5";
+import { IoPersonCircleOutline, IoAddSharp } from "react-icons/io5";
 import UserOption from "./UserDropdownOption";
 import { useReactiveVar } from "@apollo/client";
 import vars from "../../../../vars";
@@ -30,13 +26,6 @@ const UserOptions = () => {
 
           paddingRight: 20,
         }}
-        onClick={() => {
-          if (stickyHeaderSubmenu === "") {
-            vars.ui.stickyHeaderSubmenu("user-options");
-          } else {
-            vars.ui.stickyHeaderSubmenu("");
-          }
-        }}
       >
         <div
           style={{
@@ -61,21 +50,6 @@ const UserOptions = () => {
           <div style={{ color: COLORS.ICON_GRAY, fontSize: 12 }}>
             {user?.bases} bases
           </div>
-        </div>
-
-        <div
-          style={{
-            width: 50,
-            height: 50,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <IoChevronDown
-            size={25}
-            style={{ color: COLORS.ICON_GRAY, right: 0 }}
-          />
         </div>
       </div>
       {stickyHeaderSubmenu === "user-options" ? (

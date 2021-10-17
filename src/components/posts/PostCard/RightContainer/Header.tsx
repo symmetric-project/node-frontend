@@ -38,7 +38,7 @@ const Header = ({ post }: { post: Post }) => {
           <NodeIcon
             size={20}
             nodeName={post.nodeName}
-            style={{ marginRight: 2 }}
+            style={{ marginRight: 5 }}
           />
           {post.nodeName}
         </a>

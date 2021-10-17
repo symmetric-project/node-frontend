@@ -1,8 +1,7 @@
 import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
 import PostCards from "../src/components/PostCards";
-import PostingContainer from "../src/components/PostingContainer";
-import RightCard from "../src/components/cards/GenericCard";
+import RightCard from "../src/components/cards/Card";
 import SortingContainer from "../src/components/SortingContainer";
 import TopNodesCard from "../src/components/cards/TopNodesCard";
 import { NODES, POSTS } from "../src/api/queries";
@@ -10,6 +9,7 @@ import { GetStaticPropsContext } from "next";
 import client from "../src/api/client";
 import { Node, Post } from "../src/types";
 import { logError } from "../src/utils/errors";
+import RightCards from "../src/components/pages/nodeName/RightCards";
 
 const IndexPage = ({
   posts,
@@ -35,25 +35,11 @@ const IndexPage = ({
           alignItems: "center ",
         }}
       >
-        <PostingContainer />
+        {/* <PostingContainer /> */}
         <SortingContainer />
         <PostCards posts={posts} />
       </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <TopNodesCard nodes={topNodes} />
-        <RightCard title="About Community">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </RightCard>
-        <RightCard title="About Community">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </RightCard>
-        <RightCard title="About Community">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </RightCard>
-      </div>
+      <RightCards topNodes={topNodes} />
     </div>
   );
 };

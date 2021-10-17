@@ -1,7 +1,6 @@
-import { ApolloError } from "@apollo/client";
+import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
-import { NODE, POST, POSTS } from "../../../src/api/queries";
-import GenericCard from "../../../src/components/cards/GenericCard";
+import { NODE, NODES, POST, POSTS } from "../../../src/api/queries";
 import { Comment, Node, Post } from "../../../src/types";
 import client from "../../../src/api/client";
 import { GetStaticPropsContext } from "next";
@@ -10,16 +9,19 @@ import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlace
 import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
 import CommentsContainer from "../../../src/components/posts/CommentsContainer";
-import NodeHeader from "../../../src/components/NodeHeader";
+import NodeHeader from "../../../src/components/pages/nodeName/NodeHeader";
+import RightCards from "../../../src/components/pages/nodeName/RightCards";
 
 const PostPage = ({
   node,
   post,
   comments,
+  topNodes,
 }: {
   node: Node;
   post: Post;
   comments: Comment[];
+  topNodes: Node[];
 }) => {
   return (
     <div
@@ -49,12 +51,7 @@ const PostPage = ({
             <NoCommentsPlaceholder />
           )}
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <GenericCard title="About Community">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </GenericCard>
-        </div>
+        <RightCards topNodes={topNodes} />
       </div>
     </div>
   );
@@ -93,6 +90,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       node: null,
       post: null,
+      topNodes: null,
     },
     revalidate: 10,
     /* revalidate - An optional amount in seconds after which a page re-generation can occur. Defaults to false.
@@ -126,6 +124,27 @@ export async function getStaticProps(context: GetStaticPropsContext) {
       (res) => {
         staticProps.props.post = res.data.post;
         staticProps.props.comments = res.data.comments;
+      },
+      (err: ApolloError) => {
+        logError(err);
+      }
+    );
+
+  await client
+    .query({
+      query: NODES,
+      variables: {
+        limit: 6,
+        sortingParams: {
+          param: "members",
+          sort: "ASC",
+        },
+      },
+      fetchPolicy: "no-cache",
+    })
+    .then(
+      (res: ApolloQueryResult<any>) => {
+        staticProps.props.topNodes = res.data.nodes;
       },
       (err: ApolloError) => {
         logError(err);

@@ -15,7 +15,7 @@ const Logo = () => {
         userSelect: "none",
       }}
     >
-      <Image src={logo} width={32} height={32} layout="fixed" />
+      <Image src={logo} width={35} height={35} layout="fixed" />
       {/* <div style={{ marginLeft: 5, fontSize: 17, color: COLORS.BLACK }}>
         symmetric
       </div> */}
