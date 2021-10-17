@@ -1,6 +1,5 @@
 import React from "react";
-import { COLORS } from "../../../const";
-import GenericButton from "../../buttons/GenericButton";
+import Button from "../../buttons/Button";
 import MediaDropzone from "./MediaDropzone";
 
 const MediaEditor = () => {
@@ -19,7 +18,7 @@ const MediaEditor = () => {
       }}
     >
       <MediaDropzone />
-      <GenericButton name="Upload" style={{ marginLeft: 10 }} />
+      <Button style={{ marginLeft: 10 }}>Upload</Button>
     </div>
   );
 };

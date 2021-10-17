@@ -13,6 +13,8 @@ const Logo = () => {
         alignItems: "center",
         textDecoration: "none",
         userSelect: "none",
+
+        marginRight: 10,
       }}
     >
       <Image src={logo} width={35} height={35} layout="fixed" />

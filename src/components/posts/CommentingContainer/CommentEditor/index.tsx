@@ -16,7 +16,7 @@ const DynamicDraftEditor = dynamic(() => import("./DraftEditor"), {
 
 const CommentEditor = () => {
   return (
-    <div style={{ height: 150, width: "100%" }}>
+    <div style={{ height: 100, outlineWidth: 20 }}>
       <DynamicDraftEditor />
     </div>
   );

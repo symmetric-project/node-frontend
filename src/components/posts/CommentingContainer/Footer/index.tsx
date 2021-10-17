@@ -5,7 +5,7 @@ import client from "../../../../api/client";
 import { CREATE_COMMENT } from "../../../../api/mutations";
 import { logError } from "../../../../utils/errors";
 import vars from "../../../../vars";
-import GenericButton from "../../../buttons/GenericButton";
+import Button from "../../../buttons/Button";
 
 const Footer = () => {
   const sendComment = () => {
@@ -37,6 +37,7 @@ const Footer = () => {
   return (
     <div
       style={{
+        marginTop: 50,
         height: 75,
         width: "100%",
         display: "flex",
@@ -47,11 +48,9 @@ const Footer = () => {
         paddingTop: 30 + 0,
       }}
     >
-      <GenericButton
-        onClick={() => sendComment()}
-        style={{ width: 100 }}
-        name="Comment"
-      />
+      <Button onClick={() => sendComment()} style={{ width: 100 }}>
+        Comment
+      </Button>
     </div>
   );
 };

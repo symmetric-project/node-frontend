@@ -7,7 +7,7 @@ import { CREATE_POST } from "../../../../api/mutations";
 import { COLORS } from "../../../../const";
 import { Post } from "../../../../types";
 import vars from "../../../../vars";
-import GenericButton from "../../../buttons/GenericButton";
+import Button from "../../../buttons/Button";
 import Checkbox from "../../../Checkbox";
 
 const Footer = ({}: {}) => {
@@ -44,7 +44,7 @@ const Footer = ({}: {}) => {
           backgroundColor: COLORS.WHITE,
         }}
       >
-        <GenericButton
+        <Button
           onClick={() => {
             createPost({
               variables: {
@@ -59,8 +59,9 @@ const Footer = ({}: {}) => {
               },
             });
           }}
-          name="Post"
-        />
+        >
+          Post
+        </Button>
       </div>
       <div
         style={{

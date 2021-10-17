@@ -1,6 +1,6 @@
 import React from "react";
 import { Node } from "../../../types";
-import GenericButton from "../../buttons/GenericButton";
+import Button from "../../buttons/Button";
 import GenericCard from "../Card";
 import NodeRow from "./NodeRow";
 import NodeRowDivider from "./NodeRowDivider";
@@ -28,11 +28,9 @@ const TopNodesCard = ({ nodes }: { nodes: Node[] }) => {
           </React.Fragment>
         ))}
       </div>
-      <GenericButton
-        href="/trending-nodes"
-        name="View All"
-        style={{ marginTop: 7 }}
-      />
+      <Button href="/trending-nodes" style={{ marginTop: 7 }}>
+        View All
+      </Button>
     </GenericCard>
   );
 };

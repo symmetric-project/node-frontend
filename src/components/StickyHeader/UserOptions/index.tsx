@@ -1,9 +1,7 @@
 import { useReactiveVar } from "@apollo/client";
 import React from "react";
-import { IoAddOutline, IoChatbubbleEllipsesOutline } from "react-icons/io5";
-import { COLORS } from "../../../const";
 import vars from "../../../vars";
-import Notifications from "./Notifications";
+import Button from "../../buttons/Button";
 import UserDropdown from "./UserDropdown";
 
 const UserOptions = () => {
@@ -14,6 +12,7 @@ const UserOptions = () => {
         width: "auto",
         display: "flex",
         justifyContent: "flex-end",
+        alignItems: "center",
         right: 0,
       }}
       onClick={() => {
@@ -24,19 +23,7 @@ const UserOptions = () => {
         }
       }}
     >
-      <div
-        style={{
-          width: 30,
-          height: 30,
-          margin: 5,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <IoChatbubbleEllipsesOutline color={COLORS.GRAY} size={23} />
-      </div>
-      <Notifications />
-      <a
+      {/* <a
         href="/create-post"
         style={{
           width: 30,
@@ -48,8 +35,9 @@ const UserOptions = () => {
         }}
       >
         <IoAddOutline color={COLORS.GRAY} size={30} />
-      </a>
+      </a> */}
       <UserDropdown />
+      <Button style={{ height: 30 }}>Add post</Button>
     </div>
   );
 };

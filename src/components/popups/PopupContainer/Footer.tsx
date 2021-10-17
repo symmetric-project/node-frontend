@@ -5,7 +5,7 @@ import { CREATE_NODE } from "../../../api/mutations";
 import { COLORS } from "../../../const";
 import { Node } from "../../../types";
 import vars from "../../../vars";
-import GenericButton from "../../buttons/GenericButton";
+import Button from "../../buttons/Button";
 
 const Footer = () => {
   const router = useRouter();
@@ -24,13 +24,10 @@ const Footer = () => {
         padding: 10,
       }}
     >
-      <GenericButton
-        name="Cancel"
-        style={{ marginRight: 10 }}
-        onClick={() => vars.ui.popup("")}
-      />
-      <GenericButton
-        name="Create node"
+      <Button style={{ marginRight: 10 }} onClick={() => vars.ui.popup("")}>
+        Cancel
+      </Button>
+      <Button
         onClick={() =>
           createNode({
             variables: {
@@ -47,7 +44,9 @@ const Footer = () => {
             },
           })
         }
-      />
+      >
+        Creat node
+      </Button>
     </div>
   );
 };

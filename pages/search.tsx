@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import { NODES } from "../src/api/queries";
-import GenericButton from "../src/components/buttons/GenericButton";
+import Button from "../src/components/buttons/Button";
 import GenericCard from "../src/components/cards/Card";
 import NodeCard from "../src/components/nodes/NodeCard";
 import SearchHeader from "../src/components/pages/search/SearchHeader";
@@ -81,10 +81,9 @@ const SearchPage = () => {
               }}
             >
               Have an idea for a new community?
-              <GenericButton
-                name={"Create Community"}
-                onClick={() => vars.ui.popup("create-node")}
-              />
+              <Button onClick={() => vars.ui.popup("create-node")}>
+                Create Community
+              </Button>
             </div>
           </GenericCard>
         </div>

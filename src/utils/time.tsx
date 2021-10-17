@@ -4,5 +4,5 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
 export const newTimeAgo = (timestamp: number) => {
-  return timeAgo.format(Date.now() - timestamp / 1000);
+  return timeAgo.format(timestamp * 1000);
 };

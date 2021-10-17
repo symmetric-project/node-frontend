@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { COLORS } from "../../const";
 
-const GenericButton = ({
-  name,
+const Button = ({
+  children,
   style,
   href,
   onClick,
 }: {
-  name: string;
+  children: React.ReactNode;
   style?: React.CSSProperties;
   href?: string;
   onClick?: () => void;
@@ -41,9 +41,9 @@ const GenericButton = ({
       }}
       onClick={onClick ? () => onClick() : undefined}
     >
-      {name}
+      {children}
     </a>
   );
 };
 
-export default GenericButton;
+export default Button;
