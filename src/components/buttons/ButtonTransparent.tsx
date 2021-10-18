@@ -14,7 +14,9 @@ const SortingContainerButton = ({
       style={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "center",
         alignItems: "center",
+
         borderRadius: 20,
         backgroundColor: mouseOver ? COLORS.TRANSPARENT_LIGHT_GRAY : undefined,
         padding: 7,

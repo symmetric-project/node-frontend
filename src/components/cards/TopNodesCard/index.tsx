@@ -5,10 +5,16 @@ import GenericCard from "../Card";
 import NodeRow from "./NodeRow";
 import NodeRowDivider from "./NodeRowDivider";
 
-const TopNodesCard = ({ nodes }: { nodes: Node[] }) => {
+const TopNodesCard = ({
+  nodes,
+  style,
+}: {
+  nodes: Node[];
+  style: React.CSSProperties;
+}) => {
   return (
     <GenericCard
-      style={{ marginTop: 0, paddingTop: 0 }}
+      style={{ marginTop: 0, paddingTop: 0, ...style }}
       title="Best Political Nodes"
       headerHeight={80}
       header={false}

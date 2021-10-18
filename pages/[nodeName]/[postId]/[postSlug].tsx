@@ -9,8 +9,7 @@ import NoCommentsPlaceholder from "../../../src/components/posts/NoCommentsPlace
 import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
 import CommentsContainer from "../../../src/components/posts/CommentsContainer";
-import NodeHeader from "../../../src/components/pages/nodeName/NodeHeader";
-import RightCards from "../../../src/components/pages/nodeName/RightCards";
+import CardColumn from "../../../src/components/pages/nodeName/CardColumn";
 
 const PostPage = ({
   node,
@@ -32,8 +31,9 @@ const PostPage = ({
         alignItems: "flex-start ",
       }}
     >
-      <NodeHeader node={node} />
+      {/* <NodeHeader node={node} /> */}
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <CardColumn topNodes={topNodes} />
         <div
           style={{
             display: "flex",
@@ -51,7 +51,7 @@ const PostPage = ({
             <NoCommentsPlaceholder />
           )}
         </div>
-        <RightCards topNodes={topNodes} />
+        <CardColumn topNodes={topNodes} />
       </div>
     </div>
   );

@@ -1,12 +1,18 @@
 import React from "react";
 import { Node } from "../../../types";
 import Card from "../../cards/Card";
-import TopNodesCard from "../../cards/TopNodesCard";
 
-const RightCards = ({ topNodes }: { topNodes: Node[] }) => {
+const CardColumn = ({
+  topNodes,
+  style,
+}: {
+  topNodes: Node[];
+  style?: React.CSSProperties;
+}) => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <TopNodesCard nodes={topNodes} />
+    <div
+      style={{ display: "flex", flexDirection: "column", width: 200, ...style }}
+    >
       <Card title="What is Symmetric">
         Symmetric is a in-development decentralized discussion platform. The
         goal is to bypass censorship and redistribute revenue to subreddit
@@ -29,4 +35,4 @@ const RightCards = ({ topNodes }: { topNodes: Node[] }) => {
   );
 };
 
-export default RightCards;
+export default CardColumn;

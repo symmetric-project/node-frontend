@@ -1,15 +1,15 @@
 import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
 import PostCards from "../src/components/PostCards";
-import RightCard from "../src/components/cards/Card";
 import SortingContainer from "../src/components/SortingContainer";
-import TopNodesCard from "../src/components/cards/TopNodesCard";
 import { NODES, POSTS } from "../src/api/queries";
 import { GetStaticPropsContext } from "next";
 import client from "../src/api/client";
 import { Node, Post } from "../src/types";
 import { logError } from "../src/utils/errors";
-import RightCards from "../src/components/pages/nodeName/RightCards";
+import CardColumn from "../src/components/pages/nodeName/CardColumn";
+import TopNodesCard from "../src/components/cards/TopNodesCard";
+import { NextSeo } from "next-seo";
 
 const IndexPage = ({
   posts,
@@ -21,12 +21,21 @@ const IndexPage = ({
   return (
     <div
       style={{
+        position: "relative",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "flex-start ",
       }}
     >
+      <NextSeo
+        title="Symmetric - Dive Into Anything"
+        description="Symetric is a decentralized Reddit-like discussion platform without censorship and ads."
+      />
+      <TopNodesCard
+        nodes={topNodes}
+        style={{ position: "sticky", top: 0, marginTop: 15 }}
+      />
       <div
         style={{
           display: "flex",
@@ -39,7 +48,7 @@ const IndexPage = ({
         <SortingContainer />
         <PostCards posts={posts} />
       </div>
-      <RightCards topNodes={topNodes} />
+      <CardColumn topNodes={topNodes} style={{ position: "sticky", top: 0 }} />
     </div>
   );
 };

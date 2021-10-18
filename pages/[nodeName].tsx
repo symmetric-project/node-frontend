@@ -1,14 +1,13 @@
 import { ApolloError, ApolloQueryResult } from "@apollo/client";
 import React from "react";
 import { NODE, NODES, POSTS } from "../src/api/queries";
-import NodeHeader from "../src/components/pages/nodeName/NodeHeader";
 import PostCards from "../src/components/PostCards";
 import SortingContainer from "../src/components/SortingContainer";
 import { Node, Post } from "../src/types";
 import client from "../src/api/client";
 import { GetStaticPropsContext } from "next";
 import { logError } from "../src/utils/errors";
-import RightCards from "../src/components/pages/nodeName/RightCards";
+import CardColumn from "../src/components/pages/nodeName/CardColumn";
 
 const NodePage = ({
   node,
@@ -23,7 +22,7 @@ const NodePage = ({
   /* const { loading, error, data } = useQuery(POSTS); */
   return (
     <div>
-      <NodeHeader node={node} />
+      {/* <NodeHeader node={node} /> */}
       <div
         style={{
           display: "flex",
@@ -32,6 +31,7 @@ const NodePage = ({
           alignItems: "flex-start ",
         }}
       >
+        <CardColumn topNodes={topNodes} style={{ width: 100 }} />
         <div
           style={{
             display: "flex",
@@ -44,7 +44,7 @@ const NodePage = ({
           <SortingContainer />
           <PostCards posts={posts} />
         </div>
-        <RightCards topNodes={topNodes} />
+        <CardColumn topNodes={topNodes} style={{ width: 200 }} />
       </div>
     </div>
   );

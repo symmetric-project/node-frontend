@@ -17,12 +17,14 @@ const GenericCard = ({
     <div
       style={{
         position: "relative",
-        width: 310,
+        width: 228,
         minHeight: 150,
         backgroundColor: "white",
-        margin: 20,
+        margin: 15,
+        marginBottom: 0,
 
         borderRadius: 3,
+        ...style,
       }}
     >
       {header ? (

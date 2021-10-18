@@ -60,7 +60,6 @@ const UserOptions = () => {
             height: "auto",
             backgroundColor: "white",
             top: 48,
-            right: 0,
             borderBottomLeftRadius: 5,
 
             display: "flex",

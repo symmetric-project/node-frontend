@@ -1,8 +1,9 @@
 import { useReactiveVar } from "@apollo/client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoChatbubbleEllipsesOutline, IoHomeOutline } from "react-icons/io5";
 import { COLORS } from "../../const";
 import vars from "../../vars";
+import ButtonTransparent from "../buttons/ButtonTransparent";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserOptions from "./UserOptions";
@@ -10,7 +11,7 @@ import Notifications from "./UserOptions/Notifications";
 
 const StickyHeader = () => {
   const user = useReactiveVar(vars.auth.user);
-  const [scrollY, setScrollY] = useState(0);
+  /* const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +22,7 @@ const StickyHeader = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, []); */
   return (
     <div
       style={{
@@ -29,7 +30,7 @@ const StickyHeader = () => {
         top: 0,
         height: 51,
         width: "100%",
-        backgroundColor: scrollY < 51 ? "transparent" : "white",
+        backgroundColor: "white",
 
         display: "flex",
         justifyContent: "center",
@@ -41,32 +42,16 @@ const StickyHeader = () => {
 
         zIndex: 10,
 
-        boxShadow: scrollY > 51 ? "0 3px 6px rgb(0 0 0 / 4%)" : undefined,
+        boxShadow: "0 3px 6px rgb(0 0 0 / 4%)",
       }}
     >
       <Logo />
-      <div
-        style={{
-          width: 30,
-          height: 30,
-          margin: 5,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
+      <ButtonTransparent style={{ padding: 0, width: 40, height: 40 }}>
         <IoHomeOutline color={COLORS.GRAY} size={23} />
-      </div>
-      <div
-        style={{
-          width: 30,
-          height: 30,
-          margin: 5,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
+      </ButtonTransparent>
+      <ButtonTransparent style={{ padding: 0, width: 40, height: 40 }}>
         <IoChatbubbleEllipsesOutline color={COLORS.GRAY} size={23} />
-      </div>
+      </ButtonTransparent>
       <Notifications />
       <Search />
       {user ? <UserOptions /> : null}
