@@ -18,6 +18,7 @@ const Header = ({}: {}) => {
           fetchPolicy: "no-cache",
           variables: {
             substring: nodeName,
+            limit: 10,
           },
         })
         .then(
@@ -46,6 +47,7 @@ const Header = ({}: {}) => {
     >
       <div style={{ width: 300, marginBottom: 10 }}>
         <SelectAsync
+          placeholder="Subreddit"
           value={nodeName!}
           loadOptions={loadOptions}
           onChange={(value) => {

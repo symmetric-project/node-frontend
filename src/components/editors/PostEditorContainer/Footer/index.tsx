@@ -53,7 +53,7 @@ const Footer = ({}: {}) => {
                   title: vars.createPost.title(),
                   link: vars.createPost.link(),
                   rawState: JSON.stringify(
-                    convertToRaw(vars.createPost.editorState() as any)
+                    convertToRaw(vars.createPost.editorState().getCurrentContent())
                   ),
                 },
               },

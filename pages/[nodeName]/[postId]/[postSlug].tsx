@@ -10,6 +10,7 @@ import { logError } from "../../../src/utils/errors";
 import PostCard from "../../../src/components/posts/PostCard";
 import CommentsContainer from "../../../src/components/posts/CommentsContainer";
 import CardColumn from "../../../src/components/pages/nodeName/CardColumn";
+import { NextSeo } from "next-seo";
 
 const PostPage = ({
   node,
@@ -32,6 +33,7 @@ const PostPage = ({
       }}
     >
       {/* <NodeHeader node={node} /> */}
+      <NextSeo title={`${post.title}${" - Symmetric"}`} />
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <CardColumn topNodes={topNodes} />
         <div

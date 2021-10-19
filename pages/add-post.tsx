@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import React from "react";
 import GenericCard from "../src/components/cards/Card";
 import PostEditorContainer from "../src/components/editors/PostEditorContainer";
@@ -12,6 +13,7 @@ const IndexPage = () => {
         alignItems: "flex-start ",
       }}
     >
+      <NextSeo title="Add post - Symmetric" />
       <div
         style={{
           display: "flex",

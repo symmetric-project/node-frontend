@@ -18,7 +18,7 @@ const Footer = () => {
           newComment: {
             postId,
             rawState: JSON.stringify(
-              convertToRaw(vars.createPost.editorState() as any)
+              convertToRaw(vars.createComment.editorState().getCurrentContent())
             ),
             authorId: vars.auth.user()?.id,
             postSlug,

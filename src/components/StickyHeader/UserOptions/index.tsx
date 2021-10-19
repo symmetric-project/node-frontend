@@ -1,10 +1,12 @@
 import { useReactiveVar } from "@apollo/client";
+import { useRouter } from "next/router";
 import React from "react";
 import vars from "../../../vars";
 import Button from "../../buttons/Button";
 import UserDropdown from "./UserDropdown";
 
 const UserOptions = () => {
+  const router = useRouter();
   const stickyHeaderSubmenu = useReactiveVar(vars.ui.stickyHeaderSubmenu);
   return (
     <div
@@ -14,13 +16,6 @@ const UserOptions = () => {
         justifyContent: "flex-end",
         alignItems: "center",
         right: 0,
-      }}
-      onClick={() => {
-        if (stickyHeaderSubmenu === "") {
-          vars.ui.stickyHeaderSubmenu("user-options");
-        } else {
-          vars.ui.stickyHeaderSubmenu("");
-        }
       }}
     >
       {/* <a
@@ -36,8 +31,21 @@ const UserOptions = () => {
       >
         <IoAddOutline color={COLORS.GRAY} size={30} />
       </a> */}
-      <UserDropdown />
-      <Button style={{ height: 30 }}>Add post</Button>
+      <UserDropdown
+      /* onClick={() => {
+          if (stickyHeaderSubmenu === "") {
+            vars.ui.stickyHeaderSubmenu("user-options");
+          } else {
+            vars.ui.stickyHeaderSubmenu("");
+          }
+        }} */
+      />
+      <Button
+        onClick={() => router.push("/add-post")}
+        style={{ height: 30 }}
+      >
+        Add post
+      </Button>
     </div>
   );
 };

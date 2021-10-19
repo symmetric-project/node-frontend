@@ -20,6 +20,7 @@ const Search = () => {
           fetchPolicy: "no-cache",
           variables: {
             substring: nodeName,
+            limit: 10,
           },
         })
         .then(
