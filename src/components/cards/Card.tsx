@@ -3,7 +3,7 @@ import React, { CSSProperties } from "react";
 const GenericCard = ({
   title,
   children,
-  headerHeight = 46,
+  headerHeight = 35,
   style,
   header = true,
 }: {
